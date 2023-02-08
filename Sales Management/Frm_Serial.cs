@@ -59,7 +59,7 @@ namespace Sales_Management
             }
             if(textBox1.Text == x)
             {
-                Properties.Settings.Default.Product_Key = "Yes";
+                Properties.Settings.Default.Product_Key = x;
                 Properties.Settings.Default.Save();
                 MessageBox.Show("تم تفعيل البرنامج بنجاح", "تاكيد", MessageBoxButtons.OK);
                 Close();

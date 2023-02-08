@@ -246,6 +246,13 @@ namespace Sales_Management
                     MessageBox.Show("من فضلك ادخل سعر الشراء وسعر البيع للمنتج الذى تم تحويله", "تاكيد");
                     return;
                 }
+
+                if (NudBuyPrice.Value > NudSalePrice.Value)
+                {
+                    MessageBox.Show("لا يمكن ان يكون سعر الشراء اكبر من سعر البيع", "تاكيد");
+                    return;
+                }
+
                 if (Convert.ToInt32(cbxStoreFrom.SelectedValue) == Convert.ToInt32(cbxStoreTo.SelectedValue))
                 {
                     MessageBox.Show("لا يمكن التحويل لنفس المخزن", "تاكيد");

@@ -81,9 +81,9 @@ namespace Sales_Management
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Image = global::Sales_Management.Properties.Resources.plus_32;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(239, 349);
+            this.btnAdd.Location = new System.Drawing.Point(240, 349);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(186, 56);
+            this.btnAdd.Size = new System.Drawing.Size(185, 56);
             this.btnAdd.TabIndex = 26;
             this.btnAdd.Text = "اضافة";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -95,9 +95,9 @@ namespace Sales_Management
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arabic Typesetting", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(240, 14);
+            this.label3.Location = new System.Drawing.Point(241, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(185, 40);
+            this.label3.Size = new System.Drawing.Size(183, 39);
             this.label3.TabIndex = 16;
             this.label3.Text = "رصيد البنك الحالى هو:";
             // 
@@ -127,7 +127,7 @@ namespace Sales_Management
             // 
             this.NudPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NudPrice.DecimalPlaces = 2;
-            this.NudPrice.Location = new System.Drawing.Point(3, 79);
+            this.NudPrice.Location = new System.Drawing.Point(4, 79);
             this.NudPrice.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -148,7 +148,7 @@ namespace Sales_Management
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(272, 150);
+            this.label4.Location = new System.Drawing.Point(273, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 40);
             this.label4.TabIndex = 20;
@@ -158,7 +158,7 @@ namespace Sales_Management
             // 
             this.DtpDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpDate.Location = new System.Drawing.Point(3, 147);
+            this.DtpDate.Location = new System.Drawing.Point(4, 147);
             this.DtpDate.Name = "DtpDate";
             this.DtpDate.Size = new System.Drawing.Size(230, 46);
             this.DtpDate.TabIndex = 21;
@@ -177,7 +177,7 @@ namespace Sales_Management
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(3, 215);
+            this.txtName.Location = new System.Drawing.Point(4, 215);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(230, 46);
             this.txtName.TabIndex = 23;
@@ -188,7 +188,7 @@ namespace Sales_Management
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(269, 286);
+            this.label7.Location = new System.Drawing.Point(270, 286);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(126, 40);
             this.label7.TabIndex = 24;
@@ -197,7 +197,7 @@ namespace Sales_Management
             // txtreason
             // 
             this.txtreason.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtreason.Location = new System.Drawing.Point(3, 276);
+            this.txtreason.Location = new System.Drawing.Point(4, 276);
             this.txtreason.Multiline = true;
             this.txtreason.Name = "txtreason";
             this.txtreason.Size = new System.Drawing.Size(230, 60);
@@ -206,7 +206,8 @@ namespace Sales_Management
             // 
             // Frm_BankAddMoney
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 39F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 414);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

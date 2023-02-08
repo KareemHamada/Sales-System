@@ -1128,5 +1128,14 @@ namespace Sales_Management
             frm.ShowDialog();
             fillUnit();
         }
+
+        private void txtBarcode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (ch == 13)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace Sales_Management
 
                 if (rbtnPayAll.Checked)
                 {
-                    if (MessageBox.Show("هل انتا متاكد من تسديد المبلغ", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show("هل انت متاكد من تسديد المبلغ", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         if (rbtnAllCust.Checked) { 
                             MessageBox.Show("من فضلك حدد اسم عميل", "تاكيد");
@@ -99,7 +99,7 @@ namespace Sales_Management
                 else if (rbtnPayPart.Checked)
                 {
 
-                    if (MessageBox.Show("هل انتا متاكد من تسديد المبلغ", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show("هل انت متاكد من تسديد المبلغ", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         if (rbtnAllCust.Checked) { 
                             MessageBox.Show("من فضلك حدد اسم عميل", "تاكيد");
@@ -133,25 +133,47 @@ namespace Sales_Management
                 Frm_Printing frm = new Frm_Printing();
 
                 frm.crystalReportViewer1.RefreshReport();
-
-                RptCustomerMoney rpt = new RptCustomerMoney();
-
-
-                rpt.SetDatabaseLogon("", "", @".\SQLEXPRESS", "Sales_System");
-                rpt.SetDataSource(tblRpt);
-                rpt.SetParameterValue("Name", name);
-                frm.crystalReportViewer1.ReportSource = rpt;
-
-                System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                rpt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                if (Properties.Settings.Default.ShowBeforePrint)
+                if (Properties.Settings.Default.SalePrintKind == "8CM")
                 {
-                    frm.ShowDialog();
+                    RptCustomerMoney rpt = new RptCustomerMoney();
+
+
+                    rpt.SetDatabaseLogon("", "", @".\SQLEXPRESS", "Sales_System");
+                    rpt.SetDataSource(tblRpt);
+                    rpt.SetParameterValue("Name", name);
+                    frm.crystalReportViewer1.ReportSource = rpt;
+
+                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                    rpt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
                 }
-                else
+                else if (Properties.Settings.Default.SalePrintKind == "A4")
                 {
-                    rpt.PrintToPrinter(1, true, 0, 0);
+                    RptCustomerMoneyA4 rpt = new RptCustomerMoneyA4();
+                    rpt.SetDatabaseLogon("", "", @".\SQLEXPRESS", "Sales_System");
+                    rpt.SetDataSource(tblRpt);
+                    rpt.SetParameterValue("Name", name);
+                    frm.crystalReportViewer1.ReportSource = rpt;
+
+                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                    rpt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
                 }
+                
             }
             catch (Exception) { }
         }

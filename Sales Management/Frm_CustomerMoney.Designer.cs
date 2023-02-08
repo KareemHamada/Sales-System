@@ -113,7 +113,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.20225F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.80899F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.5618F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 224F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 226F));
             this.tableLayoutPanel2.Controls.Add(this.NudPrice, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.rbtnPayPart, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.rbtnPayAll, 0, 0);
@@ -133,7 +133,7 @@ namespace Sales_Management
             // 
             this.NudPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NudPrice.DecimalPlaces = 2;
-            this.NudPrice.Location = new System.Drawing.Point(617, 9);
+            this.NudPrice.Location = new System.Drawing.Point(618, 9);
             this.NudPrice.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -154,7 +154,7 @@ namespace Sales_Management
             this.rbtnPayPart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnPayPart.AutoSize = true;
             this.rbtnPayPart.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnPayPart.Location = new System.Drawing.Point(779, 10);
+            this.rbtnPayPart.Location = new System.Drawing.Point(780, 10);
             this.rbtnPayPart.Name = "rbtnPayPart";
             this.rbtnPayPart.Size = new System.Drawing.Size(154, 44);
             this.rbtnPayPart.TabIndex = 12;
@@ -167,7 +167,7 @@ namespace Sales_Management
             this.rbtnPayAll.AutoSize = true;
             this.rbtnPayAll.Checked = true;
             this.rbtnPayAll.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnPayAll.Location = new System.Drawing.Point(943, 10);
+            this.rbtnPayAll.Location = new System.Drawing.Point(944, 10);
             this.rbtnPayAll.Name = "rbtnPayAll";
             this.rbtnPayAll.Size = new System.Drawing.Size(168, 44);
             this.rbtnPayAll.TabIndex = 11;
@@ -179,7 +179,7 @@ namespace Sales_Management
             // 
             this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotal.Location = new System.Drawing.Point(16, 9);
+            this.txtTotal.Location = new System.Drawing.Point(17, 9);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(195, 46);
@@ -191,7 +191,7 @@ namespace Sales_Management
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(260, 12);
+            this.label1.Location = new System.Drawing.Point(262, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 40);
             this.label1.TabIndex = 20;
@@ -203,7 +203,7 @@ namespace Sales_Management
             this.btnPay.ForeColor = System.Drawing.Color.Black;
             this.btnPay.Image = global::Sales_Management.Properties.Resources.money;
             this.btnPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPay.Location = new System.Drawing.Point(421, 9);
+            this.btnPay.Location = new System.Drawing.Point(422, 9);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(180, 46);
             this.btnPay.TabIndex = 22;
@@ -260,10 +260,10 @@ namespace Sales_Management
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1116, 65);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
@@ -273,7 +273,7 @@ namespace Sales_Management
             this.cbxCustomer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxCustomer.FormattingEnabled = true;
-            this.cbxCustomer.Location = new System.Drawing.Point(465, 20);
+            this.cbxCustomer.Location = new System.Drawing.Point(465, 9);
             this.cbxCustomer.Name = "cbxCustomer";
             this.cbxCustomer.Size = new System.Drawing.Size(291, 47);
             this.cbxCustomer.TabIndex = 13;
@@ -334,7 +334,8 @@ namespace Sales_Management
             // 
             // Frm_CustomerMoney
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 39F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 581);
             this.Controls.Add(this.tplParent);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

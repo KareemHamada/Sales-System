@@ -37,7 +37,7 @@ namespace Sales_Management
             tbl.Clear();
             if (rbtnAllStock.Checked)
             {
-                tbl = db.readData("SELECT [Order_ID] as 'رقم العملية',Stock_Data.Stock_Name as 'اسم الخزنة',[Money] as 'المبلغ',[Date] as 'تاريخ العملية',[Name] as 'المسؤل عن الايداع' ,[Type] as 'نوع لاايداع',[Reason] as 'السبب' FROM [dbo].[Stock_Insert],Stock_Data where Stock_Data.Stock_ID =[Stock_Insert].Stock_ID and Convert(date,Date ,105 ) between '" + date1 + "' and '" + date2 + "' ", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم العملية',Stock_Data.Stock_Name as 'اسم الخزنة',[Money] as 'المبلغ',[Date] as 'تاريخ العملية',[Name] as 'المسؤل عن الايداع' ,[Type] as 'نوع الايداع',[Reason] as 'السبب' FROM [dbo].[Stock_Insert],Stock_Data where Stock_Data.Stock_ID =[Stock_Insert].Stock_ID and Convert(date,Date ,105 ) between '" + date1 + "' and '" + date2 + "' ", "");
             }
             else
             {
@@ -48,7 +48,7 @@ namespace Sales_Management
                         MessageBox.Show("من فضلك اختر خزنة صحيحة", "تاكيد");
                         return;
                     }
-                    tbl = db.readData("SELECT [Order_ID] as 'رقم العملية',Stock_Data.Stock_Name as 'اسم الخزنة',[Money] as 'المبلغ',[Date] as 'تاريخ العملية',[Name] as 'المسؤل عن الايداع' ,[Type] as 'نوع لاايداع',[Reason] as 'السبب' FROM [dbo].[Stock_Insert],Stock_Data where Stock_Data.Stock_ID =[Stock_Insert].Stock_ID and [Stock_Insert].Stock_ID = " + cbxStock.SelectedValue + " and Convert(date,Date ,105 ) between '" + date1 + "' and '" + date2 + "' ", "");
+                    tbl = db.readData("SELECT [Order_ID] as 'رقم العملية',Stock_Data.Stock_Name as 'اسم الخزنة',[Money] as 'المبلغ',[Date] as 'تاريخ العملية',[Name] as 'المسؤل عن الايداع' ,[Type] as 'نوع الايداع',[Reason] as 'السبب' FROM [dbo].[Stock_Insert],Stock_Data where Stock_Data.Stock_ID =[Stock_Insert].Stock_ID and [Stock_Insert].Stock_ID = " + cbxStock.SelectedValue + " and Convert(date,Date ,105 ) between '" + date1 + "' and '" + date2 + "' ", "");
                 }
                 
             }

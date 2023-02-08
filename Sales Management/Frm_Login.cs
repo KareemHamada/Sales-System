@@ -144,9 +144,41 @@ namespace Sales_Management
             }
             return true;
         }
+        private string identifier(string wmiClass, string wmiProperty)
+        // return a hardware identifier
+        {
+            string result = "";
+            System.Management.ManagementClass mc = new System.Management.ManagementClass(wmiClass);
+            System.Management.ManagementObjectCollection moc = mc.GetInstances();
+            foreach (System.Management.ManagementObject mo in moc)
+            {
+                // only get the first one
+                if (result == "")
+                {
+                    try
+                    {
+                        result = mo[wmiProperty].ToString();
+                        break;
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            }
+
+            return result;
+        }
+        string x = "0";
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(Properties.Settings.Default.Product_Key == "No")
+            string serial = identifier("Win32_DiskDrive", "SerialNumber");
+            string signature = identifier("Win32_DiskDrive", "Signature"); // for hard drive
+            //label2.Text = signature;
+            //label1.Text = serial;
+            x = (((Convert.ToDecimal(signature) * 12345 - 3) * 21 - 9) * 2000).ToString();
+
+            if (Properties.Settings.Default.Product_Key != x)
             {
                 Frm_Serial frm = new Frm_Serial();
                 frm.ShowDialog();

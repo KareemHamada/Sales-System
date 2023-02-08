@@ -191,10 +191,12 @@ namespace Sales_Management
             txtbaky.Clear();
             txtMadfou3.Clear();
             txtTotalOrder.Clear();
+            txtTotalTax.Clear();
+            txtTotalOrderAfterTax.Clear();
             txtID.Clear();
             txtName1.Clear();
             txtName2.Clear();
-
+            
             txtbaky.Text = "0";
             txtMadfou3.Text = "0";
             txtID.Focus();

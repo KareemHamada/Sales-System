@@ -267,7 +267,7 @@ namespace Sales_Management
             this.cbxProducts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxProducts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxProducts.FormattingEnabled = true;
-            this.cbxProducts.Location = new System.Drawing.Point(7, 80);
+            this.cbxProducts.Location = new System.Drawing.Point(7, 69);
             this.cbxProducts.Name = "cbxProducts";
             this.cbxProducts.Size = new System.Drawing.Size(242, 47);
             this.cbxProducts.TabIndex = 13;
@@ -290,7 +290,7 @@ namespace Sales_Management
             this.cbxStoreFrom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxStoreFrom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxStoreFrom.FormattingEnabled = true;
-            this.cbxStoreFrom.Location = new System.Drawing.Point(7, 142);
+            this.cbxStoreFrom.Location = new System.Drawing.Point(7, 131);
             this.cbxStoreFrom.Name = "cbxStoreFrom";
             this.cbxStoreFrom.Size = new System.Drawing.Size(242, 47);
             this.cbxStoreFrom.TabIndex = 15;
@@ -343,14 +343,15 @@ namespace Sales_Management
             this.cbxUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUnit.FormattingEnabled = true;
-            this.cbxUnit.Location = new System.Drawing.Point(7, 266);
+            this.cbxUnit.Location = new System.Drawing.Point(7, 255);
             this.cbxUnit.Name = "cbxUnit";
             this.cbxUnit.Size = new System.Drawing.Size(242, 47);
             this.cbxUnit.TabIndex = 19;
             // 
             // Frm_ProdcutsOutStore
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 39F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 428);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

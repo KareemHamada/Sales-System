@@ -105,7 +105,7 @@ namespace Sales_Management
                         MessageBox.Show("المبلغ الموجود فى الخزنة غير كافى لاجراء العملية", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    if (MessageBox.Show("هل انتا متاكد من تسديد المبلغ", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show("هل انت متاكد من تسديد المبلغ", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         
                         db.executeData("delete from Supplier_Money where Order_ID=" + DgvSearch.CurrentRow.Cells[0].Value + " and Price =" + DgvSearch.CurrentRow.Cells[2].Value + "", "", "");
@@ -127,7 +127,7 @@ namespace Sales_Management
                         MessageBox.Show("المبلغ الموجود فى الخزنة غير كافى لاجراء العملية", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-                    if (MessageBox.Show("هل انتا متاكد من تسديد المبلغ", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show("هل انت متاكد من تسديد المبلغ", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         decimal money = Convert.ToDecimal(DgvSearch.CurrentRow.Cells[2].Value) - NudPrice.Value;
 
@@ -146,13 +146,17 @@ namespace Sales_Management
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (rbtnOneSupplier.Checked == true)
+            if (rbtnOneSupplier.Checked)
             {
                 if (DgvSearch.Rows.Count >= 1)
                 {
                     PrintOneSupplier();
 
                 }
+            }
+            else
+            {
+                MessageBox.Show("من فضلك اختر مورد محدد", "تاكيد");
             }
         }
 
@@ -168,25 +172,47 @@ namespace Sales_Management
                 Frm_Printing frm = new Frm_Printing();
 
                 frm.crystalReportViewer1.RefreshReport();
-
-                RptSupplierMoney rpt = new RptSupplierMoney();
-
-
-                rpt.SetDatabaseLogon("", "", @".\SQLEXPRESS", "Sales_System");
-                rpt.SetDataSource(tblRpt);
-                rpt.SetParameterValue("ID", id);
-                frm.crystalReportViewer1.ReportSource = rpt;
-
-                System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-                rpt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-                if (Properties.Settings.Default.ShowBeforePrint)
+                if (Properties.Settings.Default.SalePrintKind == "8CM")
                 {
-                    frm.ShowDialog();
+                    RptSupplierMoney rpt = new RptSupplierMoney();
+                    rpt.SetDatabaseLogon("", "", @".\SQLEXPRESS", "Sales_System");
+                    rpt.SetDataSource(tblRpt);
+                    rpt.SetParameterValue("ID", id);
+                    frm.crystalReportViewer1.ReportSource = rpt;
+
+                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                    rpt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
                 }
-                else
+                else if (Properties.Settings.Default.SalePrintKind == "A4")
                 {
-                    rpt.PrintToPrinter(1, true, 0, 0);
+                    RptSupplierMoneyA4 rpt = new RptSupplierMoneyA4();
+
+
+                    rpt.SetDatabaseLogon("", "", @".\SQLEXPRESS", "Sales_System");
+                    rpt.SetDataSource(tblRpt);
+                    rpt.SetParameterValue("ID", id);
+                    frm.crystalReportViewer1.ReportSource = rpt;
+
+                    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
+                    rpt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
                 }
+                
             }
             catch (Exception) { }
         }

@@ -200,7 +200,7 @@ namespace Sales_Management
             this.cbxEmployee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxEmployee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxEmployee.FormattingEnabled = true;
-            this.cbxEmployee.Location = new System.Drawing.Point(9, 28);
+            this.cbxEmployee.Location = new System.Drawing.Point(9, 17);
             this.cbxEmployee.Name = "cbxEmployee";
             this.cbxEmployee.Size = new System.Drawing.Size(259, 47);
             this.cbxEmployee.TabIndex = 13;
@@ -274,7 +274,7 @@ namespace Sales_Management
             this.cbxItems.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxItems.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxItems.FormattingEnabled = true;
-            this.cbxItems.Location = new System.Drawing.Point(8, 27);
+            this.cbxItems.Location = new System.Drawing.Point(8, 16);
             this.cbxItems.Name = "cbxItems";
             this.cbxItems.Size = new System.Drawing.Size(262, 47);
             this.cbxItems.TabIndex = 11;
@@ -378,7 +378,8 @@ namespace Sales_Management
             // 
             // Frm_EmployeeBorrowItems
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 39F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 410);
             this.Controls.Add(this.tlpParent);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

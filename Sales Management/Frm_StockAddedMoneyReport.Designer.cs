@@ -37,21 +37,21 @@ namespace Sales_Management
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbxStock = new System.Windows.Forms.ComboBox();
+            this.rbtnOneStock = new System.Windows.Forms.RadioButton();
+            this.rbtnAllStock = new System.Windows.Forms.RadioButton();
             this.DtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.DtpTo = new System.Windows.Forms.DateTimePicker();
             this.DgvSearch = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbxStock = new System.Windows.Forms.ComboBox();
-            this.rbtnOneStock = new System.Windows.Forms.RadioButton();
-            this.rbtnAllStock = new System.Windows.Forms.RadioButton();
             this.tlpParent.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvSearch)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpParent
@@ -91,7 +91,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1127, 81);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
@@ -170,6 +170,62 @@ namespace Sales_Management
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1127, 68);
             this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.17284F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.91358F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.91358F));
+            this.tableLayoutPanel3.Controls.Add(this.cbxStock, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rbtnOneStock, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.rbtnAllStock, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(635, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(492, 68);
+            this.tableLayoutPanel3.TabIndex = 14;
+            // 
+            // cbxStock
+            // 
+            this.cbxStock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxStock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxStock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxStock.FormattingEnabled = true;
+            this.cbxStock.Location = new System.Drawing.Point(3, 10);
+            this.cbxStock.Name = "cbxStock";
+            this.cbxStock.Size = new System.Drawing.Size(226, 47);
+            this.cbxStock.TabIndex = 13;
+            // 
+            // rbtnOneStock
+            // 
+            this.rbtnOneStock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbtnOneStock.AutoSize = true;
+            this.rbtnOneStock.ForeColor = System.Drawing.Color.Blue;
+            this.rbtnOneStock.Location = new System.Drawing.Point(239, 12);
+            this.rbtnOneStock.Name = "rbtnOneStock";
+            this.rbtnOneStock.Size = new System.Drawing.Size(119, 44);
+            this.rbtnOneStock.TabIndex = 12;
+            this.rbtnOneStock.Text = "خزنة محددة";
+            this.rbtnOneStock.UseVisualStyleBackColor = true;
+            // 
+            // rbtnAllStock
+            // 
+            this.rbtnAllStock.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbtnAllStock.AutoSize = true;
+            this.rbtnAllStock.Checked = true;
+            this.rbtnAllStock.ForeColor = System.Drawing.Color.Blue;
+            this.rbtnAllStock.Location = new System.Drawing.Point(375, 12);
+            this.rbtnAllStock.Name = "rbtnAllStock";
+            this.rbtnAllStock.Size = new System.Drawing.Size(107, 44);
+            this.rbtnAllStock.TabIndex = 11;
+            this.rbtnAllStock.TabStop = true;
+            this.rbtnAllStock.Text = "كل الخزن";
+            this.rbtnAllStock.UseVisualStyleBackColor = true;
             // 
             // DtpFrom
             // 
@@ -262,65 +318,10 @@ namespace Sales_Management
             this.DgvSearch.Size = new System.Drawing.Size(1121, 368);
             this.DgvSearch.TabIndex = 4;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.17284F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.91358F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.91358F));
-            this.tableLayoutPanel3.Controls.Add(this.cbxStock, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rbtnOneStock, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rbtnAllStock, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(635, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(492, 68);
-            this.tableLayoutPanel3.TabIndex = 14;
-            // 
-            // cbxStock
-            // 
-            this.cbxStock.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbxStock.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbxStock.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxStock.FormattingEnabled = true;
-            this.cbxStock.Location = new System.Drawing.Point(3, 21);
-            this.cbxStock.Name = "cbxStock";
-            this.cbxStock.Size = new System.Drawing.Size(226, 47);
-            this.cbxStock.TabIndex = 13;
-            // 
-            // rbtnOneStock
-            // 
-            this.rbtnOneStock.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rbtnOneStock.AutoSize = true;
-            this.rbtnOneStock.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnOneStock.Location = new System.Drawing.Point(239, 12);
-            this.rbtnOneStock.Name = "rbtnOneStock";
-            this.rbtnOneStock.Size = new System.Drawing.Size(119, 44);
-            this.rbtnOneStock.TabIndex = 12;
-            this.rbtnOneStock.Text = "خزنة محددة";
-            this.rbtnOneStock.UseVisualStyleBackColor = true;
-            // 
-            // rbtnAllStock
-            // 
-            this.rbtnAllStock.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rbtnAllStock.AutoSize = true;
-            this.rbtnAllStock.Checked = true;
-            this.rbtnAllStock.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnAllStock.Location = new System.Drawing.Point(375, 12);
-            this.rbtnAllStock.Name = "rbtnAllStock";
-            this.rbtnAllStock.Size = new System.Drawing.Size(107, 44);
-            this.rbtnAllStock.TabIndex = 11;
-            this.rbtnAllStock.TabStop = true;
-            this.rbtnAllStock.Text = "كل الخزن";
-            this.rbtnAllStock.UseVisualStyleBackColor = true;
-            // 
             // Frm_StockAddedMoneyReport
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 39F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 588);
             this.Controls.Add(this.tlpParent);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -338,9 +339,9 @@ namespace Sales_Management
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvSearch)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvSearch)).EndInit();
             this.ResumeLayout(false);
 
         }

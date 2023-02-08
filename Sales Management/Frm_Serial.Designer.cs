@@ -30,8 +30,8 @@ namespace Sales_Management
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -57,25 +57,25 @@ namespace Sales_Management
             this.tableLayoutPanel1.Size = new System.Drawing.Size(467, 224);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(186, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "الرقم الاول";
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(189, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 40);
+            this.label2.Size = new System.Drawing.Size(90, 39);
             this.label2.TabIndex = 1;
             this.label2.Text = "الرقم الثاني";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "الرقم الاول";
             // 
             // textBox1
             // 
@@ -100,7 +100,8 @@ namespace Sales_Management
             // 
             // Frm_Serial
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 39F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 224);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

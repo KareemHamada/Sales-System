@@ -99,6 +99,7 @@ namespace Sales_Management
             this.txtSalePrice.Location = new System.Drawing.Point(15, 132);
             this.txtSalePrice.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtSalePrice.Name = "txtSalePrice";
+            this.txtSalePrice.ReadOnly = true;
             this.txtSalePrice.Size = new System.Drawing.Size(255, 46);
             this.txtSalePrice.TabIndex = 17;
             this.txtSalePrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -172,7 +173,7 @@ namespace Sales_Management
             this.cbxUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxUnit.FormattingEnabled = true;
-            this.cbxUnit.Location = new System.Drawing.Point(11, 73);
+            this.cbxUnit.Location = new System.Drawing.Point(11, 74);
             this.cbxUnit.Name = "cbxUnit";
             this.cbxUnit.Size = new System.Drawing.Size(262, 38);
             this.cbxUnit.TabIndex = 35;
@@ -180,7 +181,8 @@ namespace Sales_Management
             // 
             // Frm_SaleQty
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 39F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(406, 312);
             this.Controls.Add(this.tlpParent);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -861,7 +861,8 @@ namespace Sales_Management
             // 
             // Form1
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 55F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1657, 658);
             this.Controls.Add(this.pnlBackground);
             this.Controls.Add(this.menuStrip1);

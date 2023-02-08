@@ -139,6 +139,7 @@ namespace Sales_Management
         {
             Frm_Customer frm = new Frm_Customer();
             frm.ShowDialog();
+            FillCustomer();
         }
 
         private void btnItems_Click(object sender, EventArgs e)
@@ -349,6 +350,7 @@ namespace Sales_Management
                     realQty = Math.Abs(Qty - realQty);
                 }
             }
+            db.executeData("delete Products_Qty where Qty <= 0", "", "");
         }
 
         private void insertSalesRb7h(int i, decimal priceBeforeTaxOfBigUnit, decimal taxValue_ForOneBigUnit, decimal realQty, decimal buyPriceForBigUnit,decimal priceAfterTaxOfBigUnit,int Store_ID)
@@ -627,8 +629,8 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    // rpt.PrintToPrinter(1, true, 0, 0);
-                    frm.ShowDialog();
+                    rpt.PrintToPrinter(1, true, 0, 0);
+                    //frm.ShowDialog();
 
                 }
                 else if (Properties.Settings.Default.SalePrintKind == "A4")
@@ -641,8 +643,8 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    // rpt.PrintToPrinter(1, true, 0, 0);
-                    frm.ShowDialog();
+                    rpt.PrintToPrinter(1, true, 0, 0);
+                    //frm.ShowDialog();
                 }
 
             }

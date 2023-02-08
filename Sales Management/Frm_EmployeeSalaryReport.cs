@@ -35,18 +35,20 @@ namespace Sales_Management
             date1 = DtpFrom.Value.ToString("yyyy-MM-dd");
             date2 = DtpTo.Value.ToString("yyyy-MM-dd");
             tbl.Clear();
-            if (cbxEmployee.SelectedValue == null)
-            {
-                MessageBox.Show("من فضلك اختر موظفا صحيحا", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            
             if (rbtnAllEmp.Checked)
             {
-                tbl = db.readData("SELECT [Order_ID] as 'رقم العملية',Employee.[Emp_Name] as 'اسم الموظف',[Total_Salary] as 'اجمالى المرتب',[Total_Borrow] as 'اجمالى السلفيات والمسحوبات',[Safy_Salary] as 'صافى المرتب',[Order_Date] as 'تاريخ الصرف',[Date_Reminder] as 'تاريخ الاستحقاق',[Notes] as 'ملاحظات' FROM [dbo].[Employee_Salary],Employee where Employee.Emp_ID=[Employee_Salary].Emp_ID and Convert(date,[Order_Date] ,105 ) between '" + date1 + "' and '" + date2 + "' ", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم العملية',Employee.[Emp_Name] as 'اسم الموظف',[Total_Salary] as 'اجمالى المرتب',[Total_Borrow] as 'اجمالى السلفيات',[Safy_Salary] as 'صافى المرتب',[Order_Date] as 'تاريخ الصرف',[Date_Reminder] as 'تاريخ الاستحقاق',[Notes] as 'ملاحظات' FROM [dbo].[Employee_Salary],Employee where Employee.Emp_ID=[Employee_Salary].Emp_ID and Convert(date,[Order_Date] ,105 ) between '" + date1 + "' and '" + date2 + "' ", "");
             }
             else
             {
-                tbl = db.readData("SELECT [Order_ID] as 'رقم العملية',Employee.[Emp_Name] as 'اسم الموظف',[Total_Salary] as 'اجمالى المرتب',[Total_Borrow] as 'اجمالى السلفيات والمسحوبات',[Safy_Salary] as 'صافى المرتب',[Order_Date] as 'تاريخ الصرف',[Date_Reminder] as 'تاريخ الاستحقاق',[Notes] as 'ملاحظات' FROM [dbo].[Employee_Salary],Employee where Employee.Emp_ID=[Employee_Salary].Emp_ID and [Employee_Salary].Emp_ID=" + cbxEmployee.SelectedValue + " and Convert(date,[Order_Date] ,105 ) between '" + date1 + "' and '" + date2 + "' ", "");
+                if (cbxEmployee.SelectedValue == null)
+                {
+                    MessageBox.Show("من فضلك اختر موظفا صحيحا", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                tbl = db.readData("SELECT [Order_ID] as 'رقم العملية',Employee.[Emp_Name] as 'اسم الموظف',[Total_Salary] as 'اجمالى المرتب',[Total_Borrow] as 'اجمالى السلفيات',[Safy_Salary] as 'صافى المرتب',[Order_Date] as 'تاريخ الصرف',[Date_Reminder] as 'تاريخ الاستحقاق',[Notes] as 'ملاحظات' FROM [dbo].[Employee_Salary],Employee where Employee.Emp_ID=[Employee_Salary].Emp_ID and [Employee_Salary].Emp_ID=" + cbxEmployee.SelectedValue + " and Convert(date,[Order_Date] ,105 ) between '" + date1 + "' and '" + date2 + "' ", "");
             }
             if (tbl.Rows.Count >= 1)
             {
@@ -54,7 +56,7 @@ namespace Sales_Management
                 decimal Sum = 0;
                 for (int i = 0; i <= tbl.Rows.Count - 1; i++)
                 {
-                    Sum += Convert.ToDecimal(tbl.Rows[i][4]);
+                    Sum += Convert.ToDecimal(tbl.Rows[i][2]);
                 }
 
                 txtTotal.Text = Math.Round(Sum, 2).ToString();

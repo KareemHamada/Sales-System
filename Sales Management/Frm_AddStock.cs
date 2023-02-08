@@ -82,7 +82,7 @@ namespace Sales_Management
                 return;
             }
             db.executeData("insert into Stock_Data Values (" + txtID.Text + " ,N'" + txtName.Text + "')", "تم الادخال بنجاح","");
-            db.executeData("insert into Stock Values (" + txtID.Text + ",0)", "تم الادخال بنجاح", "");
+            db.executeData("insert into Stock Values (" + txtID.Text + ",0)", "", "");
             AutoNumber();
         }
 
@@ -107,6 +107,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
+                db.executeData("delete from Stock where Stock_ID=" + txtID.Text + "", "", "");
                 db.executeData("delete from Stock_Data where Stock_ID=" + txtID.Text + "", "تم مسح البيانات بنجاح", "لا يمكن حذف هذه الخزنة قد يكون هذه الخزنة متعلقة بعمليات اخري عند حذفها يتم حذف هذه الخزنة");
                 AutoNumber();
             }
