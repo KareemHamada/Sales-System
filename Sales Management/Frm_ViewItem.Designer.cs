@@ -173,7 +173,7 @@ namespace Sales_Management
             this.cbxGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxGroup.FormattingEnabled = true;
-            this.cbxGroup.Location = new System.Drawing.Point(946, 9);
+            this.cbxGroup.Location = new System.Drawing.Point(946, 17);
             this.cbxGroup.Name = "cbxGroup";
             this.cbxGroup.Size = new System.Drawing.Size(165, 40);
             this.cbxGroup.TabIndex = 13;
@@ -282,7 +282,7 @@ namespace Sales_Management
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 231F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 178F));
             this.tableLayoutPanel4.Controls.Add(this.btnViewAll, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnAddNew, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnUpdate, 2, 0);
@@ -304,7 +304,7 @@ namespace Sales_Management
             this.btnViewAll.ForeColor = System.Drawing.Color.Black;
             this.btnViewAll.Image = global::Sales_Management.Properties.Resources.eye__1_;
             this.btnViewAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewAll.Location = new System.Drawing.Point(1008, 5);
+            this.btnViewAll.Location = new System.Drawing.Point(1009, 5);
             this.btnViewAll.Name = "btnViewAll";
             this.btnViewAll.Size = new System.Drawing.Size(217, 52);
             this.btnViewAll.TabIndex = 51;
@@ -319,7 +319,7 @@ namespace Sales_Management
             this.btnAddNew.ForeColor = System.Drawing.Color.Black;
             this.btnAddNew.Image = global::Sales_Management.Properties.Resources.plus_32;
             this.btnAddNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNew.Location = new System.Drawing.Point(806, 5);
+            this.btnAddNew.Location = new System.Drawing.Point(807, 5);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(195, 52);
             this.btnAddNew.TabIndex = 52;
@@ -334,7 +334,7 @@ namespace Sales_Management
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Image = global::Sales_Management.Properties.Resources.update__1_;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(580, 5);
+            this.btnUpdate.Location = new System.Drawing.Point(581, 5);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(216, 52);
             this.btnUpdate.TabIndex = 53;
@@ -349,7 +349,7 @@ namespace Sales_Management
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = global::Sales_Management.Properties.Resources.remove;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(377, 5);
+            this.btnDelete.Location = new System.Drawing.Point(378, 5);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(192, 52);
             this.btnDelete.TabIndex = 54;
@@ -364,7 +364,7 @@ namespace Sales_Management
             this.btnDeleteAll.ForeColor = System.Drawing.Color.Black;
             this.btnDeleteAll.Image = global::Sales_Management.Properties.Resources.delete;
             this.btnDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteAll.Location = new System.Drawing.Point(181, 5);
+            this.btnDeleteAll.Location = new System.Drawing.Point(182, 5);
             this.btnDeleteAll.Name = "btnDeleteAll";
             this.btnDeleteAll.Size = new System.Drawing.Size(190, 52);
             this.btnDeleteAll.TabIndex = 55;
