@@ -104,6 +104,7 @@ namespace Sales_Management
                 {
                     //db.readData("delete from Products_Qty ", "");
                     //db.readData("delete from Products_Unit ", "");
+                    // beacuase there are cascaded on db
 
                     db.executeData("delete from Products", "تم مسح البيانات بنجاح", "لا يمكن حذف جميع المنتجات قد يكون هناك منتج متعلق بعمليات اخري عند حذفها يتم حذف هذا المنتج");
                     showAllItems();
@@ -118,6 +119,8 @@ namespace Sales_Management
             {
                 if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
+                    // beacuase there are cascaded on db
+
                     //db.readData("delete from Products_Qty where Pro_ID=" + DgvSearch.CurrentRow.Cells[0].Value + "", "");
                     //db.readData("delete from Products_Unit where Pro_ID=" + DgvSearch.CurrentRow.Cells[0].Value + "", "");
                     db.executeData("delete from Products where Pro_ID=" + DgvSearch.CurrentRow.Cells[0].Value + "", "تم مسح البيانات بنجاح", "لا يمكن حذف هذا المنتج قد يكون هذا المنتج متعلق بعمليات اخري عند حذفها يتم حذف هذا المنتج");

@@ -735,7 +735,7 @@ namespace Sales_Management
             this.cbxUnitBuy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxUnitBuy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUnitBuy.FormattingEnabled = true;
-            this.cbxUnitBuy.Location = new System.Drawing.Point(18, 197);
+            this.cbxUnitBuy.Location = new System.Drawing.Point(18, 194);
             this.cbxUnitBuy.Name = "cbxUnitBuy";
             this.cbxUnitBuy.Size = new System.Drawing.Size(264, 36);
             this.cbxUnitBuy.TabIndex = 41;
@@ -756,7 +756,7 @@ namespace Sales_Management
             this.cbxUnitSale.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxUnitSale.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUnitSale.FormattingEnabled = true;
-            this.cbxUnitSale.Location = new System.Drawing.Point(17, 235);
+            this.cbxUnitSale.Location = new System.Drawing.Point(17, 232);
             this.cbxUnitSale.Name = "cbxUnitSale";
             this.cbxUnitSale.Size = new System.Drawing.Size(267, 36);
             this.cbxUnitSale.TabIndex = 36;
@@ -828,7 +828,7 @@ namespace Sales_Management
             this.cbxMainUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxMainUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxMainUnit.FormattingEnabled = true;
-            this.cbxMainUnit.Location = new System.Drawing.Point(67, 9);
+            this.cbxMainUnit.Location = new System.Drawing.Point(67, 3);
             this.cbxMainUnit.Name = "cbxMainUnit";
             this.cbxMainUnit.Size = new System.Drawing.Size(232, 36);
             this.cbxMainUnit.TabIndex = 30;
@@ -1000,7 +1000,7 @@ namespace Sales_Management
             this.cbxGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxGroup.FormattingEnabled = true;
-            this.cbxGroup.Location = new System.Drawing.Point(66, 9);
+            this.cbxGroup.Location = new System.Drawing.Point(66, 3);
             this.cbxGroup.Name = "cbxGroup";
             this.cbxGroup.Size = new System.Drawing.Size(233, 36);
             this.cbxGroup.TabIndex = 27;
@@ -1164,7 +1164,7 @@ namespace Sales_Management
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.19303F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.90909F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 182F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
             this.tableLayoutPanel7.Controls.Add(this.txtSearchBarcode, 5, 0);
             this.tableLayoutPanel7.Controls.Add(this.btnSearch, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label21, 4, 0);
@@ -1183,7 +1183,7 @@ namespace Sales_Management
             // txtSearchBarcode
             // 
             this.txtSearchBarcode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSearchBarcode.Location = new System.Drawing.Point(8, 8);
+            this.txtSearchBarcode.Location = new System.Drawing.Point(9, 8);
             this.txtSearchBarcode.Name = "txtSearchBarcode";
             this.txtSearchBarcode.Size = new System.Drawing.Size(169, 36);
             this.txtSearchBarcode.TabIndex = 45;
@@ -1196,7 +1196,7 @@ namespace Sales_Management
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Sales_Management.Properties.Resources.search1;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(513, 7);
+            this.btnSearch.Location = new System.Drawing.Point(514, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(113, 38);
             this.btnSearch.TabIndex = 10;
@@ -1209,7 +1209,7 @@ namespace Sales_Management
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(190, 12);
+            this.label21.Location = new System.Drawing.Point(192, 12);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(100, 28);
             this.label21.TabIndex = 44;
@@ -1218,9 +1218,9 @@ namespace Sales_Management
             // txtProNameSearch
             // 
             this.txtProNameSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtProNameSearch.Location = new System.Drawing.Point(632, 8);
+            this.txtProNameSearch.Location = new System.Drawing.Point(633, 8);
             this.txtProNameSearch.Name = "txtProNameSearch";
-            this.txtProNameSearch.Size = new System.Drawing.Size(211, 36);
+            this.txtProNameSearch.Size = new System.Drawing.Size(210, 36);
             this.txtProNameSearch.TabIndex = 9;
             this.txtProNameSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtProNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProNameSearch_KeyPress);
@@ -1242,9 +1242,9 @@ namespace Sales_Management
             this.cbxProducts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxProducts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxProducts.FormattingEnabled = true;
-            this.cbxProducts.Location = new System.Drawing.Point(298, 14);
+            this.cbxProducts.Location = new System.Drawing.Point(300, 14);
             this.cbxProducts.Name = "cbxProducts";
-            this.cbxProducts.Size = new System.Drawing.Size(208, 36);
+            this.cbxProducts.Size = new System.Drawing.Size(207, 36);
             this.cbxProducts.TabIndex = 11;
             this.cbxProducts.SelectionChangeCommitted += new System.EventHandler(this.cbxProducts_SelectionChangeCommitted);
             // 
