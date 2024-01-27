@@ -613,6 +613,7 @@ namespace Sales_Management
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(450, 46);
             this.toolStripMenuItem4.Text = "ايداع رصيد";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // btnStockAddMoney
             // 
@@ -857,7 +858,7 @@ namespace Sales_Management
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(431, 34);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Copyright © 2023 Pytech. All rights reserved";
+            this.label1.Text = "Copyright © 2024 Pytech. All rights reserved";
             // 
             // Form1
             // 

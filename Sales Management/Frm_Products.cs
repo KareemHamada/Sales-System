@@ -185,15 +185,23 @@ namespace Sales_Management
 
         private void FillPro()
         {
-            cbxProducts.DataSource = db.readData("select * from Products", "");
+            cbxProducts.DataSource = db.readData("select * from Products where CurrentState=1", "");
             cbxProducts.DisplayMember = "Pro_Name";
             cbxProducts.ValueMember = "Pro_ID";
         }
         private void fillGroups()
         {
-            cbxGroup.DataSource = db.readData("select * from Products_Group", "");
-            cbxGroup.DisplayMember = "Group_Name";
-            cbxGroup.ValueMember = "Group_ID";
+            try
+            {
+                cbxGroup.DataSource = db.readData("select * from Products_Group where CurrentState=1", "");
+                cbxGroup.DisplayMember = "Group_Name";
+                cbxGroup.ValueMember = "Group_ID";
+            }
+            catch
+            {
+
+            }
+            
         }
         //private void fillStore()
         //{
@@ -203,20 +211,28 @@ namespace Sales_Management
         //}
         private void fillUnit()
         {
-            cbxMainUnit.DataSource = db.readData("select * from Unit", "");
-            cbxMainUnit.DisplayMember = "Unit_Name";
-            cbxMainUnit.ValueMember = "Unit_ID";
+            try
+            {
+                cbxMainUnit.DataSource = db.readData("select * from Unit where CurrentState=1", "");
+                cbxMainUnit.DisplayMember = "Unit_Name";
+                cbxMainUnit.ValueMember = "Unit_ID";
 
-            cbxUnitSale.DataSource = db.readData("select * from Unit", "");
-            cbxUnitSale.DisplayMember = "Unit_Name";
-            cbxUnitSale.ValueMember = "Unit_ID";
+                cbxUnitSale.DataSource = db.readData("select * from Unit where CurrentState=1", "");
+                cbxUnitSale.DisplayMember = "Unit_Name";
+                cbxUnitSale.ValueMember = "Unit_ID";
 
-            cbxUnitBuy.DataSource = db.readData("select * from Unit", "");
-            cbxUnitBuy.DisplayMember = "Unit_Name";
-            cbxUnitBuy.ValueMember = "Unit_ID";
-            cbxUnit.DataSource = db.readData("select * from Unit", "");
-            cbxUnit.DisplayMember = "Unit_Name";
-            cbxUnit.ValueMember = "Unit_ID";
+                cbxUnitBuy.DataSource = db.readData("select * from Unit where CurrentState=1", "");
+                cbxUnitBuy.DisplayMember = "Unit_Name";
+                cbxUnitBuy.ValueMember = "Unit_ID";
+
+                cbxUnit.DataSource = db.readData("select * from Unit where CurrentState=1", "");
+                cbxUnit.DisplayMember = "Unit_Name";
+                cbxUnit.ValueMember = "Unit_ID";
+            }
+            catch
+            {
+
+            }
         }
         private void Frm_Products_Load(object sender, EventArgs e)
         {
@@ -355,7 +371,7 @@ namespace Sales_Management
                     is_Tax = "غير خاضع للضريبة";
                 }
 
-                db.executeData("insert into Products Values (" + txtID.Text + " ,N'" + txtProName.Text + "' ," + NudAllQty.Value + " ,0 ," + NudSalePrice.Value + " ," + Nudtax.Value + " ," + txtSalePriceTax.Text + " ,N'" + txtBarcode.Text + "' , " + NudMinQty.Value + " , " + NudMaxDiscount.Value + ",N'" + is_Tax + "' ," + cbxGroup.SelectedValue + " ," + cbxMainUnit.SelectedValue + "," + cbxUnitSale.SelectedValue + " ," + cbxUnitBuy.SelectedValue + ")", "", "");
+                db.executeData("insert into Products Values (" + txtID.Text + " ,N'" + txtProName.Text + "' ," + NudAllQty.Value + " ,0 ," + NudSalePrice.Value + " ," + Nudtax.Value + " ," + txtSalePriceTax.Text + " ,N'" + txtBarcode.Text + "' , " + NudMinQty.Value + " , " + NudMaxDiscount.Value + ",N'" + is_Tax + "' ," + cbxGroup.SelectedValue + " ," + cbxMainUnit.SelectedValue + "," + cbxUnitSale.SelectedValue + " ," + cbxUnitBuy.SelectedValue + ",1)", "", "");
 
 
                 for (int i = 0; i <= DgvStore.Rows.Count - 1; i++)
@@ -428,19 +444,20 @@ namespace Sales_Management
                 }
                 //string unit_Name = cbxMainUnit.Text;
 
+                // if main unit exist 
                 for (int i = 0; i <= DgvUnits.Rows.Count - 1; i++)
                 {
                     if (Convert.ToInt32(cbxMainUnit.SelectedValue) == Convert.ToInt32(DgvUnits.Rows[i].Cells[0].Value))
                     {
-                        MessageBox.Show("تم حفظ البيانات بيانات المنتج", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("تم حفظ بيانات المنتج", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         AutoNumber();
                         return;
                     }
                 }
 
-
+                // if main unit not exist 
                 db.executeData("insert into Products_Unit values (" + txtID.Text + " ," + cbxMainUnit.SelectedValue + " ,1 , " + txtSalePriceTax.Text + " ," + txtSalePriceTax.Text + ")", "", "");
-                MessageBox.Show("تم حفظ البيانات بيانات المنتج", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("تم حفظ بيانات المنتج", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 AutoNumber();
             }
         }
@@ -450,10 +467,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                // beacuase there are cascaded on db
-                //db.readData("delete from Products_Qty where Pro_ID=" + txtID.Text + "", "");
-                //db.readData("delete from Products_Unit where Pro_ID=" + txtID.Text + "", "");
-                db.executeData("delete from Products where Pro_ID=" + txtID.Text + "", "تم مسح البيانات بنجاح", "لا يمكن حذف هذا المنتج قد يكون هذا المنتج متعلق بعمليات اخري عند حذفها يتم حذف هذا المنتج");
+                db.executeData("update Products set CurrentState=0,Barcode='' where Pro_ID=" + txtID.Text + "", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }
@@ -463,10 +477,8 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                // beacuase there are cascaded on db
-                //db.readData("delete from Products_Qty ", "");
-                //db.readData("delete from Products_Unit ", "");
-                db.executeData("delete from Products", "تم مسح البيانات بنجاح", "لا يمكن حذف جميع المنتجات قد يكون هناك منتج متعلق بعمليات اخري عند حذفها يتم حذف هذا المنتج");
+                db.executeData("update Products set CurrentState=0,Barcode=''", "تم الحذف بنجاح", "");
+                
                 AutoNumber();
             }
         }
@@ -478,7 +490,7 @@ namespace Sales_Management
             {
                 DataTable tblSearch = new DataTable();
                 tblSearch.Clear();
-                tblSearch = db.readData("select * from Products where Pro_Name like N'%" + txtProNameSearch.Text + "%'", "");
+                tblSearch = db.readData("select * from Products where Pro_Name like N'%" + txtProNameSearch.Text + "%' and CurrentState=1", "");
 
                 if (tblSearch.Rows.Count <= 0)
                 {
@@ -584,7 +596,7 @@ namespace Sales_Management
             {
                 DataTable tblSearch = new DataTable();
                 tblSearch.Clear();
-                tblSearch = db.readData("select * from Products where Pro_ID=" + cbxProducts.SelectedValue + "", "");
+                tblSearch = db.readData("select * from Products where Pro_ID=" + cbxProducts.SelectedValue + " and CurrentState=1", "");
 
                 if (tblSearch.Rows.Count <= 0)
                 {
@@ -738,51 +750,7 @@ namespace Sales_Management
             catch (Exception) { }
         }
 
-        //private void btnAddQty_Click(object sender, EventArgs e)
-        //{
-        //    if (cbxStore.Items.Count >= 1)
-        //    {
-
-        //        if (NudBuyPriceStore.Value <= 0 || NudQtyStore.Value <= 0)
-        //        {
-        //            MessageBox.Show("من فضلك ادخل الكمية و سعر الشراء");
-        //            return;
-        //        }
-
-        //        DgvStore.Rows.Add(1);
-        //        int indexrow = DgvStore.Rows.Count - 1;
-        //        DgvStore.Rows[indexrow].Cells[0].Value = cbxStore.SelectedValue;
-        //        DgvStore.Rows[indexrow].Cells[1].Value = cbxStore.Text;
-        //        DgvStore.Rows[indexrow].Cells[2].Value = NudQtyStore.Value;
-        //        DgvStore.Rows[indexrow].Cells[3].Value = NudBuyPriceStore.Value;
-
-        //        decimal total = 0;
-        //        for (int i = 0; i <= DgvStore.Rows.Count - 1; i++)
-        //        {
-        //            total += Convert.ToDecimal(DgvStore.Rows[i].Cells[2].Value);
-        //        }
-
-        //        NudAllQty.Value = total;
-        //        NudBuyPriceStore.Value = 1;
-        //        NudQtyStore.Value = 1;
-
-        //    }
-        //}
-
-        //private void btnRemoveStore_Click(object sender, EventArgs e)
-        //{
-        //    if (DgvStore.Rows.Count >= 1)
-        //    {
-        //        DgvStore.Rows.RemoveAt(DgvStore.CurrentCell.RowIndex);
-        //        decimal total = 0;
-        //        for (int i = 0; i <= DgvStore.Rows.Count - 1; i++)
-        //        {
-        //            total += Convert.ToDecimal(DgvStore.Rows[i].Cells[2].Value);
-        //        }
-
-        //        NudAllQty.Value = total;
-        //    }
-        //}
+ 
 
         private void btnAddUnit_Click(object sender, EventArgs e)
         {
@@ -849,7 +817,7 @@ namespace Sales_Management
                 {
                     DataTable tblSearch = new DataTable();
                     tblSearch.Clear();
-                    tblSearch = db.readData("select * from Products where Barcode=N'" + txtSearchBarcode.Text + "'", "");
+                    tblSearch = db.readData("select * from Products where Barcode=N'" + txtSearchBarcode.Text + "' and CurrentState=1", "");
 
                     if (tblSearch.Rows.Count <= 0)
                     {
@@ -1070,53 +1038,7 @@ namespace Sales_Management
             txtBarcode.Text = Properties.Settings.Default.Pro_Barcode;
         }
 
-        //private void btnNext_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Pro_ID) from Products", "");
-        //    if (Convert.ToInt32(tbl.Rows[0][0]) - 1 == row)
-        //    {
-        //        row = 0;
-        //        Show();
-        //    }
-        //    else
-        //    {
-        //        row++;
-        //        Show();
-        //    }
-        //}
 
-        //private void btnFirst_Click(object sender, EventArgs e)
-        //{
-        //    row = 0;
-        //    Show();
-        //}
-
-        //private void btnLast_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Pro_ID) from Products", "");
-        //    row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //    Show();
-        //}
-
-        //private void btnPrev_Click(object sender, EventArgs e)
-        //{
-        //    if (row == 0)
-        //    {
-        //        tbl.Clear();
-        //        tbl = db.readData("select count(Pro_ID) from Products", "");
-        //        row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //        Show();
-        //    }
-        //    else
-        //    {
-
-
-        //        row--;
-        //        Show();
-        //    }
-        //}
 
         private void btnShowGroup_Click(object sender, EventArgs e)
         {
@@ -1140,5 +1062,57 @@ namespace Sales_Management
                 e.Handled = true;
             }
         }
+
+
+
+
+
+
+
+        //private void btnAddQty_Click(object sender, EventArgs e)
+        //{
+        //    if (cbxStore.Items.Count >= 1)
+        //    {
+
+        //        if (NudBuyPriceStore.Value <= 0 || NudQtyStore.Value <= 0)
+        //        {
+        //            MessageBox.Show("من فضلك ادخل الكمية و سعر الشراء");
+        //            return;
+        //        }
+
+        //        DgvStore.Rows.Add(1);
+        //        int indexrow = DgvStore.Rows.Count - 1;
+        //        DgvStore.Rows[indexrow].Cells[0].Value = cbxStore.SelectedValue;
+        //        DgvStore.Rows[indexrow].Cells[1].Value = cbxStore.Text;
+        //        DgvStore.Rows[indexrow].Cells[2].Value = NudQtyStore.Value;
+        //        DgvStore.Rows[indexrow].Cells[3].Value = NudBuyPriceStore.Value;
+
+        //        decimal total = 0;
+        //        for (int i = 0; i <= DgvStore.Rows.Count - 1; i++)
+        //        {
+        //            total += Convert.ToDecimal(DgvStore.Rows[i].Cells[2].Value);
+        //        }
+
+        //        NudAllQty.Value = total;
+        //        NudBuyPriceStore.Value = 1;
+        //        NudQtyStore.Value = 1;
+
+        //    }
+        //}
+
+        //private void btnRemoveStore_Click(object sender, EventArgs e)
+        //{
+        //    if (DgvStore.Rows.Count >= 1)
+        //    {
+        //        DgvStore.Rows.RemoveAt(DgvStore.CurrentCell.RowIndex);
+        //        decimal total = 0;
+        //        for (int i = 0; i <= DgvStore.Rows.Count - 1; i++)
+        //        {
+        //            total += Convert.ToDecimal(DgvStore.Rows[i].Cells[2].Value);
+        //        }
+
+        //        NudAllQty.Value = total;
+        //    }
+        //}
     }
 }

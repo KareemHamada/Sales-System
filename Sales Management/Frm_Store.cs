@@ -21,7 +21,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblGroup.Clear();
-            tblGroup = db.readData("select Store_ID as 'رقم المخزن' ,Store_Name as 'اسم المخزن' from Store", "");
+            tblGroup = db.readData("select Store_ID as 'رقم المخزن' ,Store_Name as 'اسم المخزن' from Store where CurrentState=1", "");
             DgvSearch.DataSource = tblGroup;
             tbl.Clear();
             tbl = db.readData("select max (Store_ID) from Store", "");
@@ -46,28 +46,7 @@ namespace Sales_Management
 
         }
 
-        //int row;
-        //private void Show()
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select * from Store", "");
-
-        //    if (tbl.Rows.Count <= 0)
-        //    {
-        //        MessageBox.Show("لا يوجد بيانات فى هذه الشاشه");
-        //    }
-        //    else
-        //    {
-        //        txtID.Text = tbl.Rows[row][0].ToString();
-        //        txtName.Text = tbl.Rows[row][1].ToString();
-        //    }
-
-        //    btnAdd.Enabled = false;
-        //    btnNew.Enabled = true;
-        //    btnDelete.Enabled = true;
-        //    btnDeleteAll.Enabled = true;
-        //    btnSave.Enabled = true;
-        //}
+        
         private void Frm_Store_Load(object sender, EventArgs e)
         {
             AutoNumber();
@@ -80,7 +59,7 @@ namespace Sales_Management
                 MessageBox.Show("من فضلك ادخل اسم المخزن");
                 return;
             }
-            db.executeData("insert into Store Values (" + txtID.Text + " ,N'" + txtName.Text + "')", "تم الادخال بنجاح", "");
+            db.executeData("insert into Store Values (" + txtID.Text + " ,N'" + txtName.Text + "',1)", "تم الادخال بنجاح", "");
 
             AutoNumber();
         }
@@ -105,7 +84,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("delete from Store where Store_ID=" + txtID.Text + "", "تم مسح البيانات بنجاح","لا يمكن حذف هذا المخزن قد يكون هذا المخزن متعلق بعمليات اخري عند حذفها يتم حذف هذا المخزن");
+                db.readData("update Store set CurrentState=0 where Store_ID=" + txtID.Text + "", "تم الحذف بنجاح");
                 AutoNumber();
             }
         }
@@ -114,7 +93,8 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("delete from Store ", "تم مسح البيانات بنجاح", "لا يمكن حذف المخازن قد يكون هناك مخزن متعلق بعمليات اخري عند حذفها يتم حذف هذه المخازن");
+                db.readData("update Store set CurrentState=0", "تم الحذف بنجاح");
+                //db.executeData("delete from Store ", "تم مسح البيانات بنجاح", "لا يمكن حذف المخازن قد يكون هناك مخزن متعلق بعمليات اخري عند حذفها يتم حذف هذه المخازن");
                 AutoNumber();
             }
         }

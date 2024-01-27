@@ -21,7 +21,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblGroup.Clear();
-            tblGroup = db.readData("select Group_ID as 'رقم المجموعة' ,Group_Name as 'اسم المجموعة' from Products_Group", "");
+            tblGroup = db.readData("select Group_ID as 'رقم المجموعة' ,Group_Name as 'اسم المجموعة' from Products_Group where CurrentState=1", "");
             DgvSearch.DataSource = tblGroup;
             tbl.Clear();
             tbl = db.readData("select max(Group_ID) from Products_Group", "");
@@ -45,28 +45,6 @@ namespace Sales_Management
 
         }
 
-        int row;
-        private void Show()
-        {
-            tbl.Clear();
-            tbl = db.readData("select * from Products_Group", "");
-
-            if (tbl.Rows.Count <= 0)
-            {
-                MessageBox.Show("لا يوجد بيانات فى هذه الشاشه");
-            }
-            else
-            {
-                txtID.Text = tbl.Rows[row][0].ToString();
-                txtName.Text = tbl.Rows[row][1].ToString();
-
-                btnAdd.Enabled = false;
-                btnNew.Enabled = true;
-                btnDelete.Enabled = true;
-                btnDeleteAll.Enabled = true;
-                btnSave.Enabled = true;
-            }
-        }
         private void Frm_ProductGroup_Load(object sender, EventArgs e)
         {
             AutoNumber();
@@ -84,7 +62,7 @@ namespace Sales_Management
                 MessageBox.Show("من فضلك ادخل اسم المجموعة");
                 return;
             }
-            db.executeData("insert into Products_Group Values (" + txtID.Text + " ,N'" + txtName.Text + "')", "تم الادخال بنجاح", "");
+            db.executeData("insert into Products_Group Values (" + txtID.Text + " ,N'" + txtName.Text + "',1)", "تم الادخال بنجاح", "");
 
             AutoNumber();
         }
@@ -96,7 +74,7 @@ namespace Sales_Management
                 MessageBox.Show("من فضلك ادخل اسم المجموعة");
                 return;
             }
-            db.readData("update Products_Group set Group_Name=N'" + txtName.Text + "'  where Group_ID=" + txtID.Text + "", "تم تعديل البيانات بنجاح");
+            db.executeData("update Products_Group set Group_Name=N'" + txtName.Text + "'  where Group_ID=" + txtID.Text + "", "تم تعديل البيانات بنجاح","");
             AutoNumber();
         }
 
@@ -104,7 +82,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("delete from Products_Group where Group_ID=" + txtID.Text + "", "تم مسح البيانات بنجاح", "لا يمكن حذف هذا الصنف قد يكون هذا الصنف متعلق بعمليات اخري عند حذفها يتم حذف هذا الصنف");
+                db.executeData("update Products_Group set CurrentState=0 where Group_ID=" + txtID.Text + "", "تم الحذف بنجاح","");
                 AutoNumber();
             }
         }
@@ -113,57 +91,10 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("delete from Products_Group ", "تم مسح البيانات بنجاح", "لا يمكن حذف جميع الاصناف قد يكون هناك صنف متعلق بعمليات اخري عند حذفها يتم حذف هذا الصنف");
+                db.executeData("update Products_Group set CurrentState=0", "تم الحذف بنجاح", "");
+                //db.executeData("delete from Products_Group ", "تم مسح البيانات بنجاح", "لا يمكن حذف جميع الاصناف قد يكون هناك صنف متعلق بعمليات اخري عند حذفها يتم حذف هذا الصنف");
                 AutoNumber();
             }
-        }
-
-        private void btnFirst_Click(object sender, EventArgs e)
-        {
-            row = 0;
-            Show();
-        }
-
-        private void btnPrev_Click(object sender, EventArgs e)
-        {
-            if (row == 0)
-            {
-                tbl.Clear();
-                tbl = db.readData("select count(Group_ID) from Products_Group", "");
-                row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-                Show();
-            }
-            else
-            {
-
-
-                row--;
-                Show();
-            }
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            tbl.Clear();
-            tbl = db.readData("select count(Group_ID) from Products_Group", "");
-            if (Convert.ToInt32(tbl.Rows[0][0]) - 1 == row)
-            {
-                row = 0;
-                Show();
-            }
-            else
-            {
-                row++;
-                Show();
-            }
-        }
-
-        private void btnLast_Click(object sender, EventArgs e)
-        {
-            tbl.Clear();
-            tbl = db.readData("select count(Group_ID) from Products_Group", "");
-            row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-            Show();
         }
 
         private void DgvSearch_MouseClick(object sender, MouseEventArgs e)

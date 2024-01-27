@@ -22,7 +22,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblSearch.Clear();
-            tblSearch = db.readData("SELECT Deserved.[Des_ID] as 'رقم المصروف',[Price] as 'المبلغ',[Date] as 'التاريخ',[Notes] as 'ملاحظات',Deserved_Type.Name as 'النوع' FROM [dbo].[Deserved],Deserved_Type where Deserved_Type.Des_ID = Deserved.Type_ID", "");
+            tblSearch = db.readData("SELECT Deserved.[Des_ID] as 'رقم المصروف',[Price] as 'المبلغ',[Date] as 'التاريخ',[Notes] as 'ملاحظات',Deserved_Type.Name as 'النوع' FROM [dbo].[Deserved],Deserved_Type where Deserved.CurrentState=1 and Deserved_Type.Des_ID = Deserved.Type_ID", "");
             DgvSearch.DataSource = tblSearch;
 
             tbl.Clear();
@@ -46,54 +46,17 @@ namespace Sales_Management
             btnSave.Enabled = false;
 
         }
-        //int row;
-        //private void show()
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select * from Deserved", "");
-        //    if (tbl.Rows.Count <= 0)
-        //    {
-        //        MessageBox.Show("لا يوجد بيانات في هذه الشاشة");
-        //    }
-        //    else
-        //    {
-        //        try
-        //        {
-        //            txtID.Text = tbl.Rows[row][0].ToString();
-        //            NudPrice.Value = Convert.ToDecimal(tbl.Rows[row][1]);
-
-        //            this.Text = tbl.Rows[row][2].ToString();
-        //            DateTime dt = DateTime.ParseExact(this.Text, "dd/MM/yyyy", null);
-        //            DtpDate.Value = dt;
-
-        //            txtNotes.Text = tbl.Rows[row][3].ToString();
-        //            cbxType.SelectedValue = Convert.ToDecimal(tbl.Rows[row][4]);
-        //        }
-        //        catch (Exception) { }
-        //    }
-
-        //    btnAdd.Enabled = false;
-        //    btnNew.Enabled = true;
-        //    btnDelete.Enabled = true;
-        //    btnDeleteAll.Enabled = true;
-        //    btnSave.Enabled = true;
-        //}
+        
         string stock_ID = "";
         private void Frm_Deserved_Load(object sender, EventArgs e)
         {
             AutoNumber();
-            db.FillComboBox(cbxType, "select * from Deserved_Type", "Name", "Des_ID");
+            db.FillComboBox(cbxType, "select * from Deserved_Type where CurrentState=1", "Name", "Des_ID");
             stock_ID = Convert.ToString(Properties.Settings.Default.Stock_ID);
 
         }
 
-        //private void btnLast_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Des_ID) from Deserved", "");
-        //    row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //    show();
-        //}
+       
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -122,7 +85,7 @@ namespace Sales_Management
             db.executeData("insert into Stock_Pull (Stock_ID , Money ,Date ,Name ,Type ,Reason) values (" + stock_ID + " ," + NudPrice.Value + " ,N'" + d + "' ,N'" + Properties.Settings.Default.USERNAME + "' ,N'مصروفات', N'" + txtNotes.Text + "') ", "", "");
             db.executeData("update stock set Money=Money - " + NudPrice.Value + " where Stock_ID=" + stock_ID + "", "", "");
 
-            db.executeData("insert into Deserved Values (" + txtID.Text + " ," + NudPrice.Value + " , N'" + d + "' ,N'" + txtNotes.Text + "' ," + cbxType.SelectedValue + ")", "تم الادخال بنجاح", "");
+            db.executeData("insert into Deserved Values (" + txtID.Text + " ," + NudPrice.Value + " , N'" + d + "' ,N'" + txtNotes.Text + "' ," + cbxType.SelectedValue + ",1)", "تم الادخال بنجاح", "");
 
             AutoNumber();
         }
@@ -131,12 +94,6 @@ namespace Sales_Management
         {
             AutoNumber();
         }
-
-        //private void btnFirst_Click(object sender, EventArgs e)
-        //{
-        //    row = 0;
-        //    show();
-        //}
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -151,45 +108,15 @@ namespace Sales_Management
             AutoNumber();
         }
 
-        //private void btnPrev_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Des_ID) from Deserved", "");
 
-        //    if (row == 0)
-        //    {
-        //        row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //        show();
-        //    }
-        //    else
-        //    {
-        //        row--;
-        //        show();
-        //    }
-        //}
-
-        //private void btnNext_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Des_ID) from Deserved", "");
-
-        //    if (Convert.ToInt32(tbl.Rows[0][0]) - 1 == row)
-        //    {
-        //        row = 0;
-        //        show();
-        //    }
-        //    else
-        //    {
-        //        row++;
-        //        show();
-        //    }
-        //}
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("هل انت متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("Delete from Deserved where Des_ID=" + txtID.Text + "", "تم مسح البيانات بنجاح", "");
+
+                db.executeData("Update Deserved set CurrentState=0 where Des_ID=" + txtID.Text + "", "تم الحذف بنجاح", "");
+
                 AutoNumber();
             }
         }
@@ -203,7 +130,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انت متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("Delete from Deserved", "تم مسح جميع البيانات بنجاح", "");
+                db.executeData("Update Deserved set CurrentState=0", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }

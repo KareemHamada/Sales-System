@@ -78,9 +78,14 @@ namespace Sales_Management
 
         public void FillComboBox(ComboBox cbx,string stmt,string dMember,string vMember)
         {
-            cbx.DataSource = readData(stmt,"");
-            cbx.DisplayMember = dMember;
-            cbx.ValueMember = vMember;
+            try
+            {
+                cbx.DataSource = readData(stmt, "");
+                cbx.DisplayMember = dMember;
+                cbx.ValueMember = vMember;
+            }
+            catch { }
+            
         }
     }
 }

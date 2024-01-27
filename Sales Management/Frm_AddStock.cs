@@ -21,7 +21,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblStock.Clear();
-            tblStock = db.readData("select Stock_ID as 'رقم الخزنة' ,Stock_Name as 'اسم الخزنة' from Stock_Data", "");
+            tblStock = db.readData("select Stock_ID as 'رقم الخزنة' ,Stock_Name as 'اسم الخزنة' from Stock_Data where CurrentState=1", "");
             DgvSearch.DataSource = tblStock;
 
             tbl.Clear();
@@ -47,28 +47,7 @@ namespace Sales_Management
 
         }
 
-        //int row;
-        //private void Show()
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select * from Stock_Data", "");
 
-        //    if (tbl.Rows.Count <= 0)
-        //    {
-        //        MessageBox.Show("لا يوجد بيانات فى هذه الشاشه");
-        //    }
-        //    else
-        //    {
-        //        txtID.Text = tbl.Rows[row][0].ToString();
-        //        txtName.Text = tbl.Rows[row][1].ToString();
-        //    }
-
-        //    btnAdd.Enabled = false;
-        //    btnNew.Enabled = true;
-        //    btnDelete.Enabled = true;
-        //    btnDeleteAll.Enabled = true;
-        //    btnSave.Enabled = true;
-        //}
         private void Frm_AddStock_Load(object sender, EventArgs e)
         {
             AutoNumber();
@@ -81,7 +60,7 @@ namespace Sales_Management
                 MessageBox.Show("من فضلك ادخل اسم الخزنة");
                 return;
             }
-            db.executeData("insert into Stock_Data Values (" + txtID.Text + " ,N'" + txtName.Text + "')", "تم الادخال بنجاح","");
+            db.executeData("insert into Stock_Data Values (" + txtID.Text + " ,N'" + txtName.Text + "',1)", "تم الادخال بنجاح","");
             db.executeData("insert into Stock Values (" + txtID.Text + ",0)", "", "");
             AutoNumber();
         }
@@ -93,7 +72,7 @@ namespace Sales_Management
                 MessageBox.Show("من فضلك ادخل اسم الخزنة");
                 return;
             }
-            db.executeData("update  Stock_Data set  Stock_Name=N'" + txtName.Text + "' where Stock_ID=" + txtID.Text + " ", "تم الحفظ بنجاح", "");
+            db.executeData("update Stock_Data set Stock_Name=N'" + txtName.Text + "' where Stock_ID=" + txtID.Text + " ", "تم الحفظ بنجاح", "");
 
             AutoNumber();
         }
@@ -107,8 +86,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("delete from Stock where Stock_ID=" + txtID.Text + "", "", "");
-                db.executeData("delete from Stock_Data where Stock_ID=" + txtID.Text + "", "تم مسح البيانات بنجاح", "لا يمكن حذف هذه الخزنة قد يكون هذه الخزنة متعلقة بعمليات اخري عند حذفها يتم حذف هذه الخزنة");
+                db.executeData("update Stock_Data set CurrentState=0 where Stock_ID=" + txtID.Text + " ", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }
@@ -117,7 +95,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("delete from Stock_Data ", "تم مسح البيانات بنجاح", "لا يمكن حذف جميع الخزنات قد يكون هناك خزنة متعلقة بعمليات اخري عند حذفها يتم حذف هذه الخزنة");
+                db.executeData("update Stock_Data set CurrentState=0", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }

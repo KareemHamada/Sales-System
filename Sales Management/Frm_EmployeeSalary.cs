@@ -50,7 +50,7 @@ namespace Sales_Management
         {
             try
             {
-                db.FillComboBox(cbxEmployee, "select * from Employee", "Emp_Name", "Emp_ID");
+                db.FillComboBox(cbxEmployee, "select * from Employee where CurrentState=1", "Emp_Name", "Emp_ID");
                 AutoNumber();
 
             }

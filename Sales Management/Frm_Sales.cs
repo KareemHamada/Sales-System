@@ -39,14 +39,14 @@ namespace Sales_Management
         DataTable tbl = new DataTable();
         private void fillGroups()
         {
-            cbxGroub.DataSource = db.readData("select * from Products_Group", "");
+            cbxGroub.DataSource = db.readData("select * from Products_Group where CurrentState=1", "");
             cbxGroub.DisplayMember = "Group_Name";
             cbxGroub.ValueMember = "Group_ID";
         }
         public void FillCustomer()
         {
 
-            cbxCustomer.DataSource = db.readData("select * from Customers", "");
+            cbxCustomer.DataSource = db.readData("select * from Customers where CurrentState=1", "");
             cbxCustomer.DisplayMember = "Cust_Name";
             cbxCustomer.ValueMember = "Cust_ID";
         }
@@ -57,9 +57,8 @@ namespace Sales_Management
             {
                 fillGroups();
                 FillCustomer();
-                db.FillComboBox(cbxItems, "select * from Products", "Pro_Name", "Pro_ID");
+                db.FillComboBox(cbxItems, "select * from Products where CurrentState=1", "Pro_Name", "Pro_ID");
 
-                //DtpDate.Text = DateTime.Now.ToShortDateString();
                 DtpReminder.Text = DateTime.Now.ToShortDateString();
                 rbtnCustNakdy_CheckedChanged(null, null);
                 cbxChooseGroub_CheckedChanged(null, null);
@@ -422,8 +421,7 @@ namespace Sales_Management
                 if (txtCustomer.Text == "")
                 {
                     Cust_Name = "عميل نقدى";
-                }
-                    
+                }   
                 else if (txtCustomer.Text != "")
                 {
                     Cust_Name = txtCustomer.Text;
@@ -543,11 +541,17 @@ namespace Sales_Management
                         }
                         else if (rbtnCustAagel.Checked)
                         {
-                            db.executeData("insert into Customer_Money values (" + txtID.Text + " , N'" + Cust_Name + "' , " + Properties.Settings.Default.Bakey + " ,'" + d + "' ,'" + dreminder + "',"+cbxCustomer.SelectedValue+")", "", "");
+                            // Cus_Name name of table at db
+                            //db.executeData("insert into Customer_Money values (" + txtID.Text + " , N'" + Cust_Name + "' , " + Properties.Settings.Default.Bakey + " ,'" + d + "' ,'" + dreminder + "',"+cbxCustomer.SelectedValue+")", "", "");
+
+                            db.executeData("insert into Customer_Money values (" + txtID.Text + " ," + Properties.Settings.Default.Bakey + ",'" + d + "' ,'" + dreminder + "'," + cbxCustomer.SelectedValue + ")", "", "");
+
 
                             if (Properties.Settings.Default.Madfoua >= 1)
                             {
-                                db.executeData("insert into Customer_Report values (" + txtID.Text + " ," + Properties.Settings.Default.Madfoua + " , '" + d + "' , N'" + Cust_Name + "')", "", "");
+                                //db.executeData("insert into Customer_Report values (" + txtID.Text + " ," + Properties.Settings.Default.Madfoua + " , '" + d + "' , N'" + Cust_Name + "')", "", "");
+
+                                db.executeData("insert into Customer_Report values (" + txtID.Text + " ," + Properties.Settings.Default.Madfoua + " , '" + d + "' , N'',"+ cbxCustomer.SelectedValue + ")", "", "");
                             }
                         }
                         insertMoneyIntoStock();
@@ -629,7 +633,16 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    rpt.PrintToPrinter(1, true, 0, 0);
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
+
+                    //rpt.PrintToPrinter(1, true, 0, 0);
                     //frm.ShowDialog();
 
                 }
@@ -643,7 +656,16 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    rpt.PrintToPrinter(1, true, 0, 0);
+
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
+                    //rpt.PrintToPrinter(1, true, 0, 0);
                     //frm.ShowDialog();
                 }
 
@@ -667,7 +689,7 @@ namespace Sales_Management
                 DataTable tblUnit = new DataTable();
                 tblUnit.Clear();
 
-                tblItems = db.readData("select * from Products where Barcode=N'" + txtbarcode.Text + "'", "");
+                tblItems = db.readData("select * from Products where CurrentState=1 and Barcode=N'" + txtbarcode.Text + "'", "");
                 if (tblItems.Rows.Count >= 1)
                 {
                     string Product_ID = tblItems.Rows[0][0].ToString();
@@ -900,16 +922,19 @@ namespace Sales_Management
                     cbxGroub_SelectionChangeCommitted(null, null);
                 }
                 catch (Exception) { }
-                
+
                 cbxGroub.Enabled = true;
                 txtbarcode.Enabled = false;
+
+                
+                
             }
             else
             {
                 cbxGroub.Enabled = false;
                 try
                 {
-                    db.FillComboBox(cbxItems, "select * from Products", "Pro_Name", "Pro_ID");
+                    db.FillComboBox(cbxItems, "select * from Products where CurrentState=1", "Pro_Name", "Pro_ID");
                 }
                 catch (Exception) { }
                 txtbarcode.Enabled = true;
@@ -918,11 +943,15 @@ namespace Sales_Management
 
         private void cbxGroub_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
+            if(cbxGroub.Items.Count > 0)
             {
-                db.FillComboBox(cbxItems, "select * from Products where Group_ID=" + cbxGroub.SelectedValue + "", "Pro_Name", "Pro_ID");
+                try
+                {
+                    db.FillComboBox(cbxItems, "select * from Products where CurrentState=1 and Group_ID=" + cbxGroub.SelectedValue + "", "Pro_Name", "Pro_ID");
+                }
+                catch (Exception) { }
             }
-            catch (Exception) { }
+            
         }
     }
 }

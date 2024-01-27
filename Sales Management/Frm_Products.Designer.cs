@@ -29,10 +29,10 @@ namespace Sales_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
@@ -202,26 +202,26 @@ namespace Sales_Management
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvUnits.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvUnits.DefaultCellStyle = dataGridViewCellStyle13;
             this.DgvUnits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvUnits.Location = new System.Drawing.Point(3, 88);
             this.DgvUnits.Name = "DgvUnits";
             this.DgvUnits.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvUnits.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvUnits.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.DgvUnits.RowHeadersVisible = false;
             this.DgvUnits.RowHeadersWidth = 51;
             this.DgvUnits.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -461,26 +461,26 @@ namespace Sales_Management
             this.Column2,
             this.Column1,
             this.Column3});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvStore.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvStore.DefaultCellStyle = dataGridViewCellStyle15;
             this.DgvStore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvStore.Location = new System.Drawing.Point(3, 3);
             this.DgvStore.Name = "DgvStore";
             this.DgvStore.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvStore.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvStore.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.DgvStore.RowHeadersVisible = false;
             this.DgvStore.RowHeadersWidth = 51;
             this.DgvStore.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -645,6 +645,8 @@ namespace Sales_Management
             // 
             this.NudAllQty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NudAllQty.DecimalPlaces = 2;
+            this.NudAllQty.Enabled = false;
+            this.NudAllQty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.NudAllQty.Location = new System.Drawing.Point(18, 42);
             this.NudAllQty.Maximum = new decimal(new int[] {
             1569325056,
@@ -735,7 +737,7 @@ namespace Sales_Management
             this.cbxUnitBuy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxUnitBuy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUnitBuy.FormattingEnabled = true;
-            this.cbxUnitBuy.Location = new System.Drawing.Point(18, 194);
+            this.cbxUnitBuy.Location = new System.Drawing.Point(18, 197);
             this.cbxUnitBuy.Name = "cbxUnitBuy";
             this.cbxUnitBuy.Size = new System.Drawing.Size(264, 36);
             this.cbxUnitBuy.TabIndex = 41;
@@ -748,6 +750,7 @@ namespace Sales_Management
             this.txtSalePriceTax.ReadOnly = true;
             this.txtSalePriceTax.Size = new System.Drawing.Size(264, 36);
             this.txtSalePriceTax.TabIndex = 41;
+            this.txtSalePriceTax.Text = "1";
             this.txtSalePriceTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cbxUnitSale
@@ -756,7 +759,7 @@ namespace Sales_Management
             this.cbxUnitSale.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxUnitSale.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUnitSale.FormattingEnabled = true;
-            this.cbxUnitSale.Location = new System.Drawing.Point(17, 232);
+            this.cbxUnitSale.Location = new System.Drawing.Point(17, 235);
             this.cbxUnitSale.Name = "cbxUnitSale";
             this.cbxUnitSale.Size = new System.Drawing.Size(267, 36);
             this.cbxUnitSale.TabIndex = 36;
@@ -776,8 +779,8 @@ namespace Sales_Management
             // 
             this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.09559F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.90441F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.38306F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.61694F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel9, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.label11, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
@@ -819,7 +822,7 @@ namespace Sales_Management
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(314, 43);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(301, 43);
             this.tableLayoutPanel9.TabIndex = 38;
             // 
             // cbxMainUnit
@@ -828,7 +831,7 @@ namespace Sales_Management
             this.cbxMainUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxMainUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxMainUnit.FormattingEnabled = true;
-            this.cbxMainUnit.Location = new System.Drawing.Point(67, 3);
+            this.cbxMainUnit.Location = new System.Drawing.Point(59, 9);
             this.cbxMainUnit.Name = "cbxMainUnit";
             this.cbxMainUnit.Size = new System.Drawing.Size(232, 36);
             this.cbxMainUnit.TabIndex = 30;
@@ -839,7 +842,7 @@ namespace Sales_Management
             this.btnShowUnit.ForeColor = System.Drawing.Color.Black;
             this.btnShowUnit.Image = global::Sales_Management.Properties.Resources.plus_32;
             this.btnShowUnit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowUnit.Location = new System.Drawing.Point(5, 3);
+            this.btnShowUnit.Location = new System.Drawing.Point(4, 3);
             this.btnShowUnit.Name = "btnShowUnit";
             this.btnShowUnit.Size = new System.Drawing.Size(42, 37);
             this.btnShowUnit.TabIndex = 13;
@@ -851,7 +854,7 @@ namespace Sales_Management
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(395, 139);
+            this.label11.Location = new System.Drawing.Point(389, 139);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 28);
             this.label11.TabIndex = 28;
@@ -862,7 +865,7 @@ namespace Sales_Management
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(392, 8);
+            this.label1.Location = new System.Drawing.Point(385, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 28);
@@ -872,7 +875,7 @@ namespace Sales_Management
             // txtID
             // 
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtID.Location = new System.Drawing.Point(20, 7);
+            this.txtID.Location = new System.Drawing.Point(13, 7);
             this.txtID.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
@@ -885,7 +888,7 @@ namespace Sales_Management
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(390, 55);
+            this.label2.Location = new System.Drawing.Point(383, 55);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 28);
@@ -895,7 +898,7 @@ namespace Sales_Management
             // txtProName
             // 
             this.txtProName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtProName.Location = new System.Drawing.Point(20, 51);
+            this.txtProName.Location = new System.Drawing.Point(13, 51);
             this.txtProName.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.txtProName.Multiline = true;
             this.txtProName.Name = "txtProName";
@@ -908,7 +911,7 @@ namespace Sales_Management
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(386, 99);
+            this.label6.Location = new System.Drawing.Point(379, 99);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 28);
@@ -919,7 +922,7 @@ namespace Sales_Management
             // 
             this.NudMinQty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NudMinQty.DecimalPlaces = 2;
-            this.NudMinQty.Location = new System.Drawing.Point(19, 98);
+            this.NudMinQty.Location = new System.Drawing.Point(12, 98);
             this.NudMinQty.Maximum = new decimal(new int[] {
             1569325056,
             23283064,
@@ -940,7 +943,7 @@ namespace Sales_Management
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(378, 183);
+            this.label12.Location = new System.Drawing.Point(371, 183);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 28);
             this.label12.TabIndex = 31;
@@ -953,7 +956,7 @@ namespace Sales_Management
             this.checkTaxes.Checked = true;
             this.checkTaxes.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkTaxes.ForeColor = System.Drawing.Color.Red;
-            this.checkTaxes.Location = new System.Drawing.Point(322, 227);
+            this.checkTaxes.Location = new System.Drawing.Point(316, 227);
             this.checkTaxes.Name = "checkTaxes";
             this.checkTaxes.Size = new System.Drawing.Size(215, 32);
             this.checkTaxes.TabIndex = 33;
@@ -965,7 +968,7 @@ namespace Sales_Management
             // 
             this.Nudtax.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Nudtax.DecimalPlaces = 2;
-            this.Nudtax.Location = new System.Drawing.Point(21, 225);
+            this.Nudtax.Location = new System.Drawing.Point(14, 225);
             this.Nudtax.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -991,7 +994,7 @@ namespace Sales_Management
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(314, 43);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(301, 43);
             this.tableLayoutPanel1.TabIndex = 37;
             // 
             // cbxGroup
@@ -1000,7 +1003,7 @@ namespace Sales_Management
             this.cbxGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxGroup.FormattingEnabled = true;
-            this.cbxGroup.Location = new System.Drawing.Point(66, 3);
+            this.cbxGroup.Location = new System.Drawing.Point(58, 9);
             this.cbxGroup.Name = "cbxGroup";
             this.cbxGroup.Size = new System.Drawing.Size(233, 36);
             this.cbxGroup.TabIndex = 27;
@@ -1011,7 +1014,7 @@ namespace Sales_Management
             this.btnShowGroup.ForeColor = System.Drawing.Color.Black;
             this.btnShowGroup.Image = global::Sales_Management.Properties.Resources.plus_32;
             this.btnShowGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnShowGroup.Location = new System.Drawing.Point(4, 3);
+            this.btnShowGroup.Location = new System.Drawing.Point(3, 3);
             this.btnShowGroup.Name = "btnShowGroup";
             this.btnShowGroup.Size = new System.Drawing.Size(42, 37);
             this.btnShowGroup.TabIndex = 13;
@@ -1159,12 +1162,12 @@ namespace Sales_Management
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 6;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.63512F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.27273F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.84143F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.08696F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.19303F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.90909F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
             this.tableLayoutPanel7.Controls.Add(this.txtSearchBarcode, 5, 0);
             this.tableLayoutPanel7.Controls.Add(this.btnSearch, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label21, 4, 0);
@@ -1183,7 +1186,7 @@ namespace Sales_Management
             // txtSearchBarcode
             // 
             this.txtSearchBarcode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSearchBarcode.Location = new System.Drawing.Point(9, 8);
+            this.txtSearchBarcode.Location = new System.Drawing.Point(18, 8);
             this.txtSearchBarcode.Name = "txtSearchBarcode";
             this.txtSearchBarcode.Size = new System.Drawing.Size(169, 36);
             this.txtSearchBarcode.TabIndex = 45;
@@ -1196,9 +1199,9 @@ namespace Sales_Management
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Sales_Management.Properties.Resources.search1;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(514, 7);
+            this.btnSearch.Location = new System.Drawing.Point(526, 7);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(113, 38);
+            this.btnSearch.Size = new System.Drawing.Size(111, 38);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "بحث";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -1209,7 +1212,7 @@ namespace Sales_Management
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(192, 12);
+            this.label21.Location = new System.Drawing.Point(210, 12);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(100, 28);
             this.label21.TabIndex = 44;
@@ -1218,9 +1221,9 @@ namespace Sales_Management
             // txtProNameSearch
             // 
             this.txtProNameSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtProNameSearch.Location = new System.Drawing.Point(633, 8);
+            this.txtProNameSearch.Location = new System.Drawing.Point(643, 8);
             this.txtProNameSearch.Name = "txtProNameSearch";
-            this.txtProNameSearch.Size = new System.Drawing.Size(210, 36);
+            this.txtProNameSearch.Size = new System.Drawing.Size(196, 36);
             this.txtProNameSearch.TabIndex = 9;
             this.txtProNameSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtProNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProNameSearch_KeyPress);
@@ -1230,9 +1233,9 @@ namespace Sales_Management
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(854, 0);
+            this.label9.Location = new System.Drawing.Point(847, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(227, 53);
+            this.label9.Size = new System.Drawing.Size(238, 28);
             this.label9.TabIndex = 8;
             this.label9.Text = "اكتب اسم المنتج او جزء منه للبحث :";
             // 
@@ -1242,9 +1245,9 @@ namespace Sales_Management
             this.cbxProducts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxProducts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxProducts.FormattingEnabled = true;
-            this.cbxProducts.Location = new System.Drawing.Point(300, 14);
+            this.cbxProducts.Location = new System.Drawing.Point(318, 14);
             this.cbxProducts.Name = "cbxProducts";
-            this.cbxProducts.Size = new System.Drawing.Size(207, 36);
+            this.cbxProducts.Size = new System.Drawing.Size(202, 36);
             this.cbxProducts.TabIndex = 11;
             this.cbxProducts.SelectionChangeCommitted += new System.EventHandler(this.cbxProducts_SelectionChangeCommitted);
             // 

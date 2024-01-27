@@ -20,7 +20,7 @@ namespace Sales_Management
         private void Frm_ProductRequired_Load(object sender, EventArgs e)
         {
             tbl.Clear();
-            tbl = db.readData("select Pro_Name as 'اسم المنتج' ,Qty as 'الكمية الموجوده منه' ,MinQty as 'حد الطلب' from Products where MinQty >=1 and Qty <= MinQty ", "");
+            tbl = db.readData("select Pro_Name as 'اسم المنتج' ,Qty as 'الكمية الموجوده منه' ,MinQty as 'حد الطلب' from Products where Products.CurrentState=1 and MinQty >=1 and Qty <= MinQty ", "");
 
             DgvSearch.DataSource = tbl;
             txtTotal.Text = tbl.Rows.Count + "";

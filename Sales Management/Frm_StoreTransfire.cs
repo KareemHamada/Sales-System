@@ -21,20 +21,33 @@ namespace Sales_Management
 
         private void FillPro()
         {
-            cbxProducts.DataSource = db.readData("select * from Products", "");
-            cbxProducts.DisplayMember = "Pro_Name";
-            cbxProducts.ValueMember = "Pro_ID";
+            try
+            {
+                cbxProducts.DataSource = db.readData("select * from Products where CurrentState=1", "");
+                cbxProducts.DisplayMember = "Pro_Name";
+                cbxProducts.ValueMember = "Pro_ID";
+            }
+            catch { }
+            
         }
 
         private void FillStore()
         {
-            cbxStoreFrom.DataSource = db.readData("select * from Store", "");
-            cbxStoreFrom.DisplayMember = "Store_Name";
-            cbxStoreFrom.ValueMember = "Store_ID";
+            try
+            {
+                cbxStoreFrom.DataSource = db.readData("select * from Store where CurrentState=1", "");
+                cbxStoreFrom.DisplayMember = "Store_Name";
+                cbxStoreFrom.ValueMember = "Store_ID";
 
-            cbxStoreTo.DataSource = db.readData("select * from Store", "");
-            cbxStoreTo.DisplayMember = "Store_Name";
-            cbxStoreTo.ValueMember = "Store_ID";
+                cbxStoreTo.DataSource = db.readData("select * from Store where CurrentState=1", "");
+                cbxStoreTo.DisplayMember = "Store_Name";
+                cbxStoreTo.ValueMember = "Store_ID";
+            }
+            catch
+            {
+
+            }
+            
         }
         private void Frm_StoreTransfire_Load(object sender, EventArgs e)
         {
@@ -42,7 +55,7 @@ namespace Sales_Management
             {
                 FillPro();
                 FillStore();
-                cbxProducts_SelectionChangeCommitted(null,null);
+                //cbxProducts_SelectionChangeCommitted(null,null);
             }
             catch (Exception) { }
             
@@ -55,7 +68,7 @@ namespace Sales_Management
                 if (txtBarcode.Text != "")
                 {
                     tbl.Clear();
-                    tbl = db.readData("select * from Products where Barcode =N'" + txtBarcode.Text + "'", "");
+                    tbl = db.readData("select * from Products where CurrentState=1 and Barcode =N'" + txtBarcode.Text + "'", "");
                     if (tbl.Rows.Count >= 1)
                     {
                         cbxProducts.SelectedValue = Convert.ToDecimal(tbl.Rows[0][0]);

@@ -713,5 +713,10 @@ namespace Sales_Management
                 frm.ShowDialog();
             }
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

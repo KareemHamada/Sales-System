@@ -144,7 +144,7 @@ namespace Sales_Management
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.69492F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.30508F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 188F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -163,7 +163,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.Controls.Add(this.cbxPrinter, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnSavePrinter, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(189, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(190, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -171,7 +171,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(631, 298);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(630, 298);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label5
@@ -193,7 +193,7 @@ namespace Sales_Management
             this.cbxPrinter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxPrinter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPrinter.FormattingEnabled = true;
-            this.cbxPrinter.Location = new System.Drawing.Point(77, 87);
+            this.cbxPrinter.Location = new System.Drawing.Point(76, 98);
             this.cbxPrinter.Name = "cbxPrinter";
             this.cbxPrinter.Size = new System.Drawing.Size(478, 47);
             this.cbxPrinter.TabIndex = 13;

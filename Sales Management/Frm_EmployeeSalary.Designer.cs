@@ -389,7 +389,7 @@ namespace Sales_Management
             this.cbxEmployee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxEmployee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxEmployee.FormattingEnabled = true;
-            this.cbxEmployee.Location = new System.Drawing.Point(23, 6);
+            this.cbxEmployee.Location = new System.Drawing.Point(23, 17);
             this.cbxEmployee.Name = "cbxEmployee";
             this.cbxEmployee.Size = new System.Drawing.Size(206, 47);
             this.cbxEmployee.TabIndex = 13;

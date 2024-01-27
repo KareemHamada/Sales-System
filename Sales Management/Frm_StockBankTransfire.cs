@@ -19,7 +19,7 @@ namespace Sales_Management
         DataTable tbl = new DataTable();
         private void onLoadScreen()
         {
-            db.FillComboBox(cbxStock, "select * from Stock_Data", "Stock_Name", "Stock_ID");
+            db.FillComboBox(cbxStock, "select * from Stock_Data where CurrentState=1", "Stock_Name", "Stock_ID");
             tbl.Clear();
             DataTable tblBank = new DataTable();
             tblBank.Clear();

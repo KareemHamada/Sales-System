@@ -23,7 +23,7 @@ namespace Sales_Management
 
             try
             {
-                db.FillComboBox(cbxCustomer, "select * from Customers", "Cust_Name", "Cust_ID");
+                db.FillComboBox(cbxCustomer, "select * from Customers where CurrentState=1", "Cust_Name", "Cust_ID");
             }
             catch (Exception) { }
 
@@ -47,14 +47,15 @@ namespace Sales_Management
         private void btnSearch_Click(object sender, EventArgs e)
         {
             tbl.Clear();
-
             if (rbtnAllCust.Checked)
             {
-                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',[Cus_Name] as 'العميل',[Price] as 'المبلغ المستحق',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق' FROM [dbo].[Customer_Money] ", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',Customers.Cust_Name as 'العميل',[Price] as 'المبلغ المستحق',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق' FROM [dbo].[Customer_Money],Customers where Customer_Money.Cus_ID = Customers.Cust_ID", "");
             }
             else if (rbtnOneCustomer.Checked)
             {
-                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',[Cus_Name] as 'العميل',[Price] as 'المبلغ المستحق',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق' FROM [dbo].[Customer_Money] where Cus_Name=N'" + cbxCustomer.Text + "' ", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',Customers.Cust_Name as 'العميل',[Price] as 'المبلغ المستحق',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق' FROM [dbo].[Customer_Money],Customers where Customer_Money.Cus_ID = Customers.Cust_ID and Customer_Money.Cus_ID ="+cbxCustomer.SelectedValue+"", "");
+
+                //tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',[Cus_Name] as 'العميل',[Price] as 'المبلغ المستحق',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق' FROM [dbo].[Customer_Money] where Cus_Name=N'" + cbxCustomer.Text + "' ", "");
 
             }
             DgvSearch.DataSource = tbl;
@@ -86,7 +87,7 @@ namespace Sales_Management
 
                         db.executeData("delete from Customer_Money where Order_ID=" + DgvSearch.CurrentRow.Cells[0].Value + " and Price =" + DgvSearch.CurrentRow.Cells[2].Value + "", "", "");
 
-                        db.executeData("insert into Customer_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + DgvSearch.CurrentRow.Cells[2].Value + " , '" + d + "' , N'" + cbxCustomer.Text + "')", "تم تسديد المبلغ بنجاح", "");
+                        db.executeData("insert into Customer_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + DgvSearch.CurrentRow.Cells[2].Value + " , '" + d + "' , N'',"+cbxCustomer.SelectedValue+")", "تم تسديد المبلغ بنجاح", "");
 
                         // update stock
                         db.executeData("insert into Stock_Insert (Stock_ID , Money ,Date ,Name ,Type ,Reason) values (" + stock_ID + " ," + DgvSearch.CurrentRow.Cells[2].Value + " ,N'" + d + "' ,N'" + Properties.Settings.Default.USERNAME + "' ,N'مستحقات من عملاء', N'') ", "", "");
@@ -108,7 +109,7 @@ namespace Sales_Management
 
                         decimal money = Convert.ToDecimal(DgvSearch.CurrentRow.Cells[2].Value) - NudPrice.Value;
                         db.executeData("update Customer_Money set Price=" + money + " where Order_ID=" + DgvSearch.CurrentRow.Cells[0].Value + " and Price=" + DgvSearch.CurrentRow.Cells[2].Value + "", "", "");
-                        db.executeData("insert into Customer_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + NudPrice.Value + " , '" + d + "' , N'" + cbxCustomer.Text + "')", "تم تسديد المبلغ بنجاح", "");
+                        db.executeData("insert into Customer_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + NudPrice.Value + " , '" + d + "' ,N''," + cbxCustomer.SelectedValue + ")", "تم تسديد المبلغ بنجاح", "");
                         
                         // update stock
                         db.executeData("insert into Stock_Insert (Stock_ID , Money ,Date ,Name ,Type ,Reason) values (" + stock_ID + " ," + NudPrice.Value + " ,N'" + d + "' ,N'" + Properties.Settings.Default.USERNAME + "' ,N'مستحقات من عملاء', N'') ", "", "");
@@ -127,7 +128,7 @@ namespace Sales_Management
             DataTable tblRpt = new DataTable();
 
             tblRpt.Clear();
-            tblRpt = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',[Cus_Name] as 'العميل',[Price] as 'المبلغ المستحق',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق' FROM [dbo].[Customer_Money] where Cus_Name=N'" + name + "'", "");
+            tblRpt = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',Customers.Cust_Name as 'العميل',[Price] as 'المبلغ المستحق',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق' FROM [dbo].[Customer_Money],Customers where Customer_Money.Cus_ID = Customers.Cust_ID and Customer_Money.Cus_ID =" + cbxCustomer.SelectedValue + "", "");
             try
             {
                 Frm_Printing frm = new Frm_Printing();

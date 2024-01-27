@@ -22,7 +22,7 @@ namespace Sales_Management
         {
             try
             {
-                db.FillComboBox(cbxSupplier, "select * from Suppliers", "Sup_Name", "Sup_ID");
+                db.FillComboBox(cbxSupplier, "select * from Suppliers where CurrentState=1", "Sup_Name", "Sup_ID");
             }
             catch (Exception) { }
             DtpFrom.Text = DateTime.Now.ToShortDateString();
@@ -107,7 +107,16 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    rpt.PrintToPrinter(1, true, 0, 0);
+
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
+                    //rpt.PrintToPrinter(1, true, 0, 0);
                     //frm.ShowDialog();
                 }
                 else if (Properties.Settings.Default.BuyPrintKind == "A4")
@@ -120,7 +129,17 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    rpt.PrintToPrinter(1, true, 0, 0);
+
+
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
+                    //rpt.PrintToPrinter(1, true, 0, 0);
                     //frm.ShowDialog();
                     
                 }
@@ -198,15 +217,7 @@ namespace Sales_Management
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //if (DgvSearch.Rows.Count >= 1)
-            //{
-            //    if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            //    {
-            //        db.executeData("delete from Buy where Order_ID=" + DgvSearch.CurrentRow.Cells[0].Value + "", "تم المسح بنجاح");
 
-            //        btnSearch_Click(null, null);
-            //    }
-            //}
 
             if (DgvSearch.Rows.Count >= 1)
             {

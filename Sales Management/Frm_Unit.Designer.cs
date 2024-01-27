@@ -80,7 +80,6 @@ namespace Sales_Management
             // 
             this.DgvSearch.AllowUserToAddRows = false;
             this.DgvSearch.AllowUserToDeleteRows = false;
-            this.DgvSearch.AllowUserToResizeColumns = false;
             this.DgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvSearch.BackgroundColor = System.Drawing.Color.White;

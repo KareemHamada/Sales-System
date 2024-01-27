@@ -20,7 +20,7 @@ namespace Sales_Management
 
         private void fillUser()
         {
-            cbxUser.DataSource = db.readData("select * from Users", "");
+            cbxUser.DataSource = db.readData("select * from Users where CurrentState=1", "");
             cbxUser.DisplayMember = "User_Name";
             cbxUser.ValueMember = "User_ID";
         }
@@ -197,7 +197,15 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    rpt.PrintToPrinter(1, true, 0, 0);
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
+                    //rpt.PrintToPrinter(1, true, 0, 0);
                     //frm.ShowDialog();
 
                 }
@@ -211,9 +219,17 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    rpt.PrintToPrinter(1, true, 0, 0);
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
+                    //rpt.PrintToPrinter(1, true, 0, 0);
                     //frm.ShowDialog();
-                
+
                 }
             }
             catch (Exception) { }

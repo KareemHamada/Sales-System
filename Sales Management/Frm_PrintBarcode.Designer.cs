@@ -159,7 +159,7 @@ namespace Sales_Management
             this.cbxProducts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxProducts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxProducts.FormattingEnabled = true;
-            this.cbxProducts.Location = new System.Drawing.Point(22, 12);
+            this.cbxProducts.Location = new System.Drawing.Point(22, 20);
             this.cbxProducts.Name = "cbxProducts";
             this.cbxProducts.Size = new System.Drawing.Size(299, 40);
             this.cbxProducts.TabIndex = 41;

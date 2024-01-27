@@ -68,7 +68,7 @@ namespace Sales_Management
             this.tlpParent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.64626F));
             this.tlpParent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.41497F));
             this.tlpParent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.88435F));
-            this.tlpParent.Size = new System.Drawing.Size(1127, 588);
+            this.tlpParent.Size = new System.Drawing.Size(1127, 604);
             this.tlpParent.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -83,13 +83,13 @@ namespace Sales_Management
             this.tableLayoutPanel2.Controls.Add(this.label4, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtTotal, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 522);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 537);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1127, 66);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1127, 67);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // btnDelete
@@ -137,7 +137,7 @@ namespace Sales_Management
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arabic Typesetting", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(325, 8);
+            this.label1.Location = new System.Drawing.Point(325, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(477, 48);
@@ -160,13 +160,13 @@ namespace Sales_Management
             this.tableLayoutPanel1.Controls.Add(this.rbtnFromStocktoBank, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.rbtnFromBanktoStock, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 65);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 67);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.17391F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.82609F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1127, 91);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1127, 94);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // label2
@@ -175,7 +175,7 @@ namespace Sales_Management
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(996, 3);
+            this.label2.Location = new System.Drawing.Point(996, 4);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 40);
@@ -188,7 +188,7 @@ namespace Sales_Management
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(545, 3);
+            this.label3.Location = new System.Drawing.Point(545, 4);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 40);
@@ -202,7 +202,7 @@ namespace Sales_Management
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Sales_Management.Properties.Resources.search1;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(47, 3);
+            this.btnSearch.Location = new System.Drawing.Point(47, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(133, 41);
             this.btnSearch.TabIndex = 13;
@@ -236,9 +236,9 @@ namespace Sales_Management
             this.rbtnFromStocktoBank.AutoSize = true;
             this.rbtnFromStocktoBank.Checked = true;
             this.rbtnFromStocktoBank.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnFromStocktoBank.Location = new System.Drawing.Point(932, 50);
+            this.rbtnFromStocktoBank.Location = new System.Drawing.Point(932, 52);
             this.rbtnFromStocktoBank.Name = "rbtnFromStocktoBank";
-            this.rbtnFromStocktoBank.Size = new System.Drawing.Size(180, 38);
+            this.rbtnFromStocktoBank.Size = new System.Drawing.Size(180, 39);
             this.rbtnFromStocktoBank.TabIndex = 15;
             this.rbtnFromStocktoBank.TabStop = true;
             this.rbtnFromStocktoBank.Text = "من الخزنة الى البنك";
@@ -249,9 +249,9 @@ namespace Sales_Management
             this.rbtnFromBanktoStock.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnFromBanktoStock.AutoSize = true;
             this.rbtnFromBanktoStock.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnFromBanktoStock.Location = new System.Drawing.Point(707, 50);
+            this.rbtnFromBanktoStock.Location = new System.Drawing.Point(707, 52);
             this.rbtnFromBanktoStock.Name = "rbtnFromBanktoStock";
-            this.rbtnFromBanktoStock.Size = new System.Drawing.Size(180, 38);
+            this.rbtnFromBanktoStock.Size = new System.Drawing.Size(180, 39);
             this.rbtnFromBanktoStock.TabIndex = 16;
             this.rbtnFromBanktoStock.Text = "من البنك الى الخزنة";
             this.rbtnFromBanktoStock.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@ namespace Sales_Management
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvSearch.Location = new System.Drawing.Point(3, 159);
+            this.DgvSearch.Location = new System.Drawing.Point(3, 164);
             this.DgvSearch.Name = "DgvSearch";
             this.DgvSearch.ReadOnly = true;
             this.DgvSearch.RowHeadersWidth = 51;
@@ -283,14 +283,14 @@ namespace Sales_Management
             this.DgvSearch.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Blue;
             this.DgvSearch.RowTemplate.Height = 24;
             this.DgvSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvSearch.Size = new System.Drawing.Size(1121, 360);
+            this.DgvSearch.Size = new System.Drawing.Size(1121, 370);
             this.DgvSearch.TabIndex = 4;
             // 
             // Frm_StockBankTransfireReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 39F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 588);
+            this.ClientSize = new System.Drawing.Size(1127, 604);
             this.Controls.Add(this.tlpParent);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

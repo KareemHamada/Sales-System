@@ -19,7 +19,7 @@ namespace Sales_Management
         string pro_ID;
         private void FillPro()
         {
-            cbxProducts.DataSource = db.readData("select * from Products", "");
+            cbxProducts.DataSource = db.readData("select * from Products where CurrentState=1", "");
             cbxProducts.DisplayMember = "Pro_Name";
             cbxProducts.ValueMember = "Pro_ID";
         }

@@ -29,7 +29,7 @@ namespace Sales_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tplParent = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -108,7 +108,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.55056F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.80899F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.5618F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 227F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
             this.tableLayoutPanel2.Controls.Add(this.txtTotal, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnDelete, 2, 0);
@@ -125,7 +125,7 @@ namespace Sales_Management
             // 
             this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotal.Location = new System.Drawing.Point(17, 9);
+            this.txtTotal.Location = new System.Drawing.Point(19, 9);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(195, 46);
@@ -137,7 +137,7 @@ namespace Sales_Management
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(234, 12);
+            this.label1.Location = new System.Drawing.Point(237, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 40);
             this.label1.TabIndex = 20;
@@ -149,7 +149,7 @@ namespace Sales_Management
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = global::Sales_Management.Properties.Resources.exit_full_screen;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(633, 9);
+            this.btnDelete.Location = new System.Drawing.Point(635, 9);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(225, 46);
             this.btnDelete.TabIndex = 22;
@@ -165,14 +165,14 @@ namespace Sales_Management
             this.DgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvSearch.BackgroundColor = System.Drawing.Color.White;
             this.DgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle5;
             this.DgvSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvSearch.Location = new System.Drawing.Point(3, 154);
             this.DgvSearch.Name = "DgvSearch";
@@ -218,7 +218,7 @@ namespace Sales_Management
             this.cbxCustomer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxCustomer.FormattingEnabled = true;
-            this.cbxCustomer.Location = new System.Drawing.Point(466, 10);
+            this.cbxCustomer.Location = new System.Drawing.Point(466, 21);
             this.cbxCustomer.Name = "cbxCustomer";
             this.cbxCustomer.Size = new System.Drawing.Size(291, 47);
             this.cbxCustomer.TabIndex = 13;

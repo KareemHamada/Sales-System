@@ -29,7 +29,7 @@ namespace Sales_Management
             string date2 = DtpTo.Value.ToString("yyyy-MM-dd");
 
             tbl.Clear();
-            tbl = db.readData("select Deserved.Des_ID as 'رقم العملية', Price as 'المبلغ المدفوع',Date as 'تاريخ الدفع',Notes as 'ملاحظات',Deserved_Type.Name as 'النوع' from Deserved,Deserved_Type where Deserved.Type_ID = Deserved_Type.Des_ID and CONVERT(date,Date,105) between '" + date1 + "' and '" + date2 + "' ", "");
+            tbl = db.readData("select Deserved.Des_ID as 'رقم العملية', Price as 'المبلغ المدفوع',Date as 'تاريخ الدفع',Notes as 'ملاحظات',Deserved_Type.Name as 'النوع' from Deserved,Deserved_Type where Deserved.CurrentState=1 and Deserved.Type_ID = Deserved_Type.Des_ID and CONVERT(date,Date,105) between '" + date1 + "' and '" + date2 + "' ", "");
 
             if (tbl.Rows.Count >= 1)
             {

@@ -20,8 +20,8 @@ namespace Sales_Management
      
         private void onLoadScreen()
         {
-            db.FillComboBox(cbxStockFrom, "select * from Stock_Data", "Stock_Name", "Stock_ID");
-            db.FillComboBox(cbxStockTo, "select * from Stock_Data", "Stock_Name", "Stock_ID");
+            db.FillComboBox(cbxStockFrom, "select * from Stock_Data where CurrentState=1", "Stock_Name", "Stock_ID");
+            db.FillComboBox(cbxStockTo, "select * from Stock_Data where CurrentState=1", "Stock_Name", "Stock_ID");
 
             // stock from
             tbl.Clear();
@@ -60,12 +60,7 @@ namespace Sales_Management
             NudPrice.Value = 1;
             txtName.Clear();
             txtreason.Clear();
-            //try
-            //{
-            //    cbxStockFrom.SelectedIndex = 0;
-            //    cbxStockTo.SelectedIndex = 0;
-            //}
-            //catch { }
+
 
         }
         private void Frm_StockTransfire_Load(object sender, EventArgs e)

@@ -22,7 +22,7 @@ namespace Sales_Management
         {
             try
             {
-                db.FillComboBox(cbxCustomer, "select * from Customers", "Cust_Name", "Cust_ID");
+                db.FillComboBox(cbxCustomer, "select * from Customers where CurrentState=1", "Cust_Name", "Cust_ID");
             }
             catch (Exception) { }
             txtTotal.Text = "0";
@@ -46,12 +46,13 @@ namespace Sales_Management
             tbl.Clear();
             if (rbtnAllCust.Checked)
             {
-                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة' ,[Price] as 'المبلغ المدفوع' ,[Date] as 'تاريخ الدفع'  ,[Cust_Name] as 'اسم العميل' FROM [dbo].[Customer_Report]", "");
+                //tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة' ,[Price] as 'المبلغ المدفوع' ,[Date] as 'تاريخ الدفع'  ,[Cust_Name] as 'اسم العميل' FROM [dbo].[Customer_Report]", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',[Price] as 'المبلغ المدفوع' ,[Date] as 'تاريخ الدفع' ,COALESCE(NULLIF(Cust_Name,''),(select Customers.Cust_Name from Customers where Customers.Cust_ID=[Customer_Report].Cust_ID)) as 'اسم العميل'FROM [dbo].[Customer_Report]", "");
             }
             else
             {
 
-                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة' ,[Price] as 'المبلغ المدفوع' ,[Date] as 'تاريخ الدفع'  ,[Cust_Name] as 'اسم العميل' FROM [dbo].[Customer_Report] where Cust_Name=N'" + cbxCustomer.Text + "'", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة' ,[Price] as 'المبلغ المدفوع' ,[Date] as 'تاريخ الدفع'  ,Customers.Cust_Name as 'اسم العميل' FROM [dbo].[Customer_Report],Customers where Customer_Report.Cust_ID = Customers.Cust_ID and Customer_Report.Cust_ID=" + cbxCustomer.SelectedValue + "", "");
 
             }
             DgvSearch.DataSource = tbl;
@@ -73,12 +74,12 @@ namespace Sales_Management
                 {
                     if (rbtnOneCustomer.Checked)
                     {
-                        db.executeData("delete from Customer_Report where Cust_Name=N'" + cbxCustomer.Text + "'", "تم مسح البيانات بنجاح", "");
+                        db.executeData("delete from Customer_Report where Cust_ID=" + cbxCustomer.SelectedValue + "", "تم مسح البيانات بنجاح", "");
                         btnSearch_Click(null, null);
                     }
-                    else { 
-                        MessageBox.Show("من فضلك حدد عميل اولا", "تاكيد");
-                        return; 
+                    else {
+                        db.executeData("delete from Customer_Report", "تم مسح البيانات بنجاح", "");
+                        btnSearch_Click(null, null);
                     }
                 }
             }

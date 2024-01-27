@@ -22,9 +22,13 @@ namespace Sales_Management
         private void FillStore()
         {
 
-            cbxStoreFrom.DataSource = db.readData("select * from Store", "");
-            cbxStoreFrom.DisplayMember = "Store_Name";
-            cbxStoreFrom.ValueMember = "Store_ID";
+            try
+            {
+                cbxStoreFrom.DataSource = db.readData("select * from Store where CurrentState=1", "");
+                cbxStoreFrom.DisplayMember = "Store_Name";
+                cbxStoreFrom.ValueMember = "Store_ID";
+            }
+            catch { }
         }
         private void Frm_ProdcutsOutStoreReport_Load(object sender, EventArgs e)
         {
@@ -86,7 +90,7 @@ namespace Sales_Management
                 date2 = DtpTo.Value.ToString("yyyy-MM-dd");
                 if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    db.executeData("delete from Products_OutStore where  Convert(date,Date ,105 ) between '" + date1 + "' and '" + date2 + "'", "تم المسح بنجاح", "");
+                    db.executeData("delete from Products_OutStore where Convert(date,Date ,105 ) between '" + date1 + "' and '" + date2 + "'", "تم المسح بنجاح", "");
 
                     btnSearch_Click(null, null);
                 }

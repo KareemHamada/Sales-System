@@ -108,7 +108,7 @@ namespace Sales_Management
             this.tlpParent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.66102F));
             this.tlpParent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.79661F));
             this.tlpParent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.62712F));
-            this.tlpParent.Size = new System.Drawing.Size(1083, 597);
+            this.tlpParent.Size = new System.Drawing.Size(1126, 597);
             this.tlpParent.TabIndex = 0;
             // 
             // label3
@@ -117,7 +117,7 @@ namespace Sales_Management
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(474, 1);
+            this.label3.Location = new System.Drawing.Point(496, 1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 39);
             this.label3.TabIndex = 12;
@@ -131,7 +131,7 @@ namespace Sales_Management
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.3913F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.62096F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.40134F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.rbtnBuy, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.rbtnSales, 0, 0);
@@ -144,7 +144,7 @@ namespace Sales_Management
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1081, 51);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1124, 51);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
             // label1
@@ -152,7 +152,7 @@ namespace Sales_Management
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(576, 5);
+            this.label1.Location = new System.Drawing.Point(597, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 40);
             this.label1.TabIndex = 35;
@@ -163,7 +163,7 @@ namespace Sales_Management
             this.rbtnBuy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnBuy.AutoSize = true;
             this.rbtnBuy.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnBuy.Location = new System.Drawing.Point(716, 3);
+            this.rbtnBuy.Location = new System.Drawing.Point(745, 3);
             this.rbtnBuy.Name = "rbtnBuy";
             this.rbtnBuy.Size = new System.Drawing.Size(175, 44);
             this.rbtnBuy.TabIndex = 12;
@@ -177,7 +177,7 @@ namespace Sales_Management
             this.rbtnSales.AutoSize = true;
             this.rbtnSales.Checked = true;
             this.rbtnSales.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnSales.Location = new System.Drawing.Point(911, 3);
+            this.rbtnSales.Location = new System.Drawing.Point(950, 3);
             this.rbtnSales.Name = "rbtnSales";
             this.rbtnSales.Size = new System.Drawing.Size(160, 44);
             this.rbtnSales.TabIndex = 11;
@@ -190,7 +190,7 @@ namespace Sales_Management
             // 
             this.DtpDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpDate.Location = new System.Drawing.Point(380, 3);
+            this.DtpDate.Location = new System.Drawing.Point(395, 3);
             this.DtpDate.Name = "DtpDate";
             this.DtpDate.Size = new System.Drawing.Size(168, 46);
             this.DtpDate.TabIndex = 36;
@@ -200,7 +200,7 @@ namespace Sales_Management
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(214, 5);
+            this.label2.Location = new System.Drawing.Point(220, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 40);
             this.label2.TabIndex = 38;
@@ -210,7 +210,7 @@ namespace Sales_Management
             // 
             this.txtID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtID.Location = new System.Drawing.Point(8, 3);
+            this.txtID.Location = new System.Drawing.Point(9, 3);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(182, 46);
             this.txtID.TabIndex = 39;
@@ -252,7 +252,7 @@ namespace Sales_Management
             this.DgvSearch.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.DgvSearch.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Blue;
             this.DgvSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvSearch.Size = new System.Drawing.Size(1075, 227);
+            this.DgvSearch.Size = new System.Drawing.Size(1118, 227);
             this.DgvSearch.TabIndex = 39;
             // 
             // tableLayoutPanel2
@@ -269,7 +269,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1081, 104);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1124, 104);
             this.tableLayoutPanel2.TabIndex = 40;
             // 
             // tableLayoutPanel4
@@ -291,7 +291,7 @@ namespace Sales_Management
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1081, 52);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1124, 52);
             this.tableLayoutPanel4.TabIndex = 15;
             // 
             // label8
@@ -299,7 +299,7 @@ namespace Sales_Management
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(326, 6);
+            this.label8.Location = new System.Drawing.Point(343, 6);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(183, 40);
             this.label8.TabIndex = 48;
@@ -309,7 +309,7 @@ namespace Sales_Management
             // 
             this.txtbaky.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtbaky.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtbaky.Location = new System.Drawing.Point(553, 3);
+            this.txtbaky.Location = new System.Drawing.Point(581, 3);
             this.txtbaky.Name = "txtbaky";
             this.txtbaky.ReadOnly = true;
             this.txtbaky.Size = new System.Drawing.Size(305, 46);
@@ -321,7 +321,7 @@ namespace Sales_Management
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(918, 6);
+            this.label6.Location = new System.Drawing.Point(957, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 40);
             this.label6.TabIndex = 44;
@@ -331,7 +331,7 @@ namespace Sales_Management
             // 
             this.txtTotalOrderAfterTax.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotalOrderAfterTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalOrderAfterTax.Location = new System.Drawing.Point(3, 3);
+            this.txtTotalOrderAfterTax.Location = new System.Drawing.Point(9, 3);
             this.txtTotalOrderAfterTax.Name = "txtTotalOrderAfterTax";
             this.txtTotalOrderAfterTax.ReadOnly = true;
             this.txtTotalOrderAfterTax.Size = new System.Drawing.Size(279, 46);
@@ -346,7 +346,7 @@ namespace Sales_Management
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.98048F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.60275F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.3031F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212F));
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtMadfou3, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
@@ -359,7 +359,7 @@ namespace Sales_Management
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1081, 52);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1124, 52);
             this.tableLayoutPanel3.TabIndex = 14;
             // 
             // label5
@@ -367,7 +367,7 @@ namespace Sales_Management
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(580, 6);
+            this.label5.Location = new System.Drawing.Point(605, 6);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(227, 40);
             this.label5.TabIndex = 42;
@@ -377,7 +377,7 @@ namespace Sales_Management
             // 
             this.txtMadfou3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtMadfou3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMadfou3.Location = new System.Drawing.Point(814, 3);
+            this.txtMadfou3.Location = new System.Drawing.Point(848, 3);
             this.txtMadfou3.Name = "txtMadfou3";
             this.txtMadfou3.ReadOnly = true;
             this.txtMadfou3.Size = new System.Drawing.Size(142, 46);
@@ -389,7 +389,7 @@ namespace Sales_Management
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(964, 6);
+            this.label4.Location = new System.Drawing.Point(1005, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 40);
             this.label4.TabIndex = 40;
@@ -399,7 +399,7 @@ namespace Sales_Management
             // 
             this.txtTotalOrder.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotalOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalOrder.Location = new System.Drawing.Point(362, 3);
+            this.txtTotalOrder.Location = new System.Drawing.Point(375, 3);
             this.txtTotalOrder.Name = "txtTotalOrder";
             this.txtTotalOrder.ReadOnly = true;
             this.txtTotalOrder.Size = new System.Drawing.Size(207, 46);
@@ -411,7 +411,7 @@ namespace Sales_Management
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(215, 6);
+            this.label7.Location = new System.Drawing.Point(220, 6);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(136, 40);
             this.label7.TabIndex = 46;
@@ -421,7 +421,7 @@ namespace Sales_Management
             // 
             this.txtTotalTax.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotalTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalTax.Location = new System.Drawing.Point(4, 3);
+            this.txtTotalTax.Location = new System.Drawing.Point(5, 3);
             this.txtTotalTax.Name = "txtTotalTax";
             this.txtTotalTax.ReadOnly = true;
             this.txtTotalTax.Size = new System.Drawing.Size(204, 46);
@@ -443,7 +443,7 @@ namespace Sales_Management
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 162F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1081, 164);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1124, 164);
             this.tableLayoutPanel5.TabIndex = 41;
             // 
             // tableLayoutPanel6
@@ -455,13 +455,13 @@ namespace Sales_Management
             this.tableLayoutPanel6.Controls.Add(this.btnReturnAll, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(704, 2);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(732, 2);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.34109F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.65892F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(375, 160);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(390, 160);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // btnReturnAll
@@ -470,7 +470,7 @@ namespace Sales_Management
             this.btnReturnAll.ForeColor = System.Drawing.Color.Black;
             this.btnReturnAll.Image = global::Sales_Management.Properties.Resources.undo;
             this.btnReturnAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReturnAll.Location = new System.Drawing.Point(40, 108);
+            this.btnReturnAll.Location = new System.Drawing.Point(47, 108);
             this.btnReturnAll.Name = "btnReturnAll";
             this.btnReturnAll.Size = new System.Drawing.Size(296, 46);
             this.btnReturnAll.TabIndex = 16;
@@ -494,7 +494,7 @@ namespace Sales_Management
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(375, 102);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(390, 102);
             this.tableLayoutPanel7.TabIndex = 17;
             // 
             // lblStore1
@@ -502,7 +502,7 @@ namespace Sales_Management
             this.lblStore1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStore1.AutoSize = true;
             this.lblStore1.ForeColor = System.Drawing.Color.Red;
-            this.lblStore1.Location = new System.Drawing.Point(274, 56);
+            this.lblStore1.Location = new System.Drawing.Point(287, 56);
             this.lblStore1.Name = "lblStore1";
             this.lblStore1.Size = new System.Drawing.Size(91, 40);
             this.lblStore1.TabIndex = 52;
@@ -513,7 +513,7 @@ namespace Sales_Management
             this.lblName1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName1.AutoSize = true;
             this.lblName1.ForeColor = System.Drawing.Color.Red;
-            this.lblName1.Location = new System.Drawing.Point(268, 5);
+            this.lblName1.Location = new System.Drawing.Point(281, 5);
             this.lblName1.Name = "lblName1";
             this.lblName1.Size = new System.Drawing.Size(103, 40);
             this.lblName1.TabIndex = 50;
@@ -523,7 +523,7 @@ namespace Sales_Management
             // 
             this.txtName1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtName1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName1.Location = new System.Drawing.Point(3, 3);
+            this.txtName1.Location = new System.Drawing.Point(9, 3);
             this.txtName1.Name = "txtName1";
             this.txtName1.Size = new System.Drawing.Size(257, 46);
             this.txtName1.TabIndex = 53;
@@ -535,7 +535,7 @@ namespace Sales_Management
             this.cbxStore1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxStore1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxStore1.FormattingEnabled = true;
-            this.cbxStore1.Location = new System.Drawing.Point(3, 54);
+            this.cbxStore1.Location = new System.Drawing.Point(9, 64);
             this.cbxStore1.Name = "cbxStore1";
             this.cbxStore1.Size = new System.Drawing.Size(257, 47);
             this.cbxStore1.TabIndex = 54;
@@ -555,7 +555,7 @@ namespace Sales_Management
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.51219F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.4878F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(700, 160);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(728, 160);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -577,7 +577,7 @@ namespace Sales_Management
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(700, 111);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(728, 111);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // rbtnReturnQtyonly
@@ -585,7 +585,7 @@ namespace Sales_Management
             this.rbtnReturnQtyonly.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnReturnQtyonly.AutoSize = true;
             this.rbtnReturnQtyonly.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnReturnQtyonly.Location = new System.Drawing.Point(487, 61);
+            this.rbtnReturnQtyonly.Location = new System.Drawing.Point(511, 61);
             this.rbtnReturnQtyonly.Name = "rbtnReturnQtyonly";
             this.rbtnReturnQtyonly.Size = new System.Drawing.Size(193, 44);
             this.rbtnReturnQtyonly.TabIndex = 56;
@@ -598,9 +598,9 @@ namespace Sales_Management
             this.rbtnReturnItemOnly.AutoSize = true;
             this.rbtnReturnItemOnly.Checked = true;
             this.rbtnReturnItemOnly.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnReturnItemOnly.Location = new System.Drawing.Point(470, 5);
+            this.rbtnReturnItemOnly.Location = new System.Drawing.Point(489, 5);
             this.rbtnReturnItemOnly.Name = "rbtnReturnItemOnly";
-            this.rbtnReturnItemOnly.Size = new System.Drawing.Size(227, 44);
+            this.rbtnReturnItemOnly.Size = new System.Drawing.Size(236, 44);
             this.rbtnReturnItemOnly.TabIndex = 13;
             this.rbtnReturnItemOnly.TabStop = true;
             this.rbtnReturnItemOnly.Text = "ارجاع الكمية المحدده بالكامل";
@@ -611,7 +611,7 @@ namespace Sales_Management
             this.lblName2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName2.AutoSize = true;
             this.lblName2.ForeColor = System.Drawing.Color.Red;
-            this.lblName2.Location = new System.Drawing.Point(340, 7);
+            this.lblName2.Location = new System.Drawing.Point(356, 7);
             this.lblName2.Name = "lblName2";
             this.lblName2.Size = new System.Drawing.Size(103, 40);
             this.lblName2.TabIndex = 54;
@@ -621,7 +621,7 @@ namespace Sales_Management
             // 
             this.txtName2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtName2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName2.Location = new System.Drawing.Point(3, 4);
+            this.txtName2.Location = new System.Drawing.Point(10, 4);
             this.txtName2.Name = "txtName2";
             this.txtName2.Size = new System.Drawing.Size(309, 46);
             this.txtName2.TabIndex = 55;
@@ -631,7 +631,7 @@ namespace Sales_Management
             // 
             this.NudQty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NudQty.DecimalPlaces = 2;
-            this.NudQty.Location = new System.Drawing.Point(318, 60);
+            this.NudQty.Location = new System.Drawing.Point(334, 60);
             this.NudQty.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -653,7 +653,7 @@ namespace Sales_Management
             this.btnReturnItemOnly.ForeColor = System.Drawing.Color.Black;
             this.btnReturnItemOnly.Image = global::Sales_Management.Properties.Resources.undo;
             this.btnReturnItemOnly.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReturnItemOnly.Location = new System.Drawing.Point(3, 60);
+            this.btnReturnItemOnly.Location = new System.Drawing.Point(10, 60);
             this.btnReturnItemOnly.Name = "btnReturnItemOnly";
             this.btnReturnItemOnly.Size = new System.Drawing.Size(309, 46);
             this.btnReturnItemOnly.TabIndex = 58;
@@ -674,7 +674,7 @@ namespace Sales_Management
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(700, 49);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(728, 49);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // cbxStore2
@@ -683,7 +683,7 @@ namespace Sales_Management
             this.cbxStore2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxStore2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxStore2.FormattingEnabled = true;
-            this.cbxStore2.Location = new System.Drawing.Point(21, 3);
+            this.cbxStore2.Location = new System.Drawing.Point(28, 12);
             this.cbxStore2.Name = "cbxStore2";
             this.cbxStore2.Size = new System.Drawing.Size(327, 47);
             this.cbxStore2.TabIndex = 55;
@@ -693,7 +693,7 @@ namespace Sales_Management
             this.lblStore2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStore2.AutoSize = true;
             this.lblStore2.ForeColor = System.Drawing.Color.Red;
-            this.lblStore2.Location = new System.Drawing.Point(489, 4);
+            this.lblStore2.Location = new System.Drawing.Point(510, 4);
             this.lblStore2.Name = "lblStore2";
             this.lblStore2.Size = new System.Drawing.Size(91, 40);
             this.lblStore2.TabIndex = 54;
@@ -703,7 +703,7 @@ namespace Sales_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 39F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 597);
+            this.ClientSize = new System.Drawing.Size(1126, 597);
             this.Controls.Add(this.tlpParent);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

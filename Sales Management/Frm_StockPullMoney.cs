@@ -44,7 +44,7 @@ namespace Sales_Management
         {
             try
             {
-                db.FillComboBox(cbxStock, "select * from Stock_Data", "Stock_Name", "Stock_ID");
+                db.FillComboBox(cbxStock, "select * from Stock_Data where CurrentState=1", "Stock_Name", "Stock_ID");
                 onLoadScreen();
             }
             catch (Exception) { }

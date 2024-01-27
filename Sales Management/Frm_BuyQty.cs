@@ -25,7 +25,7 @@ namespace Sales_Management
 
             try
             {
-                cbxUnit.DataSource = db.readData("select Products_Unit.Unit_ID as Unit_ID,Unit.Unit_Name as Unit_Name from Products_Unit,Unit where Unit.Unit_ID = Products_Unit.Unit_ID and Pro_ID=" + Properties.Settings.Default.Pro_ID + "", "");
+                cbxUnit.DataSource = db.readData("select Products_Unit.Unit_ID as Unit_ID,Unit.Unit_Name as Unit_Name from Products_Unit,Unit where Unit.CurrentState=1 and Unit.Unit_ID = Products_Unit.Unit_ID and Pro_ID=" + Properties.Settings.Default.Pro_ID + "", "");
                 cbxUnit.DisplayMember = "Unit_Name";
                 cbxUnit.ValueMember = "Unit_ID";
             }

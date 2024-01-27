@@ -405,7 +405,7 @@ namespace Sales_Management
             this.cbxType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxType.FormattingEnabled = true;
-            this.cbxType.Location = new System.Drawing.Point(6, 59);
+            this.cbxType.Location = new System.Drawing.Point(6, 51);
             this.cbxType.Name = "cbxType";
             this.cbxType.Size = new System.Drawing.Size(303, 47);
             this.cbxType.TabIndex = 8;

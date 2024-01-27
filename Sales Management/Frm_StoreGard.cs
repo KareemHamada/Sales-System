@@ -22,16 +22,30 @@ namespace Sales_Management
         private void FillStore()
         {
 
-            cbxStore.DataSource = db.readData("select * from Store", "");
-            cbxStore.DisplayMember = "Store_Name";
-            cbxStore.ValueMember = "Store_ID";
+            try
+            {
+                cbxStore.DataSource = db.readData("select * from Store where CurrentState=1", "");
+                cbxStore.DisplayMember = "Store_Name";
+                cbxStore.ValueMember = "Store_ID";
+            }
+            catch
+            {
+
+            }
         }
         private void FillGroup()
         {
+            try
+            {
+                cbxGroups.DataSource = db.readData("select * from Products_Group where CurrentState=1", "");
+                cbxGroups.DisplayMember = "Group_Name";
+                cbxGroups.ValueMember = "Group_ID";
+            }
+            catch
+            {
 
-            cbxGroups.DataSource = db.readData("select * from Products_Group", "");
-            cbxGroups.DisplayMember = "Group_Name";
-            cbxGroups.ValueMember = "Group_ID";
+            }
+            
         }
         private void Frm_StoreGard_Load(object sender, EventArgs e)
         {
@@ -56,8 +70,6 @@ namespace Sales_Management
             txtTotalSale.Text = Math.Round(totalSale, 2).ToString();
         }
 
-     
-
         private void txtBarcode_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -69,7 +81,7 @@ namespace Sales_Management
                     {
                         if (rbtnAllGroups.Checked)
                         {
-                            tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "'", "");
+                            tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.CurrentState=1 and Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "'", "");
                         }
                         else
                         {
@@ -78,7 +90,7 @@ namespace Sales_Management
                                 MessageBox.Show("من فضلك اختر صنف صحيح");
                                 return;
                             }
-                            tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "' and Products.Group_ID=" + cbxGroups.SelectedValue + "", "");
+                            tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.CurrentState=1 and Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "' and Products.Group_ID=" + cbxGroups.SelectedValue + "", "");
                         }
 
                     }
@@ -91,7 +103,7 @@ namespace Sales_Management
                         }
                         if (rbtnAllGroups.Checked)
                         {
-                            tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "' and Products_Qty.Store_ID=" + cbxStore.SelectedValue + "", "");
+                            tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.CurrentState=1 and Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "' and Products_Qty.Store_ID=" + cbxStore.SelectedValue + "", "");
                         }
                         else
                         {
@@ -100,19 +112,10 @@ namespace Sales_Management
                                 MessageBox.Show("من فضلك اختر صنف صحيح");
                                 return;
                             }
-                            tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "' and Products_Qty.Store_ID=" + cbxStore.SelectedValue + " and Products.Group_ID=" + cbxGroups.SelectedValue + "", "");
+                            tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.CurrentState=1 and Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "' and Products_Qty.Store_ID=" + cbxStore.SelectedValue + " and Products.Group_ID=" + cbxGroups.SelectedValue + "", "");
                         }
 
                     }
-
-                    //if (rbtnAllStore.Checked)
-                    //{
-                    //    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "'", "");
-                    //}
-                    //else
-                    //{
-                    //    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID and Products.Barcode=N'" + txtBarcode.Text + "' and Products_Qty.Store_ID=" + cbxStore.SelectedValue + "", "");
-                    //}
 
 
                     DgvSearch.DataSource = tbl;
@@ -128,7 +131,7 @@ namespace Sales_Management
             {
                 if (rbtnAllGroups.Checked)
                 {
-                    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID", "");
+                    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.CurrentState=1 and Products.Pro_ID =[Products_Qty].Pro_ID", "");
                 }
                 else
                 {
@@ -137,7 +140,7 @@ namespace Sales_Management
                         MessageBox.Show("من فضلك اختر صنف صحيح");
                         return;
                     }
-                    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID and Products.Group_ID=" + cbxGroups.SelectedValue + "", "");
+                    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.CurrentState=1 and Products.Pro_ID =[Products_Qty].Pro_ID and Products.Group_ID=" + cbxGroups.SelectedValue + "", "");
                 }
 
             }
@@ -150,7 +153,7 @@ namespace Sales_Management
                 }
                 if (rbtnAllGroups.Checked)
                 {
-                    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID and Products_Qty.Store_ID=" + cbxStore.SelectedValue + "", "");
+                    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.CurrentState=1 and Products.Pro_ID =[Products_Qty].Pro_ID and Products_Qty.Store_ID=" + cbxStore.SelectedValue + "", "");
                 }
                 else
                 {
@@ -159,7 +162,7 @@ namespace Sales_Management
                         MessageBox.Show("من فضلك اختر صنف صحيح");
                         return;
                     }
-                    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID and Products_Qty.Store_ID=" + cbxStore.SelectedValue + " and Products.Group_ID=" + cbxGroups.SelectedValue + "", "");
+                    tbl = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري' FROM [dbo].[Products_Qty],Products where Products.CurrentState=1 and Products.Pro_ID =[Products_Qty].Pro_ID and Products_Qty.Store_ID=" + cbxStore.SelectedValue + " and Products.Group_ID=" + cbxGroups.SelectedValue + "", "");
                 }
 
             }
@@ -175,7 +178,7 @@ namespace Sales_Management
             DataTable tblRpt = new DataTable();
 
             tblRpt.Clear();
-            tblRpt = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري',(([Products_Qty].Sale_Price_After_Tax - Buy_Price) * [Products_Qty].[Qty]) as 'الارباح المتوقعة' FROM [dbo].[Products_Qty],Products where Products.Pro_ID =[Products_Qty].Pro_ID", "");
+            tblRpt = db.readData("SELECT [Products_Qty].[Pro_ID] as 'رقم المنتج',Products.Pro_Name as 'اسم المنتج',(select Store_Name from Store where Store.Store_ID = Products_Qty.Store_ID) as 'اسم المخزن',[Products_Qty].[Qty] as 'الكمية بالوحدة الكبري' ,[Buy_Price] as 'سعر الشراء بالوحدة الكبري',[Products_Qty].[Sale_Price_After_Tax] as 'سعر البيع بالوحدة الكبري',(([Products_Qty].Sale_Price_After_Tax - Buy_Price) * [Products_Qty].[Qty]) as 'الارباح المتوقعة' FROM [dbo].[Products_Qty],Products where Products.CurrentState=1 and Products.Pro_ID =[Products_Qty].Pro_ID", "");
             try
             {
                 Frm_Printing frm = new Frm_Printing();

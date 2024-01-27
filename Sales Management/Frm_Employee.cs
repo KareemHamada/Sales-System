@@ -22,7 +22,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblSearch.Clear();
-            tblSearch = db.readData("SELECT [Emp_ID] as 'رقم الموظف',[Emp_Name] as 'اسم الموظف',[Salary] as 'الراتب الشهرى',[Date] as 'تاريخ الاستحقاق',[National_ID] as 'تحقيق الشخصية',[Emp_Phone] as 'التليفون',[Emp_Address] as 'العنوان' FROM [dbo].[Employee]", "");
+            tblSearch = db.readData("SELECT [Emp_ID] as 'رقم الموظف',[Emp_Name] as 'اسم الموظف',[Salary] as 'الراتب الشهرى',[Date] as 'تاريخ الاستحقاق',[National_ID] as 'تحقيق الشخصية',[Emp_Phone] as 'التليفون',[Emp_Address] as 'العنوان' FROM [dbo].[Employee] where CurrentState=1", "");
             DgvSearch.DataSource = tblSearch;
 
             tbl.Clear();
@@ -55,40 +55,7 @@ namespace Sales_Management
 
         }
 
-        //int row;
-        //private void Show()
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select * from Employee", "");
 
-        //    if (tbl.Rows.Count <= 0)
-        //    {
-        //        MessageBox.Show("لا يوجد بيانات فى هذه الشاشه");
-        //    }
-        //    else
-        //    {
-        //        try
-        //        {
-        //            txtID.Text = tbl.Rows[row][0].ToString();
-        //            txtName.Text = tbl.Rows[row][1].ToString();
-        //            txtSalary.Text = tbl.Rows[row][2].ToString();
-
-        //            txtNationalID.Text = tbl.Rows[row][4].ToString();
-        //            txtAddress.Text = tbl.Rows[row][6].ToString();
-        //            txtPhone.Text = tbl.Rows[row][5].ToString();
-        //            this.Text = tbl.Rows[row][3].ToString();
-        //            DateTime dt = DateTime.ParseExact(this.Text, "dd/MM/yyyy", null);
-        //            DtbDate.Value = dt;
-        //        }
-        //        catch (Exception) { }
-        //    }
-
-        //    btnAdd.Enabled = false;
-        //    btnNew.Enabled = true;
-        //    btnDelete.Enabled = true;
-        //    btnDeleteAll.Enabled = true;
-        //    btnSave.Enabled = true;
-        //}
 
         private void Frm_Employee_Load(object sender, EventArgs e)
         {
@@ -113,7 +80,7 @@ namespace Sales_Management
                 return;
             }
             string d = DtbDate.Value.ToString("dd/MM/yyyy");
-            db.executeData("insert into Employee Values (" + txtID.Text + " ,N'" + txtName.Text + "' ," + txtSalary.Text + ", N'" + d + "', N'" + txtNationalID.Text + "',N'" + txtPhone.Text + "',N'" + txtAddress.Text + "'  )", "تم الادخال بنجاح", "");
+            db.executeData("insert into Employee Values (" + txtID.Text + " ,N'" + txtName.Text + "' ," + txtSalary.Text + ", N'" + d + "', N'" + txtNationalID.Text + "',N'" + txtPhone.Text + "',N'" + txtAddress.Text + "',1)", "تم الادخال بنجاح", "");
 
             AutoNumber();
         }
@@ -140,7 +107,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.readData("delete from Employee where Emp_ID=" + txtID.Text + "", "تم مسح البيانات بنجاح");
+                db.executeData("update Employee set CurrentState=0 where Emp_ID=" + txtID.Text + " ", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }
@@ -149,7 +116,8 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.readData("delete from Employee ", "تم مسح البيانات بنجاح");
+                db.executeData("update Employee set CurrentState=0" + txtID.Text + " ", "تم الحذف بنجاح", "");
+
                 AutoNumber();
             }
         }
@@ -206,7 +174,7 @@ namespace Sales_Management
         {
             DataTable tblSearch = new DataTable();
             tblSearch.Clear();
-            tblSearch = db.readData("select * from Employee where Emp_Name like N'%" + txtSearch.Text + "%'", "");
+            tblSearch = db.readData("select * from Employee where CurrentState=1 and Emp_Name like N'%" + txtSearch.Text + "%'", "");
 
             if (tblSearch.Rows.Count <= 0)
             {

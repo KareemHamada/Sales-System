@@ -120,7 +120,7 @@ namespace Sales_Management
             this.cbxStockTo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxStockTo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxStockTo.FormattingEnabled = true;
-            this.cbxStockTo.Location = new System.Drawing.Point(29, 126);
+            this.cbxStockTo.Location = new System.Drawing.Point(29, 115);
             this.cbxStockTo.Name = "cbxStockTo";
             this.cbxStockTo.Size = new System.Drawing.Size(244, 47);
             this.cbxStockTo.TabIndex = 15;
@@ -270,7 +270,7 @@ namespace Sales_Management
             this.cbxStockFrom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxStockFrom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxStockFrom.FormattingEnabled = true;
-            this.cbxStockFrom.Location = new System.Drawing.Point(29, 4);
+            this.cbxStockFrom.Location = new System.Drawing.Point(29, 15);
             this.cbxStockFrom.Name = "cbxStockFrom";
             this.cbxStockFrom.Size = new System.Drawing.Size(244, 47);
             this.cbxStockFrom.TabIndex = 29;

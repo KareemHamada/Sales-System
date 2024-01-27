@@ -21,7 +21,7 @@ namespace Sales_Management
         {
             try
             {
-                db.FillComboBox(cbxSupplier, "select * from Suppliers", "Sup_Name", "Sup_ID");
+                db.FillComboBox(cbxSupplier, "select * from Suppliers where CurrentState=1", "Sup_Name", "Sup_ID");
             }
             catch (Exception) { }
             txtTotal.Text = "0";

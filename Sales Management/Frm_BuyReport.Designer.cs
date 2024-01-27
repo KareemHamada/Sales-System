@@ -29,7 +29,7 @@ namespace Sales_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tplParent = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.DgvSearch = new System.Windows.Forms.DataGridView();
@@ -107,14 +107,14 @@ namespace Sales_Management
             this.DgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvSearch.BackgroundColor = System.Drawing.Color.White;
             this.DgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvSearch.Location = new System.Drawing.Point(3, 159);
             this.DgvSearch.Name = "DgvSearch";
@@ -154,7 +154,7 @@ namespace Sales_Management
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.98734F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.47679F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.01076F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 321F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 322F));
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtOrderNumber, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.checkOrderNumber, 0, 0);
@@ -175,7 +175,7 @@ namespace Sales_Management
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(830, 8);
+            this.label2.Location = new System.Drawing.Point(832, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 40);
             this.label2.TabIndex = 34;
@@ -185,7 +185,7 @@ namespace Sales_Management
             // 
             this.txtOrderNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtOrderNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtOrderNumber.Location = new System.Drawing.Point(947, 5);
+            this.txtOrderNumber.Location = new System.Drawing.Point(948, 5);
             this.txtOrderNumber.Name = "txtOrderNumber";
             this.txtOrderNumber.Size = new System.Drawing.Size(142, 46);
             this.txtOrderNumber.TabIndex = 33;
@@ -197,7 +197,7 @@ namespace Sales_Management
             // 
             this.checkOrderNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkOrderNumber.AutoSize = true;
-            this.checkOrderNumber.Location = new System.Drawing.Point(1122, 6);
+            this.checkOrderNumber.Location = new System.Drawing.Point(1123, 6);
             this.checkOrderNumber.Name = "checkOrderNumber";
             this.checkOrderNumber.Size = new System.Drawing.Size(118, 44);
             this.checkOrderNumber.TabIndex = 1;
@@ -209,7 +209,7 @@ namespace Sales_Management
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(395, 8);
+            this.label4.Location = new System.Drawing.Point(399, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 40);
             this.label4.TabIndex = 36;
@@ -219,7 +219,7 @@ namespace Sales_Management
             // 
             this.DtpTo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpTo.Location = new System.Drawing.Point(33, 5);
+            this.DtpTo.Location = new System.Drawing.Point(35, 5);
             this.DtpTo.Name = "DtpTo";
             this.DtpTo.Size = new System.Drawing.Size(257, 46);
             this.DtpTo.TabIndex = 37;
@@ -229,7 +229,7 @@ namespace Sales_Management
             // 
             this.DtpFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFrom.Location = new System.Drawing.Point(539, 5);
+            this.DtpFrom.Location = new System.Drawing.Point(542, 5);
             this.DtpFrom.Name = "DtpFrom";
             this.DtpFrom.Size = new System.Drawing.Size(196, 46);
             this.DtpFrom.TabIndex = 35;
@@ -266,7 +266,7 @@ namespace Sales_Management
             this.cbxSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxSupplier.FormattingEnabled = true;
-            this.cbxSupplier.Location = new System.Drawing.Point(550, 4);
+            this.cbxSupplier.Location = new System.Drawing.Point(550, 15);
             this.cbxSupplier.Name = "cbxSupplier";
             this.cbxSupplier.Size = new System.Drawing.Size(291, 47);
             this.cbxSupplier.TabIndex = 13;

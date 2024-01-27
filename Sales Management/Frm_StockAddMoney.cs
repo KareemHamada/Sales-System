@@ -20,7 +20,7 @@ namespace Sales_Management
 
         private void onLoadScreen()
         {
-            db.FillComboBox(cbxStock, "select * from Stock_Data", "Stock_Name", "Stock_ID");
+            db.FillComboBox(cbxStock, "select * from Stock_Data where CurrentState=1", "Stock_Name", "Stock_ID");
             tbl.Clear();
             tbl = db.readData("select * from Stock where Stock_ID=" + cbxStock.SelectedValue + "", "");
             if (tbl.Rows.Count <= 0)

@@ -33,7 +33,7 @@ namespace Sales_Management
                 //cbxUnit.DisplayMember = "Unit_Name";
                 //cbxUnit.ValueMember = "Unit_ID";
 
-                cbxUnit.DataSource = db.readData("select Products_Unit.Unit_ID as Unit_ID,Unit.Unit_Name as Unit_Name from Products_Unit,Unit where Unit.Unit_ID = Products_Unit.Unit_ID and Pro_ID=" + Properties.Settings.Default.Pro_ID + "", "");
+                cbxUnit.DataSource = db.readData("select Products_Unit.Unit_ID as Unit_ID,Unit.Unit_Name as Unit_Name from Products_Unit,Unit where Unit.CurrentState=1 and Unit.Unit_ID = Products_Unit.Unit_ID and Pro_ID=" + Properties.Settings.Default.Pro_ID + "", "");
                 cbxUnit.DisplayMember = "Unit_Name";
                 cbxUnit.ValueMember = "Unit_ID";
             }
@@ -79,14 +79,14 @@ namespace Sales_Management
                 {
                     if (Properties.Settings.Default.ItemDiscount == "Value")
                     {
-                        if(Convert.ToDecimal(txtDiscount.Text) <= maxDiscount)
+                        if(Convert.ToDecimal(txtDiscount.Text) <= maxDiscount * Convert.ToDecimal(txtQty.Text))
                         {
                             Properties.Settings.Default.Item_Discount = Convert.ToDecimal(txtDiscount.Text);
                             Properties.Settings.Default.Save();
                         }
                         else
                         {
-                            MessageBox.Show("اقصي خصم مسموح لهذا المنتج هو " + maxDiscount);
+                            MessageBox.Show("اقصي خصم مسموح لهذا المنتج هو " + maxDiscount * Convert.ToDecimal(txtQty.Text));
                         }
                         
                     }

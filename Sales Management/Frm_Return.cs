@@ -20,10 +20,10 @@ namespace Sales_Management
         Database db = new Database();
         private void fillStore()
         {
-            cbxStore1.DataSource = db.readData("select * from Store", "");
+            cbxStore1.DataSource = db.readData("select * from Store where CurrentState=1", "");
             cbxStore1.DisplayMember = "Store_Name";
             cbxStore1.ValueMember = "Store_ID";
-            cbxStore2.DataSource = db.readData("select * from Store", "");
+            cbxStore2.DataSource = db.readData("select * from Store where CurrentState=1", "");
             cbxStore2.DisplayMember = "Store_Name";
             cbxStore2.ValueMember = "Store_ID";
         }

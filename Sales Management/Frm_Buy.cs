@@ -69,20 +69,20 @@ namespace Sales_Management
 
         public void FillSupplierComboBox()
         {
-            cbxSupplier.DataSource = db.readData("select * from Suppliers", "");
+            cbxSupplier.DataSource = db.readData("select * from Suppliers where CurrentState=1", "");
             cbxSupplier.DisplayMember = "Sup_Name";
             cbxSupplier.ValueMember = "Sup_ID";
         }
         public void FillStore()
         {
 
-            cbxStore.DataSource = db.readData("select * from Store", "");
+            cbxStore.DataSource = db.readData("select * from Store where CurrentState=1", "");
             cbxStore.DisplayMember = "Store_Name";
             cbxStore.ValueMember = "Store_ID";
         }
         private void fillGroups()
         {
-            cbxGroub.DataSource = db.readData("select * from Products_Group", "");
+            cbxGroub.DataSource = db.readData("select * from Products_Group where CurrentState=1", "");
             cbxGroub.DisplayMember = "Group_Name";
             cbxGroub.ValueMember = "Group_ID";
         }
@@ -91,7 +91,7 @@ namespace Sales_Management
             try
             {
                 FillSupplierComboBox();
-                db.FillComboBox(cbxItems, "select * from Products", "Pro_Name", "Pro_ID");
+                db.FillComboBox(cbxItems, "select * from Products where CurrentState=1", "Pro_Name", "Pro_ID");
                 FillStore();
                 fillGroups();
                 cbxChooseGroub_CheckedChanged(null, null);
@@ -258,15 +258,6 @@ namespace Sales_Management
                 }
                 catch (Exception) { }
 
-                //if (DgvBuy.Rows.Count <= 0)
-                //{
-                //    txtTotal.Text = "0";
-                //    lblItemsCount.Text = "0";
-                //}
-                //else
-                //{
-
-                //}
 
             }
             if (DgvBuy.Rows.Count >= 1)
@@ -289,17 +280,7 @@ namespace Sales_Management
                     return;
                 }
 
-                //if (cbxItems.Text == "اختر منتج")
-                //{
-                //    MessageBox.Show("من فضلك اختر منتج", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return;
-                //}
-
-                //if (cbxItems.SelectedValue == null)
-                //{
-                //    MessageBox.Show("من فضلك اختر منتج صحيحا", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    return;
-                //}
+  
 
 
                 DataTable tblItems = new DataTable();
@@ -311,12 +292,12 @@ namespace Sales_Management
                 DataTable tblunit = new DataTable();
                 tblunit.Clear();
 
-                tblItems = db.readData("select * from Products where Barcode=N'" + txtBarcode.Text + "'", "");
+                tblItems = db.readData("select * from Products where CurrentState=1 and Barcode=N'" + txtBarcode.Text + "'", "");
                 if (tblItems.Rows.Count >= 1)
                 {
+                    cbxItems.SelectedValue = Convert.ToDecimal(tblItems.Rows[0][0]);
                     try
                     {
-                        cbxItems.SelectedValue = Convert.ToDecimal(tblItems.Rows[0][0]);
                         if (DgvBuy.Rows.Count > 0)
                         {
                             for (int i = 0; i < DgvBuy.Rows.Count; i++)
@@ -351,7 +332,19 @@ namespace Sales_Management
                         string Product_ID = tblItems.Rows[0][0].ToString();
                         string Product_Name = tblItems.Rows[0][1].ToString();
                         string Product_Qty = "1";
-                        string Product_Price = tblPrice.Rows[countQty - 1][3].ToString(); // get buy price of last row
+                        ///
+                        string Product_Price = "";
+                        if (countQty > 0)
+                        {
+                            Product_Price = tblPrice.Rows[countQty - 1][3].ToString(); // get buy price of last row
+                        }
+                        else
+                        {
+                            Product_Price = "0"; // get buy price of last row
+                        }
+
+                        ///
+                        //string Product_Price = tblPrice.Rows[countQty - 1][3].ToString(); // get buy price of last row
                         string Product_Unit_ID = tblItems.Rows[0][14].ToString();
                         string unit_Name = db.readData("select Unit_Name from Unit where Unit_ID=" + Product_Unit_ID + "", "").Rows[0][0].ToString();
                         decimal Discount = 0;
@@ -404,83 +397,7 @@ namespace Sales_Management
                 }
 
                 txtBarcode.Clear();
-                //DataTable tblItems = new DataTable();
-                //tblItems.Clear();
-                //DataTable tblPrice = new DataTable();
-                //tblPrice.Clear();
-                //DataTable tblunit = new DataTable();
-                //tblunit.Clear();
 
-                //tblItems = db.readData("select * from Products where Barcode=N'" + txtBarcode.Text + "'", "");
-                //if (tblItems.Rows.Count >= 1)
-                //{
-                //    try
-                //    {
-                //        cbxItems.SelectedValue = Convert.ToDecimal(tblItems.Rows[0][0]);
-                //    }
-                //    catch (Exception) { }
-                //    try
-                //    {
-                //        int countQty = 0;
-                //        try
-                //        {
-                //            countQty = Convert.ToInt32(db.readData("select count(Pro_ID) from Products_Qty where Pro_ID=" + cbxItems.SelectedValue + "", "").Rows[0][0]);
-                //        }
-                //        catch (Exception) { }
-
-
-                //        tblPrice = db.readData("select * from Products_Qty where Pro_ID=" + cbxItems.SelectedValue + "", "");
-
-                //        string Product_ID = tblItems.Rows[0][0].ToString();
-                //        string Product_Name = tblItems.Rows[0][1].ToString();
-                //        string Product_Qty = "1";
-                //        string Product_Price = tblPrice.Rows[countQty - 1][4].ToString();
-                //        string Product_Unit = tblItems.Rows[0][16].ToString();
-                //        decimal Discount = 0;
-
-
-                //        DgvBuy.Rows.Add(1);
-                //        int rowindex = DgvBuy.Rows.Count - 1;
-
-                //        DgvBuy.Rows[rowindex].Cells[0].Value = Product_ID;
-                //        DgvBuy.Rows[rowindex].Cells[1].Value = Product_Name;
-                //        DgvBuy.Rows[rowindex].Cells[2].Value = Product_Unit;
-                //        DgvBuy.Rows[rowindex].Cells[3].Value = Product_Qty;
-                //        tblunit = db.readData("select * from Products_Unit where Pro_ID=" + DgvBuy.CurrentRow.Cells[0].Value + " and Unit_Name=N'" + DgvBuy.CurrentRow.Cells[2].Value + "'", "");
-                //        decimal realPrice = 0;
-                //        try
-                //        {
-                //            realPrice = Convert.ToDecimal(Product_Price) / Convert.ToDecimal(tblunit.Rows[0][3]);
-                //        }
-                //        catch (Exception) { }
-                //        decimal total = Convert.ToDecimal(Product_Qty) * Convert.ToDecimal(realPrice);
-
-                //        DgvBuy.Rows[rowindex].Cells[4].Value = Math.Round(realPrice, 2);
-                //        DgvBuy.Rows[rowindex].Cells[5].Value = Discount;
-                //        DgvBuy.Rows[rowindex].Cells[6].Value = Math.Round(total, 2);
-                //    }
-                //    catch (Exception) { }
-
-
-                //    try
-                //    {
-                //        decimal TotalOrder = 0;
-                //        for (int i = 0; i <= DgvBuy.Rows.Count - 1; i++)
-                //        {
-
-                //            TotalOrder += Convert.ToDecimal(DgvBuy.Rows[i].Cells[6].Value);
-                //            DgvBuy.ClearSelection();
-                //            DgvBuy.FirstDisplayedScrollingRowIndex = DgvBuy.Rows.Count - 1;
-                //            DgvBuy.Rows[DgvBuy.Rows.Count - 1].Selected = true;
-                //        }
-
-
-                //        txtTotal.Text = Math.Round(TotalOrder, 2).ToString();
-                //        lblItemsCount.Text = (DgvBuy.Rows.Count).ToString();
-
-                //    }
-                //    catch (Exception) { }
-                //}
             }
         }
 
@@ -756,37 +673,7 @@ namespace Sales_Management
             catch (Exception) { }
         }
 
-        //to print 8 cm order
-        //private void Print()
-        //{
-        //    // Madfoua
-        //    //int id = Convert.ToInt32(txtID.Text);
-        //    //DataTable tblRpt = new DataTable(); 
-
-        //    //tblRpt.Clear();
-        //    //tblRpt = db.readData("SELECT [Order_ID] as 'رقم الفاتورة', Suppliers.Sup_Name as 'اسم المورد', Products.Pro_Name as 'اسم المنتج',[Date] as 'تاريخ الفاتورة',[Buy_Details].Qty as 'الكمية',[Price] as 'السعر',[User_Name] as 'اسم المستخدم',[Discount] as 'الخصم',[Total] as 'اجمالي الصنف',[TotalOrder] as 'الاجمالي العام',[Madfoua] as 'المدفوع',[Baky] as 'المبلغ المتبقي' FROM[dbo].[Buy_Details], Suppliers, Products where Suppliers.Sup_ID = [Buy_Details].Sup_ID and Products.Pro_ID = [Buy_Details].Pro_ID and Order_ID=" + id + "", "");
-        //    //try
-        //    //{
-        //    //    Frm_Printing frm = new Frm_Printing();
-
-        //    //    frm.crystalReportViewer1.RefreshReport();
-
-        //    //    rptOrderBuy rpt = new rptOrderBuy();
-
-
-        //    //    rpt.SetDatabaseLogon("", "", @".\SQLEXPRESS", "Sales_System");
-        //    //    rpt.SetDataSource(tblRpt);
-        //    //    rpt.SetParameterValue("ID", id);
-        //    //    frm.crystalReportViewer1.ReportSource = rpt;
-
-        //    //    System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
-        //    //    rpt.PrintOptions.PrinterName = printDocument.PrinterSettings.PrinterName;
-        //    //    rpt.PrintToPrinter(1, true, 0, 0);
-
-        //    //    //frm.ShowDialog();
-        //    //}
-        //    //catch (Exception) { }
-        //}
+       
         private void UpdateQty()
         {
             if(DgvBuy.Rows.Count >= 1)
@@ -888,11 +775,15 @@ namespace Sales_Management
 
         private void cbxGroub_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            try
+            if(cbxGroub.Items.Count > 0)
             {
-                db.FillComboBox(cbxItems, "select * from Products where Group_ID=" + cbxGroub.SelectedValue + "", "Pro_Name", "Pro_ID");
+                try
+                {
+                    db.FillComboBox(cbxItems, "select * from Products where CurrentState=1 and Group_ID=" + cbxGroub.SelectedValue + "", "Pro_Name", "Pro_ID");
+                }
+                catch (Exception) { }
             }
-            catch (Exception) { }
+            
         }
 
         private void cbxChooseGroub_CheckedChanged(object sender, EventArgs e)
@@ -913,7 +804,7 @@ namespace Sales_Management
                 cbxGroub.Enabled = false;
                 try
                 {
-                    db.FillComboBox(cbxItems, "select * from Products", "Pro_Name", "Pro_ID");
+                    db.FillComboBox(cbxItems, "select * from Products where CurrentState=1", "Pro_Name", "Pro_ID");
                 }
                 catch (Exception) { }
                 txtBarcode.Enabled = true;

@@ -173,7 +173,7 @@ namespace Sales_Management
             this.cbxUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxUnit.FormattingEnabled = true;
-            this.cbxUnit.Location = new System.Drawing.Point(11, 74);
+            this.cbxUnit.Location = new System.Drawing.Point(11, 73);
             this.cbxUnit.Name = "cbxUnit";
             this.cbxUnit.Size = new System.Drawing.Size(262, 38);
             this.cbxUnit.TabIndex = 35;

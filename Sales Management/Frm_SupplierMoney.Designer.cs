@@ -29,7 +29,7 @@ namespace Sales_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tplParent = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.11236F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.80899F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.5618F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 226F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 227F));
             this.tableLayoutPanel2.Controls.Add(this.NudPrice, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.rbtnPayPart, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.rbtnPayAll, 0, 0);
@@ -133,7 +133,7 @@ namespace Sales_Management
             // 
             this.NudPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.NudPrice.DecimalPlaces = 2;
-            this.NudPrice.Location = new System.Drawing.Point(627, 9);
+            this.NudPrice.Location = new System.Drawing.Point(628, 9);
             this.NudPrice.Maximum = new decimal(new int[] {
             1215752192,
             23,
@@ -154,7 +154,7 @@ namespace Sales_Management
             this.rbtnPayPart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnPayPart.AutoSize = true;
             this.rbtnPayPart.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnPayPart.Location = new System.Drawing.Point(795, 10);
+            this.rbtnPayPart.Location = new System.Drawing.Point(796, 10);
             this.rbtnPayPart.Name = "rbtnPayPart";
             this.rbtnPayPart.Size = new System.Drawing.Size(140, 44);
             this.rbtnPayPart.TabIndex = 12;
@@ -167,7 +167,7 @@ namespace Sales_Management
             this.rbtnPayAll.AutoSize = true;
             this.rbtnPayAll.Checked = true;
             this.rbtnPayAll.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnPayAll.Location = new System.Drawing.Point(943, 10);
+            this.rbtnPayAll.Location = new System.Drawing.Point(944, 10);
             this.rbtnPayAll.Name = "rbtnPayAll";
             this.rbtnPayAll.Size = new System.Drawing.Size(168, 44);
             this.rbtnPayAll.TabIndex = 11;
@@ -179,7 +179,7 @@ namespace Sales_Management
             // 
             this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotal.Location = new System.Drawing.Point(16, 9);
+            this.txtTotal.Location = new System.Drawing.Point(18, 9);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(195, 46);
@@ -191,7 +191,7 @@ namespace Sales_Management
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(261, 12);
+            this.label1.Location = new System.Drawing.Point(264, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 40);
             this.label1.TabIndex = 20;
@@ -203,7 +203,7 @@ namespace Sales_Management
             this.btnPay.ForeColor = System.Drawing.Color.Black;
             this.btnPay.Image = global::Sales_Management.Properties.Resources.money;
             this.btnPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPay.Location = new System.Drawing.Point(422, 9);
+            this.btnPay.Location = new System.Drawing.Point(424, 9);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(180, 46);
             this.btnPay.TabIndex = 22;
@@ -219,14 +219,14 @@ namespace Sales_Management
             this.DgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DgvSearch.BackgroundColor = System.Drawing.Color.White;
             this.DgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arabic Typesetting", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvSearch.DefaultCellStyle = dataGridViewCellStyle3;
             this.DgvSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvSearch.Location = new System.Drawing.Point(3, 147);
             this.DgvSearch.Name = "DgvSearch";
@@ -273,7 +273,7 @@ namespace Sales_Management
             this.cbxSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxSupplier.FormattingEnabled = true;
-            this.cbxSupplier.Location = new System.Drawing.Point(455, 9);
+            this.cbxSupplier.Location = new System.Drawing.Point(455, 20);
             this.cbxSupplier.Name = "cbxSupplier";
             this.cbxSupplier.Size = new System.Drawing.Size(316, 47);
             this.cbxSupplier.TabIndex = 13;

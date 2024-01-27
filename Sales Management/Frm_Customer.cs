@@ -22,7 +22,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblSearch.Clear();
-            tblSearch = db.readData("SELECT [Cust_ID] as 'رقم العميل',[Cust_Name] as 'اسم العميل',[Cust_CardID] as 'رقم البطافة',[Cust_Phone] as 'التليفون',[Notes] as 'ملاحظات' FROM [dbo].[Customers]", "");
+            tblSearch = db.readData("SELECT [Cust_ID] as 'رقم العميل',[Cust_Name] as 'اسم العميل',[Cust_CardID] as 'رقم البطافة',[Cust_Phone] as 'التليفون',[Notes] as 'ملاحظات' FROM [dbo].[Customers] where CurrentState=1", "");
             DgvSearch.DataSource = tblSearch;
 
             tbl.Clear();
@@ -48,30 +48,7 @@ namespace Sales_Management
             btnSave.Enabled = false;
 
         }
-        //int row;
-        //private void show()
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select * from Customers", "");
-        //    if(tbl.Rows.Count <= 0)
-        //    {
-        //        MessageBox.Show("لا يوجد بيانات في هذه الشاشة");
-        //    }
-        //    else
-        //    {
-        //        txtID.Text = tbl.Rows[row][0].ToString();
-        //        txtName.Text = tbl.Rows[row][1].ToString();
-        //        txtPhone.Text = tbl.Rows[row][2].ToString();
-        //        txtCardID.Text = tbl.Rows[row][3].ToString();
-        //        txtNotes.Text = tbl.Rows[row][4].ToString();
-        //    }
 
-        //    btnAdd.Enabled = false;
-        //    btnNew.Enabled = true;
-        //    btnDelete.Enabled = true;
-        //    btnDeleteAll.Enabled = true;
-        //    btnSave.Enabled = true;
-        //}
         private void Frm_Customer_Load(object sender, EventArgs e)
         {
             AutoNumber();
@@ -94,7 +71,7 @@ namespace Sales_Management
             }
             else
             {
-                db.executeData("insert into Customers values (" + txtID.Text + ",N'" + txtName.Text + "',N'" + txtCardID.Text + "' ,N'" + txtPhone.Text + "' ,N'" + txtNotes.Text + "')", "تم الادخال بنجاح", "");
+                db.executeData("insert into Customers values (" + txtID.Text + ",N'" + txtName.Text + "',N'" + txtCardID.Text + "' ,N'" + txtPhone.Text + "' ,N'" + txtNotes.Text + "',1)", "تم الادخال بنجاح", "");
 
                 AutoNumber();
             }
@@ -122,7 +99,7 @@ namespace Sales_Management
         {
             if(MessageBox.Show("هل انت متاكد من مسح البيانات","تاكيد",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("Delete from Customers where Cust_ID=" + txtID.Text + "", "تم مسح العميل بنجاح", "");
+                db.executeData("Update Customers set CurrentState = 0 where Cust_ID=" + txtID.Text + "", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
             
@@ -132,7 +109,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انت متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("Delete from Customers", "تم مسح جميع العملاء بنجاح", "");
+                db.executeData("Update Customers set CurrentState = 0", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }
@@ -186,7 +163,7 @@ namespace Sales_Management
         {
             //DataTable tblSear = new DataTable();
             tblSearch.Clear();
-            tblSearch = db.readData("SELECT [Cust_ID] as 'رقم العميل',[Cust_Name] as 'اسم العميل',[Cust_CardID] as 'رقم البطافة',[Cust_Phone] as 'التليفون',[Notes] as 'ملاحظات' FROM [dbo].[Customers] where Cust_Name like N'%" + txtSearch.Text + "%'", "");
+            tblSearch = db.readData("SELECT [Cust_ID] as 'رقم العميل',[Cust_Name] as 'اسم العميل',[Cust_CardID] as 'رقم البطافة',[Cust_Phone] as 'التليفون',[Notes] as 'ملاحظات' FROM [dbo].[Customers] where CurrentState=1 and Cust_Name like N'%" + txtSearch.Text + "%'", "");
 
             DgvSearch.DataSource = tblSearch;
         }

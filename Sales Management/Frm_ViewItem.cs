@@ -21,14 +21,14 @@ namespace Sales_Management
 
         private void FillGroup()
         {
-            cbxGroup.DataSource = db.readData("select * from Products_Group", "");
+            cbxGroup.DataSource = db.readData("select * from Products_Group where CurrentState=1", "");
             cbxGroup.DisplayMember = "Group_Name";
             cbxGroup.ValueMember = "Group_ID";
         }
         private void showAllItems()
         {
             tbl.Clear();
-            tbl = db.readData("SELECT [Pro_ID] as ' رقم المنتج',[Pro_Name] as 'اسم المنتج',(select Unit_Name from Unit where [Products].Main_UnitID = Unit.Unit_ID) as 'الوحدة الرئيسية',[Qty] as 'الكمية الكلية',[Sale_Price_Before_Tax] as 'سعر التجزئه قبل الضريبة',[Tax_Value] as ' % الضريبة',[Sale_Price_After_Tax] as 'سعر التجزئه بعد الضريبة',(select Unit_Name from Unit where [Products].Sale_UnitID = Unit.Unit_ID) as 'وحدة البيع',(select Unit_Name from Unit where [Products].Buy_UnitID = Unit.Unit_ID) as 'وحدة الشراء',[Barcode] as 'الباركود' ,[MinQty] as 'الحد الادنى',[MaxDiscount] as 'اقصى خصم مسموح',[IS_Tax] as 'هل خاضع للضريبة',Products_Group.Group_Name as 'اسم المجموعة' FROM [dbo].[Products],Products_Group where Products_Group.Group_ID=[Products].Group_ID", "");
+            tbl = db.readData("SELECT [Pro_ID] as ' رقم المنتج',[Pro_Name] as 'اسم المنتج',(select Unit_Name from Unit where [Products].Main_UnitID = Unit.Unit_ID) as 'الوحدة الرئيسية',[Qty] as 'الكمية الكلية',[Sale_Price_Before_Tax] as 'سعر التجزئه قبل الضريبة',[Tax_Value] as ' % الضريبة',[Sale_Price_After_Tax] as 'سعر التجزئه بعد الضريبة',(select Unit_Name from Unit where [Products].Sale_UnitID = Unit.Unit_ID) as 'وحدة البيع',(select Unit_Name from Unit where [Products].Buy_UnitID = Unit.Unit_ID) as 'وحدة الشراء',[Barcode] as 'الباركود' ,[MinQty] as 'الحد الادنى',[MaxDiscount] as 'اقصى خصم مسموح',[IS_Tax] as 'هل خاضع للضريبة',Products_Group.Group_Name as 'اسم المجموعة' FROM [dbo].[Products],Products_Group where Products.CurrentState=1 and Products_Group.Group_ID=[Products].Group_ID", "");
             DgvSearch.DataSource = tbl;
             showTotal();
 
@@ -70,7 +70,7 @@ namespace Sales_Management
             }
             tbl.Clear();
 
-            tbl = db.readData("SELECT [Pro_ID] as ' رقم المنتج',[Pro_Name] as 'اسم المنتج',(select Unit_Name from Unit where [Products].Main_UnitID = Unit.Unit_ID) as 'الوحدة الرئيسية',[Qty] as 'الكمية الكلية',[Sale_Price_Before_Tax] as 'سعر التجزئه قبل الضريبة',[Tax_Value] as ' % الضريبة',[Sale_Price_After_Tax] as 'سعر التجزئه بعد الضريبة',(select Unit_Name from Unit where [Products].Sale_UnitID = Unit.Unit_ID) as 'وحدة البيع',(select Unit_Name from Unit where [Products].Buy_UnitID = Unit.Unit_ID) as 'وحدة الشراء',[Barcode] as 'الباركود' ,[MinQty] as 'الحد الادنى',[MaxDiscount] as 'اقصى خصم مسموح',[IS_Tax] as 'هل خاضع للضريبة',Products_Group.Group_Name as 'اسم المجموعة' FROM [dbo].[Products],Products_Group where Products_Group.Group_ID=[Products].Group_ID and Products.Group_ID=" + cbxGroup.SelectedValue + "", "");
+            tbl = db.readData("SELECT [Pro_ID] as ' رقم المنتج',[Pro_Name] as 'اسم المنتج',(select Unit_Name from Unit where [Products].Main_UnitID = Unit.Unit_ID) as 'الوحدة الرئيسية',[Qty] as 'الكمية الكلية',[Sale_Price_Before_Tax] as 'سعر التجزئه قبل الضريبة',[Tax_Value] as ' % الضريبة',[Sale_Price_After_Tax] as 'سعر التجزئه بعد الضريبة',(select Unit_Name from Unit where [Products].Sale_UnitID = Unit.Unit_ID) as 'وحدة البيع',(select Unit_Name from Unit where [Products].Buy_UnitID = Unit.Unit_ID) as 'وحدة الشراء',[Barcode] as 'الباركود' ,[MinQty] as 'الحد الادنى',[MaxDiscount] as 'اقصى خصم مسموح',[IS_Tax] as 'هل خاضع للضريبة',Products_Group.Group_Name as 'اسم المجموعة' FROM [dbo].[Products],Products_Group where Products.CurrentState=1 and Products_Group.Group_ID=[Products].Group_ID and Products.Group_ID=" + cbxGroup.SelectedValue + "", "");
 
             DgvSearch.DataSource = tbl;
 
@@ -80,7 +80,7 @@ namespace Sales_Management
         private void btnBarcode_Click(object sender, EventArgs e)
         {
             tbl.Clear();
-            tbl = db.readData("SELECT [Pro_ID] as ' رقم المنتج',[Pro_Name] as 'اسم المنتج',(select Unit_Name from Unit where [Products].Main_UnitID = Unit.Unit_ID) as 'الوحدة الرئيسية',[Qty] as 'الكمية الكلية',[Sale_Price_Before_Tax] as 'سعر التجزئه قبل الضريبة',[Tax_Value] as 'الضريبة %',[Sale_Price_After_Tax] as 'سعر التجزئه بعد الضريبة',(select Unit_Name from Unit where [Products].Sale_UnitID = Unit.Unit_ID) as 'وحدة البيع',(select Unit_Name from Unit where [Products].Buy_UnitID = Unit.Unit_ID) as 'وحدة الشراء',[Barcode] as 'الباركود' ,[MinQty] as 'الحد الادنى',[MaxDiscount] as 'اقصى خصم مسموح',[IS_Tax] as 'هل خاضع للضريبة',Products_Group.Group_Name as 'اسم المجموعة' FROM [dbo].[Products],Products_Group where Products_Group.Group_ID=[Products].Group_ID and Products.[Barcode]=N'" + txtBarcode.Text + "'", "");
+            tbl = db.readData("SELECT [Pro_ID] as ' رقم المنتج',[Pro_Name] as 'اسم المنتج',(select Unit_Name from Unit where [Products].Main_UnitID = Unit.Unit_ID) as 'الوحدة الرئيسية',[Qty] as 'الكمية الكلية',[Sale_Price_Before_Tax] as 'سعر التجزئه قبل الضريبة',[Tax_Value] as 'الضريبة %',[Sale_Price_After_Tax] as 'سعر التجزئه بعد الضريبة',(select Unit_Name from Unit where [Products].Sale_UnitID = Unit.Unit_ID) as 'وحدة البيع',(select Unit_Name from Unit where [Products].Buy_UnitID = Unit.Unit_ID) as 'وحدة الشراء',[Barcode] as 'الباركود' ,[MinQty] as 'الحد الادنى',[MaxDiscount] as 'اقصى خصم مسموح',[IS_Tax] as 'هل خاضع للضريبة',Products_Group.Group_Name as 'اسم المجموعة' FROM [dbo].[Products],Products_Group where Products.CurrentState=1 and Products_Group.Group_ID=[Products].Group_ID and Products.[Barcode]=N'" + txtBarcode.Text + "'", "");
 
             DgvSearch.DataSource = tbl;
             showTotal();
@@ -89,7 +89,7 @@ namespace Sales_Management
         private void btnName_Click(object sender, EventArgs e)
         {
             tbl.Clear();
-            tbl = db.readData("SELECT [Pro_ID] as ' رقم المنتج',[Pro_Name] as 'اسم المنتج',(select Unit_Name from Unit where [Products].Main_UnitID = Unit.Unit_ID) as 'الوحدة الرئيسية',[Qty] as 'الكمية الكلية',[Sale_Price_Before_Tax] as 'سعر التجزئه قبل الضريبة',[Tax_Value] as ' % الضريبة',[Sale_Price_After_Tax] as 'سعر التجزئه بعد الضريبة',(select Unit_Name from Unit where [Products].Sale_UnitID = Unit.Unit_ID) as 'وحدة البيع',(select Unit_Name from Unit where [Products].Buy_UnitID = Unit.Unit_ID) as 'وحدة الشراء',[Barcode] as 'الباركود' ,[MinQty] as 'الحد الادنى',[MaxDiscount] as 'اقصى خصم مسموح',[IS_Tax] as 'هل خاضع للضريبة',Products_Group.Group_Name as 'اسم المجموعة' FROM [dbo].[Products],Products_Group where Products_Group.Group_ID=[Products].Group_ID and [Pro_Name] like N'%" + txtName.Text + "%'", "");
+            tbl = db.readData("SELECT [Pro_ID] as ' رقم المنتج',[Pro_Name] as 'اسم المنتج',(select Unit_Name from Unit where [Products].Main_UnitID = Unit.Unit_ID) as 'الوحدة الرئيسية',[Qty] as 'الكمية الكلية',[Sale_Price_Before_Tax] as 'سعر التجزئه قبل الضريبة',[Tax_Value] as ' % الضريبة',[Sale_Price_After_Tax] as 'سعر التجزئه بعد الضريبة',(select Unit_Name from Unit where [Products].Sale_UnitID = Unit.Unit_ID) as 'وحدة البيع',(select Unit_Name from Unit where [Products].Buy_UnitID = Unit.Unit_ID) as 'وحدة الشراء',[Barcode] as 'الباركود' ,[MinQty] as 'الحد الادنى',[MaxDiscount] as 'اقصى خصم مسموح',[IS_Tax] as 'هل خاضع للضريبة',Products_Group.Group_Name as 'اسم المجموعة' FROM [dbo].[Products],Products_Group where Products.CurrentState=1 and Products_Group.Group_ID=[Products].Group_ID and [Pro_Name] like N'%" + txtName.Text + "%'", "");
 
             DgvSearch.DataSource = tbl;
             showTotal();
@@ -102,11 +102,7 @@ namespace Sales_Management
             {
                 if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    //db.readData("delete from Products_Qty ", "");
-                    //db.readData("delete from Products_Unit ", "");
-                    // beacuase there are cascaded on db
-
-                    db.executeData("delete from Products", "تم مسح البيانات بنجاح", "لا يمكن حذف جميع المنتجات قد يكون هناك منتج متعلق بعمليات اخري عند حذفها يتم حذف هذا المنتج");
+                    db.executeData("update Products set CurrentState=0,Barcode=''", "تم الحذف بنجاح", "");
                     showAllItems();
                 }
             }
@@ -119,11 +115,7 @@ namespace Sales_Management
             {
                 if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    // beacuase there are cascaded on db
-
-                    //db.readData("delete from Products_Qty where Pro_ID=" + DgvSearch.CurrentRow.Cells[0].Value + "", "");
-                    //db.readData("delete from Products_Unit where Pro_ID=" + DgvSearch.CurrentRow.Cells[0].Value + "", "");
-                    db.executeData("delete from Products where Pro_ID=" + DgvSearch.CurrentRow.Cells[0].Value + "", "تم مسح البيانات بنجاح", "لا يمكن حذف هذا المنتج قد يكون هذا المنتج متعلق بعمليات اخري عند حذفها يتم حذف هذا المنتج");
+                    db.executeData("update Products set CurrentState=0,Barcode='' where Pro_ID=" + DgvSearch.CurrentRow.Cells[0].Value + "", "تم الحذف بنجاح", "");
                     showAllItems();
 
                 }

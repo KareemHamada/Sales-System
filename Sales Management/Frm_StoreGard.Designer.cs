@@ -92,7 +92,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.21135F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.9112F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.82239F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 277F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 282F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtRb7h, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
@@ -114,7 +114,7 @@ namespace Sales_Management
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(700, 6);
+            this.label2.Location = new System.Drawing.Point(702, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(217, 40);
@@ -125,11 +125,11 @@ namespace Sales_Management
             // 
             this.txtRb7h.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRb7h.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRb7h.Location = new System.Drawing.Point(925, 4);
+            this.txtRb7h.Location = new System.Drawing.Point(927, 4);
             this.txtRb7h.Margin = new System.Windows.Forms.Padding(4);
             this.txtRb7h.Name = "txtRb7h";
             this.txtRb7h.ReadOnly = true;
-            this.txtRb7h.Size = new System.Drawing.Size(206, 46);
+            this.txtRb7h.Size = new System.Drawing.Size(205, 46);
             this.txtRb7h.TabIndex = 40;
             this.txtRb7h.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -149,11 +149,11 @@ namespace Sales_Management
             // 
             this.txtTotalBuy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotalBuy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalBuy.Location = new System.Drawing.Point(476, 4);
+            this.txtTotalBuy.Location = new System.Drawing.Point(480, 4);
             this.txtTotalBuy.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalBuy.Name = "txtTotalBuy";
             this.txtTotalBuy.ReadOnly = true;
-            this.txtTotalBuy.Size = new System.Drawing.Size(215, 46);
+            this.txtTotalBuy.Size = new System.Drawing.Size(214, 46);
             this.txtTotalBuy.TabIndex = 42;
             this.txtTotalBuy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -162,7 +162,7 @@ namespace Sales_Management
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(285, 6);
+            this.label3.Location = new System.Drawing.Point(289, 6);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(183, 40);
@@ -173,7 +173,7 @@ namespace Sales_Management
             // 
             this.txtTotalSale.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotalSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalSale.Location = new System.Drawing.Point(15, 4);
+            this.txtTotalSale.Location = new System.Drawing.Point(18, 4);
             this.txtTotalSale.Margin = new System.Windows.Forms.Padding(4);
             this.txtTotalSale.Name = "txtTotalSale";
             this.txtTotalSale.ReadOnly = true;
@@ -297,7 +297,7 @@ namespace Sales_Management
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.17623F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.90433F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.8888F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 314F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 319F));
             this.tableLayoutPanel3.Controls.Add(this.cbxStore, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.rbtnOneStore, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.rbtnAllStore, 0, 0);
@@ -319,7 +319,7 @@ namespace Sales_Management
             this.cbxStore.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxStore.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxStore.FormattingEnabled = true;
-            this.cbxStore.Location = new System.Drawing.Point(785, 14);
+            this.cbxStore.Location = new System.Drawing.Point(786, 14);
             this.cbxStore.Margin = new System.Windows.Forms.Padding(4);
             this.cbxStore.Name = "cbxStore";
             this.cbxStore.Size = new System.Drawing.Size(233, 47);
@@ -358,7 +358,7 @@ namespace Sales_Management
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(645, 7);
+            this.label4.Location = new System.Drawing.Point(647, 7);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 40);
@@ -369,7 +369,7 @@ namespace Sales_Management
             // 
             this.txtBarcode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBarcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBarcode.Location = new System.Drawing.Point(331, 4);
+            this.txtBarcode.Location = new System.Drawing.Point(334, 4);
             this.txtBarcode.Margin = new System.Windows.Forms.Padding(4);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(287, 46);

@@ -174,8 +174,6 @@ namespace Sales_Management
         {
             string serial = identifier("Win32_DiskDrive", "SerialNumber");
             string signature = identifier("Win32_DiskDrive", "Signature"); // for hard drive
-            //label2.Text = signature;
-            //label1.Text = serial;
             x = (((Convert.ToDecimal(signature) * 12345 - 3) * 21 - 9) * 2000).ToString();
 
             if (Properties.Settings.Default.Product_Key != x)
@@ -187,21 +185,22 @@ namespace Sales_Management
             {
                 tbl.Clear();
                 if (rbtnManager.Checked)
-                    tbl = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and Type=N'مدير'", "");
+                    tbl = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and Type=N'مدير' and CurrentState=1", "");
                 else if (rbtnEmp.Checked)
-                    tbl = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and Type=N'مستخدم عادى'", "");
+                    tbl = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and Type=N'مستخدم عادى' and CurrentState=1", "");
                 if (tbl.Rows.Count <= 0)
                 {
                     DataTable tblStock = new DataTable();
                     tblStock = db.readData("select * from Stock_Data", "");
                     if (tblStock.Rows.Count <= 0)
                     {
-                        db.executeData("insert into Stock_Data Values (1,N'الخزنة الرئيسية') ", "", "");
+                        string mainStore = "الخزنة الرئيسية";
+                        db.executeData("insert into Stock_Data Values (1,N'"+mainStore+"',1) ", "", "");
                         db.executeData("insert into Stock Values (1,0) ", "", "");
                         db.executeData("insert into Bank Values(0)", "", "");
                     }
                     string type = "مدير";
-                    db.executeData("insert into Users values (1 ,N'921' ,N'921',N'" + type + "',1,0)", "", "");
+                    db.executeData("insert into Users values (1 ,N'921' ,N'921',N'" + type + "',1,0,1)", "", "");
                     
                     db.executeData("insert into User_Setting Values (1, 1,1,1,1,1,1,1,1,1,1,1,1,1)", "", "");
                     db.executeData("insert into User_Customer Values (1, 1,1,1)", "", "");
@@ -216,9 +215,9 @@ namespace Sales_Management
 
                     tbl.Clear();
                     if (rbtnManager.Checked)
-                        tbl = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and Type=N'مدير'", "");
+                        tbl = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and Type=N'مدير' and CurrentState=1", "");
                     else if (rbtnEmp.Checked)
-                        tbl = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and Type=N'مستخدم عادى'", "");
+                        tbl = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and Type=N'مستخدم عادى' and CurrentState=1", "");
 
                 }
                 if (tbl.Rows.Count >= 1)

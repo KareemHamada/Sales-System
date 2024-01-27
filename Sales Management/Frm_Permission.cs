@@ -21,7 +21,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblGroup.Clear();
-            tblGroup = db.readData("SELECT [User_Id] as 'رقم المستخدم',[User_Name] as 'اسم المستخدم',[User_Password] as 'كلمة السر',[Type] as 'نوعة', Stock_Data.Stock_Name as 'الخزنة',Users.Rebh as 'نسبة الربح' FROM[dbo].[Users], Stock_Data where Users.Stock_ID = Stock_Data.Stock_ID", "");
+            tblGroup = db.readData("SELECT [User_Id] as 'رقم المستخدم',[User_Name] as 'اسم المستخدم',[User_Password] as 'كلمة السر',[Type] as 'نوعة', Stock_Data.Stock_Name as 'الخزنة',Users.Rebh as 'نسبة الربح' FROM[dbo].[Users], Stock_Data where Users.CurrentState=1 and Users.Stock_ID = Stock_Data.Stock_ID", "");
             DgvSearch.DataSource = tblGroup;
             tbl.Clear();
             tbl = db.readData("select max (User_ID) from Users", "");
@@ -54,83 +54,73 @@ namespace Sales_Management
 
         }
 
-        int row;
-        //private void Show()
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select * from Users", "");
-
-        //    if (tbl.Rows.Count <= 0)
-        //    {
-        //        MessageBox.Show("لا يوجد بيانات فى هذه الشاشه");
-        //    }
-        //    else
-        //    {
-        //        txtID.Text = tbl.Rows[row][0].ToString();
-        //        txtUserName.Text = tbl.Rows[row][1].ToString();
-        //        txtPassword.Text = tbl.Rows[row][2].ToString();
-        //        cbxType.Text = tbl.Rows[row][3].ToString();
-        //        cbxStock.SelectedValue = Convert.ToDecimal(tbl.Rows[row][4]);
-        //        NudPrice.Value = Convert.ToDecimal(tbl.Rows[row][5]);
-        //    }
-
-        //    btnAdd.Enabled = false;
-        //    btnNew.Enabled = true;
-        //    btnDelete.Enabled = true;
-        //    btnSave.Enabled = true;
-        //}
-
         private void FillStock()
         {
-            cbxStock.DataSource = db.readData("select * from Stock_Data", "");
-            cbxStock.DisplayMember = "Stock_Name";
-            cbxStock.ValueMember = "Stock_ID";
+            try
+            {
+                cbxStock.DataSource = db.readData("select * from Stock_Data where CurrentState=1", "");
+                cbxStock.DisplayMember = "Stock_Name";
+                cbxStock.ValueMember = "Stock_ID";
+            }
+            catch
+            {
+
+            }
+            
         }
         private void FillUsers()
         {
-            cbxUser1.DataSource = db.readData("select * from Users", "");
-            cbxUser1.DisplayMember = "User_Name";
-            cbxUser1.ValueMember = "User_ID";
+            try
+            {
+                cbxUser1.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser1.DisplayMember = "User_Name";
+                cbxUser1.ValueMember = "User_ID";
 
-            cbxUser2.DataSource = db.readData("select * from Users", "");
-            cbxUser2.DisplayMember = "User_Name";
-            cbxUser2.ValueMember = "User_ID";
+                cbxUser2.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser2.DisplayMember = "User_Name";
+                cbxUser2.ValueMember = "User_ID";
 
-            cbxUser3.DataSource = db.readData("select * from Users", "");
-            cbxUser3.DisplayMember = "User_Name";
-            cbxUser3.ValueMember = "User_ID";
+                cbxUser3.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser3.DisplayMember = "User_Name";
+                cbxUser3.ValueMember = "User_ID";
 
-            cbxUser4.DataSource = db.readData("select * from Users", "");
-            cbxUser4.DisplayMember = "User_Name";
-            cbxUser4.ValueMember = "User_ID";
+                cbxUser4.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser4.DisplayMember = "User_Name";
+                cbxUser4.ValueMember = "User_ID";
 
-            cbxUser5.DataSource = db.readData("select * from Users", "");
-            cbxUser5.DisplayMember = "User_Name";
-            cbxUser5.ValueMember = "User_ID";
+                cbxUser5.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser5.DisplayMember = "User_Name";
+                cbxUser5.ValueMember = "User_ID";
 
-            cbxUser6.DataSource = db.readData("select * from Users", "");
-            cbxUser6.DisplayMember = "User_Name";
-            cbxUser6.ValueMember = "User_ID";
+                cbxUser6.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser6.DisplayMember = "User_Name";
+                cbxUser6.ValueMember = "User_ID";
 
-            cbxUser7.DataSource = db.readData("select * from Users", "");
-            cbxUser7.DisplayMember = "User_Name";
-            cbxUser7.ValueMember = "User_ID";
+                cbxUser7.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser7.DisplayMember = "User_Name";
+                cbxUser7.ValueMember = "User_ID";
 
-            cbxUser8.DataSource = db.readData("select * from Users", "");
-            cbxUser8.DisplayMember = "User_Name";
-            cbxUser8.ValueMember = "User_ID";
+                cbxUser8.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser8.DisplayMember = "User_Name";
+                cbxUser8.ValueMember = "User_ID";
 
-            cbxUser9.DataSource = db.readData("select * from Users", "");
-            cbxUser9.DisplayMember = "User_Name";
-            cbxUser9.ValueMember = "User_ID";
+                cbxUser9.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser9.DisplayMember = "User_Name";
+                cbxUser9.ValueMember = "User_ID";
 
-            //cbxUser10.DataSource = db.readData("select * from Users", "");
-            //cbxUser10.DisplayMember = "User_Name";
-            //cbxUser10.ValueMember = "User_ID";
+                //cbxUser10.DataSource = db.readData("select * from Users", "");
+                //cbxUser10.DisplayMember = "User_Name";
+                //cbxUser10.ValueMember = "User_ID";
 
-            cbxUser11.DataSource = db.readData("select * from Users", "");
-            cbxUser11.DisplayMember = "User_Name";
-            cbxUser11.ValueMember = "User_ID";
+                cbxUser11.DataSource = db.readData("select * from Users where CurrentState=1", "");
+                cbxUser11.DisplayMember = "User_Name";
+                cbxUser11.ValueMember = "User_ID";
+            }
+            catch
+            {
+
+            }
+            
         }
         private void Frm_Permission_Load(object sender, EventArgs e)
         {
@@ -166,13 +156,13 @@ namespace Sales_Management
             }
             DataTable tblCheckIfExist = new DataTable();
             tblCheckIfExist.Clear();
-            tblCheckIfExist = db.readData("select * from Users where User_Name=N'"+ txtUserName.Text + "' and User_Password=N'"+ txtPassword.Text + "'", "");
+            tblCheckIfExist = db.readData("select * from Users where User_Name=N'"+ txtUserName.Text + "' and User_Password=N'"+ txtPassword.Text + "' and CurrentState=1", "");
             if(tblCheckIfExist.Rows.Count > 0)
             {
                 MessageBox.Show("اسم المستخدم و كلمة السر تم اختيارهم من قبل");
                 return;
             }
-            db.executeData("insert into Users Values (" + txtID.Text + " , N'" + txtUserName.Text + "' ,N'" + txtPassword.Text + "' ,N'" + cbxType.Text + "' ," + cbxStock.SelectedValue + " , " + NudPrice.Value + ")", "تم الادخال بنجاح", "");
+            db.executeData("insert into Users Values (" + txtID.Text + " , N'" + txtUserName.Text + "' ,N'" + txtPassword.Text + "' ,N'" + cbxType.Text + "' ," + cbxStock.SelectedValue + " , " + NudPrice.Value + ",1)", "تم الادخال بنجاح", "");
             db.executeData("insert into User_Setting Values (" + txtID.Text + " , 0,0,0,0,0,0,0,0,0,0,0,0,0)", "", "");
             db.executeData("insert into User_Customer Values (" + txtID.Text + " , 0,0,0)", "", "");
             db.executeData("insert into User_Supplier Values (" + txtID.Text + " , 0,0,0)", "", "");
@@ -194,54 +184,6 @@ namespace Sales_Management
             AutoNumber();
         }
 
-        //private void btnFirst_Click(object sender, EventArgs e)
-        //{
-        //    row = 0;
-        //    Show();
-        //}
-
-        //private void btnPrev_Click(object sender, EventArgs e)
-        //{
-        //    if (row == 0)
-        //    {
-        //        tbl.Clear();
-        //        tbl = db.readData("select count(User_ID) from Users", "");
-        //        row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //        Show();
-        //    }
-        //    else
-        //    {
-
-
-        //        row--;
-        //        Show();
-        //    }
-        //}
-
-        //private void btnNext_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(User_ID) from Users", "");
-        //    if (Convert.ToInt32(tbl.Rows[0][0]) - 1 == row)
-        //    {
-        //        row = 0;
-        //        Show();
-        //    }
-        //    else
-        //    {
-        //        row++;
-        //        Show();
-        //    }
-        //}
-
-        //private void btnLast_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(User_ID) from Users", "");
-        //    row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //    Show();
-        //}
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtPassword.Text == "" || txtUserName.Text == "")
@@ -256,14 +198,14 @@ namespace Sales_Management
             }
             DataTable tblCheckIfExist = new DataTable();
             tblCheckIfExist.Clear();
-            tblCheckIfExist = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and User_Id !="+ txtID.Text + "", "");
+            tblCheckIfExist = db.readData("select * from Users where User_Name=N'" + txtUserName.Text + "' and User_Password=N'" + txtPassword.Text + "' and User_Id !="+ txtID.Text + " and CurrentState=1", "");
             if (tblCheckIfExist.Rows.Count > 0)
             {
                 MessageBox.Show("اسم المستخدم و كلمة السر تم اختيارهم من قبل");
                 return;
             }
 
-            db.executeData("update  Users set  User_Name=N'" + txtUserName.Text + "' ,User_Password=N'" + txtPassword.Text + "' ,Type=N'" + cbxType.Text + "' ,Stock_ID=" + cbxStock.SelectedValue + ",Rebh="+ NudPrice.Value + " where User_ID=" + txtID.Text + " ", "تم التعديل بنجاح", "");
+            db.executeData("update Users set User_Name=N'" + txtUserName.Text + "' ,User_Password=N'" + txtPassword.Text + "' ,Type=N'" + cbxType.Text + "' ,Stock_ID=" + cbxStock.SelectedValue + ",Rebh="+ NudPrice.Value + " where User_ID=" + txtID.Text + " ", "تم التعديل بنجاح", "");
             AutoNumber();
         }
 
@@ -271,41 +213,31 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                //db.readData("delete from User_Setting where User_ID=" + txtID.Text + "", "");
-                //db.readData("delete from User_Customer where User_ID=" + txtID.Text + "", "");
-                //db.readData("delete from User_Supplier where User_ID=" + txtID.Text + "", "");
-                //db.readData("delete from User_Buy where User_ID=" + txtID.Text + "", "");
-                //db.readData("delete from User_Sale where User_ID=" + txtID.Text + "", "");
-                //db.readData("delete from User_Return where User_ID=" + txtID.Text + "", "");
-                //db.readData("delete from User_StockBank where User_ID=" + txtID.Text + "", "");
-                //db.readData("delete from User_Emp where User_ID=" + txtID.Text + "", "");
-                //db.readData("delete from User_Deserved where User_ID=" + txtID.Text + "", "");
-                ////db.readData("delete from User_Report where User_ID=" + txtID.Text + "", "");
-                //db.readData("delete from User_BackUp where User_ID=" + txtID.Text + "", "");
+                db.executeData("update Users set CurrentState=0 where User_ID=" + txtID.Text + " ", "تم الحذف بنجاح", "");
 
-                bool res = db.executeData("delete from Users where User_ID=" + txtID.Text + "", "تم مسح البيانات بنجاح", "لا يمكن حذف هذا المستخدم قد يكون هذا المستخدم متعلق بعمليات اخري عند حذفها يتم حذف هذا المستخدم");
-                if (res)
+                DataTable tblUser = new DataTable();
+                tblUser = db.readData("select * from Users where CurrentState=1", "");
+                if (tblUser.Rows.Count <= 0)
                 {
-                    DataTable tblUser = new DataTable();
-                    tblUser = db.readData("select * from Users", "");
-                    if (tblUser.Rows.Count <= 0)
-                    {
-                        string type = "مدير";
-                        db.executeData("insert into Users values (1 ,N'921' ,N'921',N'" + type + "',1,0)", "", "");
-                        
-                        db.executeData("insert into User_Setting Values (1, 1,1,1,1,1,1,1,1,1,1,1,1,1)", "", "");
-                        db.executeData("insert into User_Customer Values (1, 1,1,1)", "", "");
-                        db.executeData("insert into User_Supplier Values (1, 1,1,1)", "", "");
-                        db.executeData("insert into User_Buy Values (1, 1,1,1)", "", "");
-                        db.executeData("insert into User_Sale Values (1 , 1,1,1,1)", "", "");
-                        db.executeData("insert into User_Return Values (1 , 1,1)", "", "");
-                        db.executeData("insert into User_StockBank Values (1 , 1,1,1,1,1,1,1,1,1)", "", "");
-                        db.executeData("insert into User_Emp Values (1 , 1,1,1,1,1,1,1)", "", "");
-                        db.executeData("insert into User_Deserved Values (1 , 1,1,1,1)", "", "");
-                        db.executeData("insert into User_BackUp Values (1, 1,1)", "", "");   
-                    }
+                    string type = "مدير";
+                    db.executeData("insert into Users values ("+ (Convert.ToInt32(txtID.Text) + 1) + " ,N'921' ,N'921',N'" + type + "',1,0,1)", "", "");
+
+                    db.executeData("insert into User_Setting Values (" + (Convert.ToInt32(txtID.Text) + 1) + ", 1,1,1,1,1,1,1,1,1,1,1,1,1)", "", "");
+                    db.executeData("insert into User_Customer Values (" + (Convert.ToInt32(txtID.Text) + 1) + ", 1,1,1)", "", "");
+                    db.executeData("insert into User_Supplier Values (" + (Convert.ToInt32(txtID.Text) + 1) + ", 1,1,1)", "", "");
+                    db.executeData("insert into User_Buy Values (" + (Convert.ToInt32(txtID.Text) + 1) + ", 1,1,1)", "", "");
+                    db.executeData("insert into User_Sale Values (" + (Convert.ToInt32(txtID.Text) + 1) + " , 1,1,1,1)", "", "");
+                    db.executeData("insert into User_Return Values (" + (Convert.ToInt32(txtID.Text) + 1) + " , 1,1)", "", "");
+                    db.executeData("insert into User_StockBank Values (" + (Convert.ToInt32(txtID.Text) + 1) + " , 1,1,1,1,1,1,1,1,1)", "", "");
+                    db.executeData("insert into User_Emp Values (" + (Convert.ToInt32(txtID.Text) + 1) + " , 1,1,1,1,1,1,1)", "", "");
+                    db.executeData("insert into User_Deserved Values (" + (Convert.ToInt32(txtID.Text) + 1) + " , 1,1,1,1)", "", "");
+                    db.executeData("insert into User_BackUp Values (" + (Convert.ToInt32(txtID.Text) + 1) + ", 1,1)", "", "");
                 }
-                
+                //if (res)
+                //{
+
+                //}
+
                 AutoNumber();
             }
         }

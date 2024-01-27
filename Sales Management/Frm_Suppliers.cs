@@ -21,7 +21,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblSearch.Clear();
-            tblSearch = db.readData("SELECT [Sup_ID] as 'رقم المورد',[Sup_Name] as 'اسم المورد',[Sup_CardID] as 'رقم البطاقة',[Sup_Phone] as 'رقم التليفون',[Notes] as 'ملاحظات'FROM [dbo].[Suppliers]", "");
+            tblSearch = db.readData("SELECT [Sup_ID] as 'رقم المورد',[Sup_Name] as 'اسم المورد',[Sup_CardID] as 'رقم البطاقة',[Sup_Phone] as 'رقم التليفون',[Notes] as 'ملاحظات'FROM [dbo].[Suppliers] where CurrentState=1", "");
             DgvSearch.DataSource = tblSearch;
 
             tbl.Clear();
@@ -46,30 +46,7 @@ namespace Sales_Management
             btnSave.Enabled = false;
 
         }
-        //int row;
-        //private void show()
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select * from Suppliers", "");
-        //    if (tbl.Rows.Count <= 0)
-        //    {
-        //        MessageBox.Show("لا يوجد بيانات في هذه الشاشة");
-        //    }
-        //    else
-        //    {
-        //        txtID.Text = tbl.Rows[row][0].ToString();
-        //        txtName.Text = tbl.Rows[row][1].ToString();
-        //        txtPhone.Text = tbl.Rows[row][2].ToString();
-        //        txtCardID.Text = tbl.Rows[row][3].ToString();
-        //        txtNotes.Text = tbl.Rows[row][4].ToString();
-        //    }
 
-        //    btnAdd.Enabled = false;
-        //    btnNew.Enabled = true;
-        //    btnDelete.Enabled = true;
-        //    btnDeleteAll.Enabled = true;
-        //    btnSave.Enabled = true;
-        //}
         private void Frm_Suppliers_Load(object sender, EventArgs e)
         {
             AutoNumber();
@@ -82,7 +59,7 @@ namespace Sales_Management
                 MessageBox.Show("من فضلك ادخل اسم المورد");
                 return;
             }
-            db.executeData("insert into Suppliers values (" + txtID.Text + ",N'" + txtName.Text + "',N'" + txtCardID.Text + "' ,N'" + txtPhone.Text + "' ,N'" + txtNotes.Text + "')", "تم الادخال بنجاح", "");
+            db.executeData("insert into Suppliers values (" + txtID.Text + ",N'" + txtName.Text + "',N'" + txtCardID.Text + "' ,N'" + txtPhone.Text + "' ,N'" + txtNotes.Text + "',1)", "تم الادخال بنجاح", "");
 
 
             AutoNumber();
@@ -109,7 +86,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انت متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("Delete from Suppliers where Sup_ID=" + txtID.Text + "", "تم مسح المورد بنجاح", "");
+                db.executeData("Update Suppliers set CurrentState =0 where Sup_ID=" + txtID.Text + "", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }
@@ -118,80 +95,10 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انت متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("Delete from Suppliers", "تم مسح جميع الموردين بنجاح", "");
+                db.executeData("Update Suppliers set CurrentState =0", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }
-
-        //private void btnLast_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Sup_ID) from Suppliers", "");
-        //    row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //    show();
-        //}
-
-        //private void btnNext_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Sup_ID) from Suppliers", "");
-
-        //    if (Convert.ToInt32(tbl.Rows[0][0]) - 1 == row)
-        //    {
-        //        row = 0;
-        //        show();
-        //    }
-        //    else
-        //    {
-        //        row++;
-        //        show();
-        //    }
-        //}
-
-        //private void btnPrev_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Sup_ID) from Suppliers", "");
-
-        //    if (row == 0)
-        //    {
-        //        row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //        show();
-        //    }
-        //    else
-        //    {
-        //        row--;
-        //        show();
-        //    }
-        //}
-
-       
-        //private void btnSearch_Click(object sender, EventArgs e)
-        //{
-        //    DataTable tblSearch = new DataTable();
-        //    tblSearch.Clear();
-
-        //    tblSearch = db.readData("select * from Suppliers where Sup_Name like N'%" + txtSearch.Text + "%'", "");
-
-        //    try
-        //    {
-        //        txtID.Text = tblSearch.Rows[0][0].ToString();
-        //        txtName.Text = tblSearch.Rows[0][1].ToString();
-        //        txtAddress.Text = tblSearch.Rows[0][2].ToString();
-        //        txtPhone.Text = tblSearch.Rows[0][3].ToString();
-        //        txtNotes.Text = tblSearch.Rows[0][4].ToString();
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //    }
-
-        //    btnAdd.Enabled = false;
-        //    btnNew.Enabled = true;
-        //    btnDelete.Enabled = true;
-        //    btnDeleteAll.Enabled = true;
-        //    btnSave.Enabled = true;
-        //}
 
         private void Frm_Suppliers_FormClosing(object sender, FormClosingEventArgs e)
         {

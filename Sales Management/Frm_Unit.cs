@@ -22,7 +22,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblUnit.Clear();
-            tblUnit = db.readData("select Unit_ID as 'رقم الوحدة' ,Unit_Name as 'اسم الوحدة' from Unit", "");
+            tblUnit = db.readData("select Unit_ID as 'رقم الوحدة' ,Unit_Name as 'اسم الوحدة' from Unit where CurrentState=1", "");
             DgvSearch.DataSource = tblUnit;
             tbl.Clear();
             tbl = db.readData("select max (Unit_ID) from Unit", "");
@@ -47,29 +47,6 @@ namespace Sales_Management
 
         }
 
-        //int row;
-        //private void Show()
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select * from Unit", "");
-
-        //    if (tbl.Rows.Count <= 0)
-        //    {
-        //        MessageBox.Show("لا يوجد بيانات فى هذه الشاشه");
-        //    }
-        //    else
-        //    {
-        //        txtID.Text = tbl.Rows[row][0].ToString();
-        //        txtName.Text = tbl.Rows[row][1].ToString();
-
-        //        btnAdd.Enabled = false;
-        //        btnNew.Enabled = true;
-        //        btnDelete.Enabled = true;
-        //        btnDeleteAll.Enabled = true;
-        //        btnSave.Enabled = true;
-        //    }
-        //}
-
         private void Frm_Unit_Load(object sender, EventArgs e)
         {
             AutoNumber();
@@ -82,7 +59,7 @@ namespace Sales_Management
                 MessageBox.Show("من فضلك ادخل اسم الوحدة");
                 return;
             }
-            db.executeData("insert into Unit Values (" + txtID.Text + " ,N'" + txtName.Text + "')", "تم الادخال بنجاح", "");
+            db.executeData("insert into Unit Values (" + txtID.Text + " ,N'" + txtName.Text + "',1)", "تم الادخال بنجاح", "");
 
             AutoNumber();
         }
@@ -107,7 +84,8 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("delete from Unit where Unit_ID=" + txtID.Text + "", "تم مسح البيانات بنجاح", "لا يمكن حذف هذه الوحدة قد يكون هذه الوحدة متعلقة بعمليات اخري عند حذفها يتم حذف هذه الوحدة");
+                db.readData("update Unit set CurrentState=0 where Unit_ID=" + txtID.Text + "", "تم الحذف بنجاح");
+
                 AutoNumber();
             }
         }
@@ -116,58 +94,10 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انتا متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("delete from Unit ", "تم مسح البيانات بنجاح", "لا يمكن حذف جميع الوحدات قد يكون هناك وحدة متعلقة بعمليات اخري عند حذفها يتم حذف هذه الوحدة");
+                db.readData("update Unit set CurrentState=0", "تم الحذف بنجاح");
                 AutoNumber();
             }
         }
-
-        //private void btnFirst_Click(object sender, EventArgs e)
-        //{
-        //    row = 0;
-        //    Show();
-        //}
-
-        //private void btnPrev_Click(object sender, EventArgs e)
-        //{
-        //    if (row == 0)
-        //    {
-        //        tbl.Clear();
-        //        tbl = db.readData("select count(Unit_ID) from Unit", "");
-        //        row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //        Show();
-        //    }
-        //    else
-        //    {
-
-
-        //        row--;
-        //        Show();
-        //    }
-        //}
-
-        //private void btnNext_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Unit_ID) from Unit", "");
-        //    if (Convert.ToInt32(tbl.Rows[0][0]) - 1 == row)
-        //    {
-        //        row = 0;
-        //        Show();
-        //    }
-        //    else
-        //    {
-        //        row++;
-        //        Show();
-        //    }
-        //}
-
-        //private void btnLast_Click(object sender, EventArgs e)
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select count(Unit_ID) from Unit", "");
-        //    row = Convert.ToInt32(tbl.Rows[0][0]) - 1;
-        //    Show();
-        //}
 
         private void DgvSearch_MouseClick(object sender, MouseEventArgs e)
         {

@@ -108,7 +108,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.55056F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.80899F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.5618F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 227F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
             this.tableLayoutPanel2.Controls.Add(this.txtTotal, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnDelete, 2, 0);
@@ -125,7 +125,7 @@ namespace Sales_Management
             // 
             this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotal.Location = new System.Drawing.Point(17, 9);
+            this.txtTotal.Location = new System.Drawing.Point(19, 9);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(195, 46);
@@ -137,7 +137,7 @@ namespace Sales_Management
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(234, 12);
+            this.label1.Location = new System.Drawing.Point(237, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 40);
             this.label1.TabIndex = 20;
@@ -149,7 +149,7 @@ namespace Sales_Management
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = global::Sales_Management.Properties.Resources.exit_full_screen;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(633, 4);
+            this.btnDelete.Location = new System.Drawing.Point(635, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(225, 56);
             this.btnDelete.TabIndex = 22;
@@ -218,7 +218,7 @@ namespace Sales_Management
             this.cbxSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxSupplier.FormattingEnabled = true;
-            this.cbxSupplier.Location = new System.Drawing.Point(466, 9);
+            this.cbxSupplier.Location = new System.Drawing.Point(466, 20);
             this.cbxSupplier.Name = "cbxSupplier";
             this.cbxSupplier.Size = new System.Drawing.Size(291, 47);
             this.cbxSupplier.TabIndex = 13;

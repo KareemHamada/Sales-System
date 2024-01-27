@@ -22,7 +22,7 @@ namespace Sales_Management
         private void AutoNumber()
         {
             tblSearch.Clear();
-            tblSearch = db.readData("SELECT [Des_ID] as 'رقم النوع',[Name] as 'اسم النوع'FROM [dbo].[Deserved_Type]", "");
+            tblSearch = db.readData("SELECT [Des_ID] as 'رقم النوع',[Name] as 'اسم النوع'FROM [dbo].[Deserved_Type] where CurrentState=1", "");
             DgvSearch.DataSource = tblSearch;
             tbl.Clear();
             tbl = db.readData("Select Max(Des_ID) from Deserved_Type", "");
@@ -44,27 +44,7 @@ namespace Sales_Management
             btnSave.Enabled = false;
 
         }
-        //int row;
-        //private void show()
-        //{
-        //    tbl.Clear();
-        //    tbl = db.readData("select * from Deserved_Type", "");
-        //    if (tbl.Rows.Count <= 0)
-        //    {
-        //        MessageBox.Show("لا يوجد بيانات في هذه الشاشة");
-        //    }
-        //    else
-        //    {
-        //        txtID.Text = tbl.Rows[row][0].ToString();
-        //        txtName.Text = tbl.Rows[row][1].ToString();
-        //    }
 
-        //    btnAdd.Enabled = false;
-        //    btnNew.Enabled = true;
-        //    btnDelete.Enabled = true;
-        //    btnDeleteAll.Enabled = true;
-        //    btnSave.Enabled = true;
-        //}
         private void Frm_DeservedType_Load(object sender, EventArgs e)
         {
             AutoNumber();
@@ -77,7 +57,7 @@ namespace Sales_Management
                 MessageBox.Show("من فضلك ادخل اسم النوع");
                 return;
             }
-            db.executeData("insert into Deserved_Type values (" + txtID.Text + ",N'" + txtName.Text + "')", "تم الادخال بنجاح", "");
+            db.executeData("insert into Deserved_Type values (" + txtID.Text + ",N'" + txtName.Text + "',1)", "تم الادخال بنجاح", "");
             AutoNumber();
         }
 
@@ -102,7 +82,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انت متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("Delete from Deserved_Type where Des_ID=" + txtID.Text + "", "تم مسح نوع الاسم بنجاح", "");
+                db.executeData("Update Deserved_Type set CurrentState=0 where Des_ID=" + txtID.Text + "", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }
@@ -111,7 +91,7 @@ namespace Sales_Management
         {
             if (MessageBox.Show("هل انت متاكد من مسح البيانات", "تاكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                db.executeData("Delete from Deserved_Type", "تم مسح جميع البيانات بنجاح", "");
+                db.executeData("Update Deserved_Type set CurrentState=0", "تم الحذف بنجاح", "");
                 AutoNumber();
             }
         }

@@ -21,7 +21,7 @@ namespace Sales_Management
         public void FillStock()
         {
 
-            cbxStock.DataSource = db.readData("select * from Stock_Data", "");
+            cbxStock.DataSource = db.readData("select * from Stock_Data where CurrentState=1", "");
             cbxStock.DisplayMember = "Stock_Name";
             cbxStock.ValueMember = "Stock_ID";
         }
@@ -86,16 +86,6 @@ namespace Sales_Management
             }
         }
 
-        //private void btnStock_Click(object sender, EventArgs e)
-        //{
-        //    Frm_StockAddMoney frm = new Frm_StockAddMoney();
-        //    frm.ShowDialog();
-        //}
-
-        //private void btnbank_Click(object sender, EventArgs e)
-        //{
-        //    Frm_BankAddMoney frm = new Frm_BankAddMoney();
-        //    frm.ShowDialog();
-        //}
+        
     }
 }

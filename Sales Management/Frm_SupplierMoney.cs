@@ -23,7 +23,7 @@ namespace Sales_Management
             stock_ID = Convert.ToString(Properties.Settings.Default.Stock_ID);
             try
             {
-                db.FillComboBox(cbxSupplier, "select * from Suppliers", "Sup_Name", "Sup_ID");
+                db.FillComboBox(cbxSupplier, "select * from Suppliers where CurrentState=1", "Sup_Name", "Sup_ID");
             }
             catch (Exception) { }
 
@@ -110,7 +110,7 @@ namespace Sales_Management
                         
                         db.executeData("delete from Supplier_Money where Order_ID=" + DgvSearch.CurrentRow.Cells[0].Value + " and Price =" + DgvSearch.CurrentRow.Cells[2].Value + "", "", "");
 
-                        db.executeData("insert  into Supplier_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + DgvSearch.CurrentRow.Cells[2].Value + " , '" + d + "' , " + cbxSupplier.SelectedValue + ")", "تم تسديد المبلغ بنجاح", "");
+                        db.executeData("insert into Supplier_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + DgvSearch.CurrentRow.Cells[2].Value + " , '" + d + "' , " + cbxSupplier.SelectedValue + ")", "تم تسديد المبلغ بنجاح", "");
 
                         db.executeData("insert into Stock_Pull (Stock_ID , Money ,Date ,Name ,Type ,Reason) values (" + stock_ID + " ," + DgvSearch.CurrentRow.Cells[2].Value + " ,N'" + d + "' ,N'" + Properties.Settings.Default.USERNAME + "' ,N'مستحقات الى موردين', N'') ", "", "");
                         db.executeData("update stock set Money=Money - " + DgvSearch.CurrentRow.Cells[2].Value + " where Stock_ID=" + stock_ID + "", "", "");
