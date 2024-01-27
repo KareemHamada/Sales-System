@@ -29,6 +29,7 @@ namespace Sales_Management
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.اعداداتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnProgramSetting = new System.Windows.Forms.ToolStripMenuItem();
@@ -869,6 +870,7 @@ namespace Sales_Management
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Arabic Typesetting", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
