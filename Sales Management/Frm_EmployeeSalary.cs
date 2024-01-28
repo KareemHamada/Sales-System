@@ -98,7 +98,7 @@ namespace Sales_Management
         {
             DataTable tblPrice = new DataTable();
             tblPrice.Clear();
-            tblPrice = db.readData("select Price from Employee_SalaryMinus where Emp_ID=" + cbxEmployee.SelectedValue + "", "");
+            tblPrice = db.readData("select Price from Employee_SalaryMinus where Emp_ID=" + cbxEmployee.SelectedValue + " and Pay=N'NO'", "");
             decimal totsa = Convert.ToDecimal(txtTotalSalary.Text);
 
             for (int i = 0; i <= tblPrice.Rows.Count - 1; i++)
@@ -107,6 +107,11 @@ namespace Sales_Management
                 {
                     db.executeData("update Employee_SalaryMinus set Pay='YES' where Emp_ID=" + cbxEmployee.SelectedValue + " and Pay=N'NO' and Price=" + Convert.ToDecimal(tblPrice.Rows[i][0]) + "", "", "");
                     totsa = totsa - Convert.ToDecimal(tblPrice.Rows[i][0]);
+                }
+                else
+                {
+                    db.executeData("update Employee_SalaryMinus set price="+(Convert.ToDecimal(tblPrice.Rows[i][0]) - totsa) +" where Emp_ID=" + cbxEmployee.SelectedValue + " and Pay=N'NO' and Price=" + Convert.ToDecimal(tblPrice.Rows[i][0]) + "", "", "");
+                    return;
                 }
             }
 
@@ -143,10 +148,15 @@ namespace Sales_Management
                 MessageBox.Show("المبلغ الموجود فى الخزنة غير كافى لاجراء العملية", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            if (Convert.ToDecimal(txtSafySalary.Text) > 0)
+            {
+                db.executeData("insert into Stock_Pull (Stock_ID , Money ,Date ,Name ,Type ,Reason) values (" + stock_ID + " ," + txtSafySalary.Text + " ,N'" + d + "' ,N'" + Properties.Settings.Default.USERNAME + "' ,N'مرتبات', N'" + txtNotes.Text + "') ", "", "");
 
-            db.executeData("insert into Stock_Pull (Stock_ID , Money ,Date ,Name ,Type ,Reason) values (" + stock_ID + " ," + txtSafySalary.Text + " ,N'" + d + "' ,N'"+Properties.Settings.Default.USERNAME+"' ,N'مرتبات', N'" + txtNotes.Text + "') ", "", "");
+                db.executeData("update stock set Money=Money - " + txtSafySalary.Text + " where Stock_ID=" + stock_ID + "", "", "");
+            }
+            
 
-            db.executeData("update stock set Money=Money - " + txtSafySalary.Text + " where Stock_ID=" + stock_ID + "", "", "");
+            
             db.executeData("insert into Employee_Salary values (" + txtID.Text + "," + cbxEmployee.SelectedValue + " ," + txtTotalSalary.Text + " ," + txtToalBorrow.Text + " ," + txtSafySalary.Text + " ,N'" + d + "' ,N'" + dReminder + "' ,N'" + txtNotes.Text + "')", "تمت عملبة الصرف بنجاح", "");
 
             try
