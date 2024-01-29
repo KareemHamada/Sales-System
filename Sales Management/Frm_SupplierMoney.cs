@@ -49,7 +49,7 @@ namespace Sales_Management
 
             if (rbtnAllSup.Checked)
             {
-                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',Suppliers.Sup_Name as 'اسم المورد',[Price] as 'السعر',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق' FROM [dbo].[Supplier_Money],Suppliers where Suppliers.Sup_ID =[Supplier_Money].Sup_ID", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',Suppliers.Sup_Name as 'اسم المورد',[Price] as 'السعر',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق',Suppliers.Sup_ID FROM [dbo].[Supplier_Money],Suppliers where Suppliers.Sup_ID =[Supplier_Money].Sup_ID", "");
             }
             else if (rbtnOneSupplier.Checked)
             {
@@ -58,7 +58,7 @@ namespace Sales_Management
                     MessageBox.Show("من فضلك اختر مورد صحيح");
                     return;
                 }
-                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',Suppliers.Sup_Name as 'اسم المورد',[Price] as 'السعر',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق' FROM [dbo].[Supplier_Money],Suppliers where Suppliers.Sup_ID =[Supplier_Money].Sup_ID and Suppliers.Sup_ID=" + cbxSupplier.SelectedValue + " ", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',Suppliers.Sup_Name as 'اسم المورد',[Price] as 'السعر',[Order_Date] as 'تاريخ الفاتورة',[Reminder_Date] as 'تاريخ الاستحقاق',Suppliers.Sup_ID FROM [dbo].[Supplier_Money],Suppliers where Suppliers.Sup_ID =[Supplier_Money].Sup_ID and Suppliers.Sup_ID=" + cbxSupplier.SelectedValue + " ", "");
 
 
             }
@@ -71,6 +71,7 @@ namespace Sales_Management
 
             }
             txtTotal.Text = Math.Round(totalPrice, 2).ToString();
+            DgvSearch.Columns[5].Visible = false;
         }
 
         private void btnPay_Click(object sender, EventArgs e)
@@ -99,7 +100,13 @@ namespace Sales_Management
                 stock_Money = Convert.ToDecimal(tblStock.Rows[0][1]);
                 //MessageBox.Show(DgvSearch.CurrentRow.Cells[2].Value.ToString());
                 if (rbtnPayAll.Checked)
-                {   
+                {
+                    if (Convert.ToInt32(DgvSearch.CurrentRow.Cells[5].Value) != Convert.ToInt32(cbxSupplier.SelectedValue))
+                    {
+                        MessageBox.Show("يجب ان يكون المورد الذى تم اختياره هو نفسه المورد المراد السداد اليه ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
                     if (Convert.ToDecimal(DgvSearch.CurrentRow.Cells[2].Value) > stock_Money)
                     {
                         MessageBox.Show("المبلغ الموجود فى الخزنة غير كافى لاجراء العملية", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -122,6 +129,11 @@ namespace Sales_Management
 
                 else if (rbtnPayPart.Checked)
                 {
+                    if (Convert.ToInt32(DgvSearch.CurrentRow.Cells[5].Value) != Convert.ToInt32(cbxSupplier.SelectedValue))
+                    {
+                        MessageBox.Show("يجب ان يكون المورد الذى تم اختياره هو نفسه المورد المراد السداد اليه ", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                     if (Convert.ToDecimal(NudPrice.Value) > stock_Money)
                     {
                         MessageBox.Show("المبلغ الموجود فى الخزنة غير كافى لاجراء العملية", "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
