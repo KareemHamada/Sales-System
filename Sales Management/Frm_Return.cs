@@ -752,6 +752,8 @@ namespace Sales_Management
             decimal Qty = 0;
             Int64 RawID = 1;
             decimal TotalProductPrice = 0;
+            decimal totalOrderPrice = 0;
+
             tblSalesRebh.Clear();
             tblSalesRebh = db.readData("select * from Sales_Rb7h where Order_ID=" + DgvSearch.CurrentRow.Cells[0].Value + " and Pro_ID =" + DgvSearch.CurrentRow.Cells[16].Value + "", "");
 
@@ -768,8 +770,10 @@ namespace Sales_Management
                 if (Qty - nudValue >= 1)
                 {
                     TotalProductPrice = (Qty - nudValue) * Convert.ToInt64(tblSalesRebh.Rows[x][14]);
+                    totalOrderPrice = nudValue * Convert.ToInt64(tblSalesRebh.Rows[x][14]);
                     // update sales rebh table
-                    db.executeData("update Sales_Rb7h set Qty=Qty - " + nudValue + ",TotalProductPrice="+TotalProductPrice+" where ID=" + RawID + "", "", "");
+                    db.executeData("update Sales_Rb7h set Qty=Qty - " + nudValue + ",TotalProductPrice=" + TotalProductPrice + " where ID=" + RawID + "", "", "");
+                    db.executeData("update Sales_Rb7h set TotalOrder= TotalOrder- " + totalOrderPrice + " where Order_ID=" + Convert.ToInt64(tblSalesRebh.Rows[x][0]) + "", "", "");
 
                     // update Products_Qty table
                     tblInsertIntoProductQty.Clear();

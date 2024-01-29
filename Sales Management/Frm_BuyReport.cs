@@ -256,7 +256,7 @@ namespace Sales_Management
                             def = Convert.ToDecimal(tblQty.Rows[0][0]) - realQtyTest;
                             if (def < 0)
                             {
-                                MessageBox.Show("الكمية المراد حذفها غير موجوده فى المخزن " + DgvSearch.CurrentRow.Cells[13].Value, "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("الكمية المراد حذفها غير موجوده فى مخزن " + DgvSearch.CurrentRow.Cells[13].Value, "تاكيد", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 return;
                             }
                         }
