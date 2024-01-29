@@ -56,7 +56,8 @@
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Elhayah.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>D7CB5537B7AA5B8806CA727E7BD1B58D72AA2F92</ManifestCertificateThumbprint>
@@ -1131,7 +1132,6 @@
     <None Include="Resources\Elhayah.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Elhayah.ico" />
     <Content Include="onlineshop_78377.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

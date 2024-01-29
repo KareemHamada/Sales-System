@@ -49,7 +49,7 @@ namespace Sales_Management
             tbl.Clear();
             if (rbtnAllSup.Checked)
             {
-                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',[Price] as 'المبلغ المدفوع',[Date] as 'تاريخ ادفع' ,Suppliers.Sup_Name as 'اسم المورد' FROM [dbo].[Supplier_Report] ,Suppliers where Suppliers.Sup_ID =Supplier_Report.Sup_ID", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',[Price] as 'المبلغ المدفوع',[Date] as 'تاريخ ادفع' ,Suppliers.Sup_Name as 'اسم المورد',Users.User_Name as 'المستخدم' FROM [dbo].[Supplier_Report] ,Suppliers,Users where Suppliers.Sup_ID =Supplier_Report.Sup_ID and Supplier_Report.User_ID = Users.User_Id", "");
             }
             else if (rbtnOneSupplier.Checked)
             {
@@ -58,7 +58,7 @@ namespace Sales_Management
                     MessageBox.Show("من فضلك اختر مورد صحيح");
                     return;
                 }
-                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',[Price] as 'المبلغ المدفوع',[Date] as 'تاريخ ادفع' ,Suppliers.Sup_Name as 'اسم المورد' FROM [dbo].[Supplier_Report] ,Suppliers where Suppliers.Sup_ID =Supplier_Report.Sup_ID and Suppliers.Sup_ID =" + cbxSupplier.SelectedValue + "", "");
+                tbl = db.readData("SELECT [Order_ID] as 'رقم الفاتورة',[Price] as 'المبلغ المدفوع',[Date] as 'تاريخ ادفع' ,Suppliers.Sup_Name as 'اسم المورد',Users.User_Name as 'المستخدم' FROM [dbo].[Supplier_Report] ,Suppliers,Users where Suppliers.Sup_ID =Supplier_Report.Sup_ID and Supplier_Report.User_ID = Users.User_Id and Suppliers.Sup_ID =" + cbxSupplier.SelectedValue + "", "");
 
             }
             DgvSearch.DataSource = tbl;

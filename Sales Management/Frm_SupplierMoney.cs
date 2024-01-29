@@ -117,7 +117,7 @@ namespace Sales_Management
                         
                         db.executeData("delete from Supplier_Money where Order_ID=" + DgvSearch.CurrentRow.Cells[0].Value + " and Price =" + DgvSearch.CurrentRow.Cells[2].Value + "", "", "");
 
-                        db.executeData("insert into Supplier_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + DgvSearch.CurrentRow.Cells[2].Value + " , '" + d + "' , " + cbxSupplier.SelectedValue + ")", "تم تسديد المبلغ بنجاح", "");
+                        db.executeData("insert into Supplier_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + DgvSearch.CurrentRow.Cells[2].Value + " , '" + d + "' , " + cbxSupplier.SelectedValue + ","+ Properties.Settings.Default.User_ID + ")", "تم تسديد المبلغ بنجاح", "");
 
                         db.executeData("insert into Stock_Pull (Stock_ID , Money ,Date ,Name ,Type ,Reason) values (" + stock_ID + " ," + DgvSearch.CurrentRow.Cells[2].Value + " ,N'" + d + "' ,N'" + Properties.Settings.Default.USERNAME + "' ,N'مستحقات الى موردين', N'') ", "", "");
                         db.executeData("update stock set Money=Money - " + DgvSearch.CurrentRow.Cells[2].Value + " where Stock_ID=" + stock_ID + "", "", "");
@@ -144,7 +144,7 @@ namespace Sales_Management
                         decimal money = Convert.ToDecimal(DgvSearch.CurrentRow.Cells[2].Value) - NudPrice.Value;
 
                         db.executeData("update Supplier_Money set Price=" + money + " where Order_ID=" + DgvSearch.CurrentRow.Cells[0].Value + " and Price=" + DgvSearch.CurrentRow.Cells[2].Value + "", "", "");
-                        db.executeData("insert  into Supplier_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + NudPrice.Value + " , '" + d + "' , " + cbxSupplier.SelectedValue + ")", "تم تسديد المبلغ بنجاح", "");
+                        db.executeData("insert  into Supplier_Report values (" + DgvSearch.CurrentRow.Cells[0].Value + " , " + NudPrice.Value + " , '" + d + "' , " + cbxSupplier.SelectedValue + "," + Properties.Settings.Default.User_ID + ")", "تم تسديد المبلغ بنجاح", "");
 
                         db.executeData("insert into Stock_Pull (Stock_ID , Money ,Date ,Name ,Type ,Reason) values (" + stock_ID + " ," + NudPrice.Value + " ,N'" + d + "' ,N'" + Properties.Settings.Default.USERNAME + "' ,N'مستحقات الى موردين', N'') ", "", "");
                         db.executeData("update stock set Money=Money - " + NudPrice.Value + " where Stock_ID=" + stock_ID + "", "", "");

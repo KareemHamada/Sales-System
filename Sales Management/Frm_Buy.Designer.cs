@@ -29,7 +29,7 @@ namespace Sales_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpParent = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -216,7 +216,7 @@ namespace Sales_Management
             this.cbxStore.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxStore.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxStore.FormattingEnabled = true;
-            this.cbxStore.Location = new System.Drawing.Point(527, 9);
+            this.cbxStore.Location = new System.Drawing.Point(527, 16);
             this.cbxStore.Name = "cbxStore";
             this.cbxStore.Size = new System.Drawing.Size(219, 40);
             this.cbxStore.TabIndex = 41;
@@ -334,14 +334,14 @@ namespace Sales_Management
             this.Column5,
             this.Column6,
             this.Column8});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arabic Typesetting", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvBuy.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arabic Typesetting", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(31)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvBuy.DefaultCellStyle = dataGridViewCellStyle1;
             this.DgvBuy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvBuy.Location = new System.Drawing.Point(3, 157);
             this.DgvBuy.Name = "DgvBuy";
@@ -512,7 +512,7 @@ namespace Sales_Management
             this.cbxItems.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxItems.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxItems.FormattingEnabled = true;
-            this.cbxItems.Location = new System.Drawing.Point(565, 18);
+            this.cbxItems.Location = new System.Drawing.Point(565, 26);
             this.cbxItems.Name = "cbxItems";
             this.cbxItems.Size = new System.Drawing.Size(252, 40);
             this.cbxItems.TabIndex = 12;
@@ -605,7 +605,7 @@ namespace Sales_Management
             this.cbxGroub.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxGroub.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxGroub.FormattingEnabled = true;
-            this.cbxGroub.Location = new System.Drawing.Point(5, 18);
+            this.cbxGroub.Location = new System.Drawing.Point(5, 26);
             this.cbxGroub.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxGroub.Name = "cbxGroub";
             this.cbxGroub.Size = new System.Drawing.Size(155, 40);
@@ -692,7 +692,7 @@ namespace Sales_Management
             this.cbxSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxSupplier.FormattingEnabled = true;
-            this.cbxSupplier.Location = new System.Drawing.Point(687, 26);
+            this.cbxSupplier.Location = new System.Drawing.Point(687, 18);
             this.cbxSupplier.Name = "cbxSupplier";
             this.cbxSupplier.Size = new System.Drawing.Size(208, 40);
             this.cbxSupplier.TabIndex = 12;
