@@ -773,6 +773,8 @@ namespace Sales_Management
                     totalOrderPrice = nudValue * Convert.ToInt64(tblSalesRebh.Rows[x][14]);
                     // update sales rebh table
                     db.executeData("update Sales_Rb7h set Qty=Qty - " + nudValue + ",TotalProductPrice=" + TotalProductPrice + " where ID=" + RawID + "", "", "");
+
+                    // update total order for all products of the same order
                     db.executeData("update Sales_Rb7h set TotalOrder= TotalOrder- " + totalOrderPrice + " where Order_ID=" + Convert.ToInt64(tblSalesRebh.Rows[x][0]) + "", "", "");
 
                     // update Products_Qty table
@@ -793,10 +795,14 @@ namespace Sales_Management
                 else if (Qty - nudValue == 0)
                 {
                     TotalProductPrice = Qty * Convert.ToInt64(tblSalesRebh.Rows[x][14]);
+                    totalOrderPrice = nudValue * Convert.ToInt64(tblSalesRebh.Rows[x][14]);
 
 
                     // update sales rebh table
                     db.executeData("update Sales_Rb7h set Qty=Qty - " + nudValue + ",TotalProductPrice=" + TotalProductPrice + " where ID=" + RawID + "", "", "");
+
+                    // update total order for all products of the same order
+                    db.executeData("update Sales_Rb7h set TotalOrder= TotalOrder- " + totalOrderPrice + " where Order_ID=" + Convert.ToInt64(tblSalesRebh.Rows[x][0]) + "", "", "");
 
                     // update Products_Qty table
                     tblInsertIntoProductQty.Clear();
@@ -818,9 +824,14 @@ namespace Sales_Management
                 else if (Qty - nudValue < 0)
                 {
                     TotalProductPrice = Qty * Convert.ToInt64(tblSalesRebh.Rows[x][14]);
+                    totalOrderPrice = nudValue * Convert.ToInt64(tblSalesRebh.Rows[x][14]);
 
                     // update sales rebh table and this will be deleted
                     db.executeData("update Sales_Rb7h set Qty=Qty - " + Qty + ",TotalProductPrice=" + TotalProductPrice + " where ID=" + RawID + "", "", "");
+
+                    // update total order for all products of the same order
+                    db.executeData("update Sales_Rb7h set TotalOrder= TotalOrder- " + totalOrderPrice + " where Order_ID=" + Convert.ToInt64(tblSalesRebh.Rows[x][0]) + "", "", "");
+
                     // update Products_Qty table
                     tblInsertIntoProductQty.Clear();
                     tblInsertIntoProductQty = db.readData("select top 1 * from Products_Qty where Pro_ID=" + proID + " and Store_ID=" + cbxStore2.SelectedValue + " and Buy_Price=" + Convert.ToDecimal(tblSalesRebh.Rows[x][16]) * QtyInMain + "", "");
