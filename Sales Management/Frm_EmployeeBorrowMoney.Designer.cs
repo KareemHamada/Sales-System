@@ -33,40 +33,40 @@ namespace Sales_Management
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtCreditor = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.NudPrice = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtNotes = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtCreditor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.DtpReminder = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbxEmployee = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.DtpDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxEmployee = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtNotes = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpParent.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudPrice)).BeginInit();
+            this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tlpParent
@@ -139,41 +139,21 @@ namespace Sales_Management
             this.tableLayoutPanel1.Size = new System.Drawing.Size(822, 300);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // txtCreditor
+            // tableLayoutPanel8
             // 
-            this.txtCreditor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCreditor.Location = new System.Drawing.Point(16, 14);
-            this.txtCreditor.Name = "txtCreditor";
-            this.txtCreditor.Size = new System.Drawing.Size(254, 46);
-            this.txtCreditor.TabIndex = 4;
-            this.txtCreditor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(299, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 40);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "اسم الدائن:";
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.96355F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.03645F));
-            this.tableLayoutPanel7.Controls.Add(this.txtNotes, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label9, 0, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 150);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(411, 75);
-            this.tableLayoutPanel7.TabIndex = 4;
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.71253F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.28747F));
+            this.tableLayoutPanel8.Controls.Add(this.NudPrice, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(411, 225);
+            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(411, 75);
+            this.tableLayoutPanel8.TabIndex = 8;
             // 
             // NudPrice
             // 
@@ -206,6 +186,43 @@ namespace Sales_Management
             this.label3.TabIndex = 6;
             this.label3.Text = "المبلغ:";
             // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.96355F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.03645F));
+            this.tableLayoutPanel7.Controls.Add(this.txtNotes, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label9, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 150);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(411, 75);
+            this.tableLayoutPanel7.TabIndex = 4;
+            // 
+            // txtNotes
+            // 
+            this.txtNotes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtNotes.Location = new System.Drawing.Point(3, 11);
+            this.txtNotes.Multiline = true;
+            this.txtNotes.Name = "txtNotes";
+            this.txtNotes.Size = new System.Drawing.Size(225, 53);
+            this.txtNotes.TabIndex = 21;
+            this.txtNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(272, 17);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 40);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "ملاحظات:";
+            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
@@ -221,6 +238,26 @@ namespace Sales_Management
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(411, 75);
             this.tableLayoutPanel6.TabIndex = 3;
+            // 
+            // txtCreditor
+            // 
+            this.txtCreditor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCreditor.Location = new System.Drawing.Point(16, 14);
+            this.txtCreditor.Name = "txtCreditor";
+            this.txtCreditor.Size = new System.Drawing.Size(254, 46);
+            this.txtCreditor.TabIndex = 4;
+            this.txtCreditor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(299, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 40);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "اسم الدائن:";
             // 
             // tableLayoutPanel5
             // 
@@ -273,6 +310,28 @@ namespace Sales_Management
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(411, 75);
             this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // cbxEmployee
+            // 
+            this.cbxEmployee.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbxEmployee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxEmployee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbxEmployee.FormattingEnabled = true;
+            this.cbxEmployee.Location = new System.Drawing.Point(16, 25);
+            this.cbxEmployee.Name = "cbxEmployee";
+            this.cbxEmployee.Size = new System.Drawing.Size(254, 47);
+            this.cbxEmployee.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(292, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 40);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "اختر موظف:";
             // 
             // tableLayoutPanel3
             // 
@@ -347,28 +406,6 @@ namespace Sales_Management
             this.label1.TabIndex = 1;
             this.label1.Text = "رقم العملية:";
             // 
-            // cbxEmployee
-            // 
-            this.cbxEmployee.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbxEmployee.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbxEmployee.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbxEmployee.FormattingEnabled = true;
-            this.cbxEmployee.Location = new System.Drawing.Point(16, 14);
-            this.cbxEmployee.Name = "cbxEmployee";
-            this.cbxEmployee.Size = new System.Drawing.Size(254, 47);
-            this.cbxEmployee.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(291, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 40);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "اختر موظف:";
-            // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
@@ -383,27 +420,6 @@ namespace Sales_Management
             this.tableLayoutPanel10.Size = new System.Drawing.Size(411, 75);
             this.tableLayoutPanel10.TabIndex = 7;
             // 
-            // txtNotes
-            // 
-            this.txtNotes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotes.Location = new System.Drawing.Point(3, 11);
-            this.txtNotes.Multiline = true;
-            this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(225, 53);
-            this.txtNotes.TabIndex = 21;
-            this.txtNotes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(272, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 40);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "ملاحظات:";
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -415,22 +431,6 @@ namespace Sales_Management
             this.label6.Size = new System.Drawing.Size(90, 40);
             this.label6.TabIndex = 11;
             this.label6.Text = "السلفيات";
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.71253F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.28747F));
-            this.tableLayoutPanel8.Controls.Add(this.NudPrice, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(411, 225);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 1;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(411, 75);
-            this.tableLayoutPanel8.TabIndex = 8;
             // 
             // Frm_EmployeeBorrowMoney
             // 
@@ -451,9 +451,11 @@ namespace Sales_Management
             this.tlpParent.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudPrice)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NudPrice)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -464,8 +466,6 @@ namespace Sales_Management
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -109,8 +109,7 @@ namespace Sales_Management
             // 
             this.DgvSearch.AllowUserToAddRows = false;
             this.DgvSearch.AllowUserToDeleteRows = false;
-            this.DgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DgvSearch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DgvSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvSearch.BackgroundColor = System.Drawing.Color.White;
             this.DgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -161,7 +160,7 @@ namespace Sales_Management
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.47287F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.83721F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 430F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 435F));
             this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtOrderNumber, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.checkOrderNumber, 0, 0);
@@ -182,7 +181,7 @@ namespace Sales_Management
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(913, 6);
+            this.label2.Location = new System.Drawing.Point(916, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 40);
             this.label2.TabIndex = 34;
@@ -192,9 +191,9 @@ namespace Sales_Management
             // 
             this.txtOrderNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtOrderNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtOrderNumber.Location = new System.Drawing.Point(971, 3);
+            this.txtOrderNumber.Location = new System.Drawing.Point(973, 3);
             this.txtOrderNumber.Name = "txtOrderNumber";
-            this.txtOrderNumber.Size = new System.Drawing.Size(136, 46);
+            this.txtOrderNumber.Size = new System.Drawing.Size(135, 46);
             this.txtOrderNumber.TabIndex = 33;
             this.txtOrderNumber.Text = "1";
             this.txtOrderNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -216,7 +215,7 @@ namespace Sales_Management
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(661, 6);
+            this.label4.Location = new System.Drawing.Point(666, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 40);
             this.label4.TabIndex = 36;
@@ -226,7 +225,7 @@ namespace Sales_Management
             // 
             this.DtpTo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpTo.Location = new System.Drawing.Point(436, 3);
+            this.DtpTo.Location = new System.Drawing.Point(441, 3);
             this.DtpTo.Name = "DtpTo";
             this.DtpTo.Size = new System.Drawing.Size(217, 46);
             this.DtpTo.TabIndex = 37;
@@ -235,9 +234,9 @@ namespace Sales_Management
             // 
             this.DtpFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFrom.Location = new System.Drawing.Point(713, 3);
+            this.DtpFrom.Location = new System.Drawing.Point(717, 3);
             this.DtpFrom.Name = "DtpFrom";
-            this.DtpFrom.Size = new System.Drawing.Size(187, 46);
+            this.DtpFrom.Size = new System.Drawing.Size(186, 46);
             this.DtpFrom.TabIndex = 35;
             // 
             // tableLayoutPanel3
@@ -248,7 +247,7 @@ namespace Sales_Management
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.89784F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.33927F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.68041F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 313F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 317F));
             this.tableLayoutPanel3.Controls.Add(this.cbxUser, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.rbtnOneUser, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.rbtnAllUser, 0, 0);
@@ -274,9 +273,9 @@ namespace Sales_Management
             this.cbxUser.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxUser.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUser.FormattingEnabled = true;
-            this.cbxUser.Location = new System.Drawing.Point(671, 17);
+            this.cbxUser.Location = new System.Drawing.Point(674, 17);
             this.cbxUser.Name = "cbxUser";
-            this.cbxUser.Size = new System.Drawing.Size(251, 47);
+            this.cbxUser.Size = new System.Drawing.Size(250, 47);
             this.cbxUser.TabIndex = 13;
             // 
             // rbtnOneUser
@@ -284,7 +283,7 @@ namespace Sales_Management
             this.rbtnOneUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnOneUser.AutoSize = true;
             this.rbtnOneUser.ForeColor = System.Drawing.Color.Blue;
-            this.rbtnOneUser.Location = new System.Drawing.Point(936, 7);
+            this.rbtnOneUser.Location = new System.Drawing.Point(938, 7);
             this.rbtnOneUser.Name = "rbtnOneUser";
             this.rbtnOneUser.Size = new System.Drawing.Size(145, 44);
             this.rbtnOneUser.TabIndex = 12;
@@ -311,9 +310,9 @@ namespace Sales_Management
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Sales_Management.Properties.Resources.search1;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(534, 6);
+            this.btnSearch.Location = new System.Drawing.Point(538, 6);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(131, 46);
+            this.btnSearch.Size = new System.Drawing.Size(130, 46);
             this.btnSearch.TabIndex = 14;
             this.btnSearch.Text = "بحث";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -325,9 +324,9 @@ namespace Sales_Management
             this.btnPrintAll.ForeColor = System.Drawing.Color.Black;
             this.btnPrintAll.Image = global::Sales_Management.Properties.Resources.printer1;
             this.btnPrintAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrintAll.Location = new System.Drawing.Point(318, 6);
+            this.btnPrintAll.Location = new System.Drawing.Point(323, 6);
             this.btnPrintAll.Name = "btnPrintAll";
-            this.btnPrintAll.Size = new System.Drawing.Size(210, 46);
+            this.btnPrintAll.Size = new System.Drawing.Size(209, 46);
             this.btnPrintAll.TabIndex = 25;
             this.btnPrintAll.Text = "طباعة تقرير مفصل";
             this.btnPrintAll.UseVisualStyleBackColor = true;
@@ -339,7 +338,7 @@ namespace Sales_Management
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Image = global::Sales_Management.Properties.Resources.remove;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(20, 6);
+            this.btnDelete.Location = new System.Drawing.Point(23, 6);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(275, 47);
@@ -374,7 +373,7 @@ namespace Sales_Management
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.61905F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.33333F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.047619F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 255F));
             this.tableLayoutPanel6.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnDeleteSelected, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnPrintOrder, 0, 0);
@@ -394,7 +393,7 @@ namespace Sales_Management
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(532, 9);
+            this.label7.Location = new System.Drawing.Point(535, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(237, 40);
             this.label7.TabIndex = 44;
@@ -407,10 +406,10 @@ namespace Sales_Management
             this.btnDeleteSelected.ForeColor = System.Drawing.Color.Black;
             this.btnDeleteSelected.Image = global::Sales_Management.Properties.Resources.remove;
             this.btnDeleteSelected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteSelected.Location = new System.Drawing.Point(785, 6);
+            this.btnDeleteSelected.Location = new System.Drawing.Point(787, 6);
             this.btnDeleteSelected.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDeleteSelected.Name = "btnDeleteSelected";
-            this.btnDeleteSelected.Size = new System.Drawing.Size(211, 46);
+            this.btnDeleteSelected.Size = new System.Drawing.Size(210, 46);
             this.btnDeleteSelected.TabIndex = 43;
             this.btnDeleteSelected.Text = "حذف الفاتورة المحددة";
             this.btnDeleteSelected.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -423,9 +422,9 @@ namespace Sales_Management
             this.btnPrintOrder.ForeColor = System.Drawing.Color.Black;
             this.btnPrintOrder.Image = global::Sales_Management.Properties.Resources.printer1;
             this.btnPrintOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPrintOrder.Location = new System.Drawing.Point(1003, 6);
+            this.btnPrintOrder.Location = new System.Drawing.Point(1004, 6);
             this.btnPrintOrder.Name = "btnPrintOrder";
-            this.btnPrintOrder.Size = new System.Drawing.Size(263, 46);
+            this.btnPrintOrder.Size = new System.Drawing.Size(262, 46);
             this.btnPrintOrder.TabIndex = 23;
             this.btnPrintOrder.Text = "طباعة الفاتورة المحددة";
             this.btnPrintOrder.UseVisualStyleBackColor = true;
@@ -435,10 +434,10 @@ namespace Sales_Management
             // 
             this.txtUserRb7h.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUserRb7h.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUserRb7h.Location = new System.Drawing.Point(306, 6);
+            this.txtUserRb7h.Location = new System.Drawing.Point(311, 6);
             this.txtUserRb7h.Name = "txtUserRb7h";
             this.txtUserRb7h.ReadOnly = true;
-            this.txtUserRb7h.Size = new System.Drawing.Size(211, 46);
+            this.txtUserRb7h.Size = new System.Drawing.Size(210, 46);
             this.txtUserRb7h.TabIndex = 45;
             this.txtUserRb7h.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -447,7 +446,7 @@ namespace Sales_Management
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(262, 9);
+            this.label8.Location = new System.Drawing.Point(267, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 40);
             this.label8.TabIndex = 46;
@@ -461,7 +460,7 @@ namespace Sales_Management
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.6195F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.59847F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.78967F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 247F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253F));
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtTotal, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label5, 2, 0);
@@ -492,7 +491,7 @@ namespace Sales_Management
             // 
             this.txtTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotal.Location = new System.Drawing.Point(793, 5);
+            this.txtTotal.Location = new System.Drawing.Point(794, 5);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(194, 46);
@@ -504,7 +503,7 @@ namespace Sales_Management
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(678, 0);
+            this.label5.Location = new System.Drawing.Point(680, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 57);
             this.label5.TabIndex = 38;
@@ -514,10 +513,10 @@ namespace Sales_Management
             // 
             this.txtTotalTax.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtTotalTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTotalTax.Location = new System.Drawing.Point(455, 5);
+            this.txtTotalTax.Location = new System.Drawing.Point(458, 5);
             this.txtTotalTax.Name = "txtTotalTax";
             this.txtTotalTax.ReadOnly = true;
-            this.txtTotalTax.Size = new System.Drawing.Size(194, 46);
+            this.txtTotalTax.Size = new System.Drawing.Size(193, 46);
             this.txtTotalTax.TabIndex = 39;
             this.txtTotalTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -526,7 +525,7 @@ namespace Sales_Management
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(255, 8);
+            this.label6.Location = new System.Drawing.Point(258, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(193, 40);
             this.label6.TabIndex = 40;
@@ -536,7 +535,7 @@ namespace Sales_Management
             // 
             this.txtPriceTax.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPriceTax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPriceTax.Location = new System.Drawing.Point(19, 5);
+            this.txtPriceTax.Location = new System.Drawing.Point(21, 5);
             this.txtPriceTax.Name = "txtPriceTax";
             this.txtPriceTax.ReadOnly = true;
             this.txtPriceTax.Size = new System.Drawing.Size(213, 46);

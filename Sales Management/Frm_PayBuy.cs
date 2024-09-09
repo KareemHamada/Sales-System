@@ -28,7 +28,11 @@ namespace Sales_Management
             }
             txtBakey.Text = "0.0";
             txtMadfoua.Text = "0.0";
-            
+            // move to the next butoon of the collection
+            // get nakdy from the obove property 
+            // get me one of the following code of the above one 
+            // if nakdy it will be recived in the loggs 
+
             if (Properties.Settings.Default.isNakdy)
             {
                 txtMadfoua.Text = (Properties.Settings.Default.TotalOrder).ToString();

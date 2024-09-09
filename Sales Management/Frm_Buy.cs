@@ -653,7 +653,17 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    rpt.PrintToPrinter(1, true, 0, 0);
+
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
+
+                    //rpt.PrintToPrinter(1, true, 0, 0);
                     //frm.ShowDialog();
                 }
                 else if (Properties.Settings.Default.BuyPrintKind == "A4")
@@ -666,7 +676,16 @@ namespace Sales_Management
 
                     System.Drawing.Printing.PrintDocument printDocument = new System.Drawing.Printing.PrintDocument();
                     rpt.PrintOptions.PrinterName = Properties.Settings.Default.PrinterName;
-                    rpt.PrintToPrinter(1, true, 0, 0);
+
+                    if (Properties.Settings.Default.ShowBeforePrint)
+                    {
+                        frm.ShowDialog();
+                    }
+                    else
+                    {
+                        rpt.PrintToPrinter(1, true, 0, 0);
+                    }
+                    //rpt.PrintToPrinter(1, true, 0, 0);
                     //frm.ShowDialog();
                 }
             }

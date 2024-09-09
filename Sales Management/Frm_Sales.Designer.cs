@@ -416,7 +416,7 @@ namespace Sales_Management
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 380F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 382F));
             this.tableLayoutPanel7.Controls.Add(this.rbtnCustAagel, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.rbtnCustNakdy, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label12, 4, 0);
@@ -436,7 +436,7 @@ namespace Sales_Management
             // 
             this.rbtnCustAagel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnCustAagel.AutoSize = true;
-            this.rbtnCustAagel.Location = new System.Drawing.Point(1077, 6);
+            this.rbtnCustAagel.Location = new System.Drawing.Point(1078, 6);
             this.rbtnCustAagel.Name = "rbtnCustAagel";
             this.rbtnCustAagel.Size = new System.Drawing.Size(100, 38);
             this.rbtnCustAagel.TabIndex = 48;
@@ -449,7 +449,7 @@ namespace Sales_Management
             this.rbtnCustNakdy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnCustNakdy.AutoSize = true;
             this.rbtnCustNakdy.Checked = true;
-            this.rbtnCustNakdy.Location = new System.Drawing.Point(1187, 6);
+            this.rbtnCustNakdy.Location = new System.Drawing.Point(1188, 6);
             this.rbtnCustNakdy.Name = "rbtnCustNakdy";
             this.rbtnCustNakdy.Size = new System.Drawing.Size(106, 38);
             this.rbtnCustNakdy.TabIndex = 47;
@@ -463,7 +463,7 @@ namespace Sales_Management
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(642, 8);
+            this.label12.Location = new System.Drawing.Point(644, 8);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(90, 34);
             this.label12.TabIndex = 50;
@@ -474,7 +474,7 @@ namespace Sales_Management
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(937, 8);
+            this.label14.Location = new System.Drawing.Point(939, 8);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(128, 34);
             this.label14.TabIndex = 58;
@@ -483,7 +483,7 @@ namespace Sales_Management
             // txtCustomer
             // 
             this.txtCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCustomer.Location = new System.Drawing.Point(386, 5);
+            this.txtCustomer.Location = new System.Drawing.Point(388, 5);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(226, 40);
             this.txtCustomer.TabIndex = 51;
@@ -493,7 +493,7 @@ namespace Sales_Management
             // 
             this.DtpReminder.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtpReminder.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpReminder.Location = new System.Drawing.Point(759, 5);
+            this.DtpReminder.Location = new System.Drawing.Point(761, 5);
             this.DtpReminder.Name = "DtpReminder";
             this.DtpReminder.Size = new System.Drawing.Size(169, 40);
             this.DtpReminder.TabIndex = 59;

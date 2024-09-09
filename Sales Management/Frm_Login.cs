@@ -170,6 +170,7 @@ namespace Sales_Management
             return result;
         }
         string x = "0";
+        // btn loggin and cheer if the log in the privilledge of the count of the loggs 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string serial = identifier("Win32_DiskDrive", "SerialNumber");
@@ -244,7 +245,7 @@ namespace Sales_Management
             }
             
         }
-
+        // exit from the program in this line of code 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
