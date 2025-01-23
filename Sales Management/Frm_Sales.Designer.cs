@@ -59,6 +59,8 @@ namespace Sales_Management
             this.label14 = new System.Windows.Forms.Label();
             this.txtCustomer = new System.Windows.Forms.TextBox();
             this.DtpReminder = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DiscountInputValue = new System.Windows.Forms.NumericUpDown();
             this.DgvSale = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +84,7 @@ namespace Sales_Management
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DiscountInputValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvSale)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -179,7 +182,7 @@ namespace Sales_Management
             this.cbxItems.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxItems.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxItems.FormattingEnabled = true;
-            this.cbxItems.Location = new System.Drawing.Point(610, 11);
+            this.cbxItems.Location = new System.Drawing.Point(610, 18);
             this.cbxItems.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxItems.Name = "cbxItems";
             this.cbxItems.Size = new System.Drawing.Size(226, 40);
@@ -272,7 +275,7 @@ namespace Sales_Management
             this.cbxGroub.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxGroub.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxGroub.FormattingEnabled = true;
-            this.cbxGroub.Location = new System.Drawing.Point(3, 18);
+            this.cbxGroub.Location = new System.Drawing.Point(3, 11);
             this.cbxGroub.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxGroub.Name = "cbxGroub";
             this.cbxGroub.Size = new System.Drawing.Size(206, 40);
@@ -357,7 +360,7 @@ namespace Sales_Management
             this.cbxCustomer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxCustomer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxCustomer.FormattingEnabled = true;
-            this.cbxCustomer.Location = new System.Drawing.Point(698, 15);
+            this.cbxCustomer.Location = new System.Drawing.Point(698, 22);
             this.cbxCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxCustomer.Name = "cbxCustomer";
             this.cbxCustomer.Size = new System.Drawing.Size(216, 40);
@@ -409,20 +412,23 @@ namespace Sales_Management
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.ColumnCount = 7;
+            this.tableLayoutPanel7.ColumnCount = 8;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.20325F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.79675F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 175F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 382F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 255F));
             this.tableLayoutPanel7.Controls.Add(this.rbtnCustAagel, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.rbtnCustNakdy, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label12, 4, 0);
             this.tableLayoutPanel7.Controls.Add(this.label14, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.txtCustomer, 5, 0);
             this.tableLayoutPanel7.Controls.Add(this.DtpReminder, 3, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label2, 6, 0);
+            this.tableLayoutPanel7.Controls.Add(this.DiscountInputValue, 7, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 70);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
@@ -436,9 +442,9 @@ namespace Sales_Management
             // 
             this.rbtnCustAagel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnCustAagel.AutoSize = true;
-            this.rbtnCustAagel.Location = new System.Drawing.Point(1078, 6);
+            this.rbtnCustAagel.Location = new System.Drawing.Point(1098, 6);
             this.rbtnCustAagel.Name = "rbtnCustAagel";
-            this.rbtnCustAagel.Size = new System.Drawing.Size(100, 38);
+            this.rbtnCustAagel.Size = new System.Drawing.Size(95, 38);
             this.rbtnCustAagel.TabIndex = 48;
             this.rbtnCustAagel.Text = "عميل أجل";
             this.rbtnCustAagel.UseVisualStyleBackColor = true;
@@ -449,9 +455,9 @@ namespace Sales_Management
             this.rbtnCustNakdy.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbtnCustNakdy.AutoSize = true;
             this.rbtnCustNakdy.Checked = true;
-            this.rbtnCustNakdy.Location = new System.Drawing.Point(1188, 6);
+            this.rbtnCustNakdy.Location = new System.Drawing.Point(1199, 6);
             this.rbtnCustNakdy.Name = "rbtnCustNakdy";
-            this.rbtnCustNakdy.Size = new System.Drawing.Size(106, 38);
+            this.rbtnCustNakdy.Size = new System.Drawing.Size(95, 38);
             this.rbtnCustNakdy.TabIndex = 47;
             this.rbtnCustNakdy.TabStop = true;
             this.rbtnCustNakdy.Text = "عميل نقدى";
@@ -463,7 +469,7 @@ namespace Sales_Management
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(644, 8);
+            this.label12.Location = new System.Drawing.Point(667, 8);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(90, 34);
             this.label12.TabIndex = 50;
@@ -474,7 +480,7 @@ namespace Sales_Management
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(939, 8);
+            this.label14.Location = new System.Drawing.Point(962, 8);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(128, 34);
             this.label14.TabIndex = 58;
@@ -483,7 +489,7 @@ namespace Sales_Management
             // txtCustomer
             // 
             this.txtCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCustomer.Location = new System.Drawing.Point(388, 5);
+            this.txtCustomer.Location = new System.Drawing.Point(411, 5);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(226, 40);
             this.txtCustomer.TabIndex = 51;
@@ -493,10 +499,36 @@ namespace Sales_Management
             // 
             this.DtpReminder.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DtpReminder.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpReminder.Location = new System.Drawing.Point(761, 5);
+            this.DtpReminder.Location = new System.Drawing.Point(784, 5);
             this.DtpReminder.Name = "DtpReminder";
             this.DtpReminder.Size = new System.Drawing.Size(169, 40);
             this.DtpReminder.TabIndex = 59;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(303, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 34);
+            this.label2.TabIndex = 60;
+            this.label2.Text = "الخصم:";
+            // 
+            // DiscountInputValue
+            // 
+            this.DiscountInputValue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.DiscountInputValue.DecimalPlaces = 2;
+            this.DiscountInputValue.Location = new System.Drawing.Point(4, 5);
+            this.DiscountInputValue.Maximum = new decimal(new int[] {
+            1569325056,
+            23283064,
+            0,
+            0});
+            this.DiscountInputValue.Name = "DiscountInputValue";
+            this.DiscountInputValue.Size = new System.Drawing.Size(248, 40);
+            this.DiscountInputValue.TabIndex = 61;
+            this.DiscountInputValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DgvSale
             // 
@@ -758,6 +790,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DiscountInputValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvSale)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -816,5 +849,7 @@ namespace Sales_Management
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         public System.Windows.Forms.ComboBox cbxGroub;
         private System.Windows.Forms.CheckBox cbxChooseGroub;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown DiscountInputValue;
     }
 }

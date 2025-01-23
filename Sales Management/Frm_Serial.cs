@@ -44,10 +44,16 @@ namespace Sales_Management
         private void Frm_Serial_Load(object sender, EventArgs e)
         {
             string serial = identifier("Win32_DiskDrive", "SerialNumber");
-            string signature = identifier("Win32_DiskDrive", "Signature"); // for hard drive
-            label2.Text = signature;
+            //string signature = identifier("Win32_DiskDrive", "Signature"); // for hard drive
+
+            string volumeSerial = identifier("Win32_LogicalDisk", "VolumeSerialNumber");
+            long numericValue = Convert.ToInt64(volumeSerial, 16); // Convert hex to decimal
+
+
+
+            label2.Text = numericValue.ToString();
             label1.Text = serial;
-            x = (((Convert.ToDecimal(signature) * 12345 - 3) * 21 - 9) * 2000).ToString();
+            x = (((numericValue * 12345 - 3) * 21 - 9) * 2000).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -144,7 +144,7 @@ namespace Sales_Management
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.69492F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.30508F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -163,7 +163,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.Controls.Add(this.cbxPrinter, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btnSavePrinter, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(190, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(191, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -171,7 +171,7 @@ namespace Sales_Management
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(630, 298);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(629, 298);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label5
@@ -179,7 +179,7 @@ namespace Sales_Management
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(120, 17);
+            this.label5.Location = new System.Drawing.Point(119, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(391, 40);
             this.label5.TabIndex = 12;
@@ -193,7 +193,7 @@ namespace Sales_Management
             this.cbxPrinter.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxPrinter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxPrinter.FormattingEnabled = true;
-            this.cbxPrinter.Location = new System.Drawing.Point(76, 98);
+            this.cbxPrinter.Location = new System.Drawing.Point(76, 99);
             this.cbxPrinter.Name = "cbxPrinter";
             this.cbxPrinter.Size = new System.Drawing.Size(478, 47);
             this.cbxPrinter.TabIndex = 13;
@@ -204,7 +204,7 @@ namespace Sales_Management
             this.btnSavePrinter.ForeColor = System.Drawing.Color.Black;
             this.btnSavePrinter.Image = global::Sales_Management.Properties.Resources.floppy_disk;
             this.btnSavePrinter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSavePrinter.Location = new System.Drawing.Point(180, 161);
+            this.btnSavePrinter.Location = new System.Drawing.Point(179, 161);
             this.btnSavePrinter.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnSavePrinter.Name = "btnSavePrinter";
             this.btnSavePrinter.Size = new System.Drawing.Size(271, 47);
@@ -291,11 +291,11 @@ namespace Sales_Management
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(355, 10);
+            this.label2.Location = new System.Drawing.Point(367, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 40);
+            this.label2.Size = new System.Drawing.Size(65, 40);
             this.label2.TabIndex = 15;
-            this.label2.Text = "اسم المحل:";
+            this.label2.Text = "الاسم:";
             // 
             // txtName
             // 
@@ -311,11 +311,11 @@ namespace Sales_Management
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(347, 82);
+            this.label3.Location = new System.Drawing.Point(363, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 40);
+            this.label3.Size = new System.Drawing.Size(73, 40);
             this.label3.TabIndex = 17;
-            this.label3.Text = "عنوان المحل:";
+            this.label3.Text = "العنوان:";
             // 
             // txtAddress
             // 
@@ -340,11 +340,11 @@ namespace Sales_Management
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(365, 157);
+            this.label7.Location = new System.Drawing.Point(362, 157);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 40);
+            this.label7.Size = new System.Drawing.Size(75, 40);
             this.label7.TabIndex = 23;
-            this.label7.Text = "تليفون:";
+            this.label7.Text = "التليفون";
             // 
             // btnSaveOrder
             // 

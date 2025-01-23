@@ -210,10 +210,14 @@ namespace Sales_Management
                     }
                     catch (Exception) { }
                     //decimal realPrice = Convert.ToDecimal(tblUnit.Rows[0][3]);
+                    decimal total = Convert.ToDecimal(Product_Qty) * Convert.ToDecimal(realPrice);
+                    if (Properties.Settings.Default.SaleDiscountForCasher && Properties.Settings.Default.ItemDiscount == "Present")
+                    {
+                        Discount = total - (total * ((100 - DiscountInputValue.Value) / 100));
+                    }
                     DgvSale.Rows[rowindex].Cells[4].Value = realPrice;
                     DgvSale.Rows[rowindex].Cells[5].Value = Discount;
-                    decimal total = Convert.ToDecimal(Product_Qty) * Convert.ToDecimal(realPrice);
-                    DgvSale.Rows[rowindex].Cells[6].Value = total;
+                    DgvSale.Rows[rowindex].Cells[6].Value = total - Discount;
                     DgvSale.Rows[rowindex].Cells[7].Value = Product_Unit_ID;
                 }
                 catch (Exception) { }
@@ -293,7 +297,9 @@ namespace Sales_Management
                 Properties.Settings.Default.Save();
 
 
-                Frm_SaleQty frm = new Frm_SaleQty();
+
+
+                Frm_SaleQty frm = new Frm_SaleQty(DiscountInputValue.Value);
                 frm.ShowDialog();
 
 

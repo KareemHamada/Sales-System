@@ -11,9 +11,11 @@ namespace Sales_Management
 {
     public partial class Frm_SaleQty : Form
     {
-        public Frm_SaleQty()
+        decimal proDiscount;
+        public Frm_SaleQty(decimal discount)
         {
             InitializeComponent();
+            proDiscount = discount;
         }
         Database db = new Database();
         private void Frm_SaleQty_Load(object sender, EventArgs e)
@@ -24,8 +26,9 @@ namespace Sales_Management
             }
             txtQty.Text = (Properties.Settings.Default.Item_Qty).ToString();
             txtSalePrice.Text = (Properties.Settings.Default.Item_SalePrice).ToString();
-            txtDiscount.Text = (Properties.Settings.Default.Item_Discount).ToString();
+            //txtDiscount.Text = (Properties.Settings.Default.Item_Discount).ToString();
 
+            txtDiscount.Text = proDiscount.ToString();
 
             try
             {
@@ -54,7 +57,7 @@ namespace Sales_Management
                 return; 
             }
             if (txtDiscount.Text == "") { 
-                MessageBox.Show("من فضلك ادخل  الخصم", "تاكيد");
+                MessageBox.Show("من فضلك ادخل الخصم", "تاكيد");
                 return;
             }
             if (cbxUnit.SelectedValue == null)
@@ -79,30 +82,39 @@ namespace Sales_Management
                 {
                     if (Properties.Settings.Default.ItemDiscount == "Value")
                     {
-                        if(Convert.ToDecimal(txtDiscount.Text) <= maxDiscount * Convert.ToDecimal(txtQty.Text))
-                        {
-                            Properties.Settings.Default.Item_Discount = Convert.ToDecimal(txtDiscount.Text);
-                            Properties.Settings.Default.Save();
-                        }
-                        else
-                        {
-                            MessageBox.Show("اقصي خصم مسموح لهذا المنتج هو " + maxDiscount * Convert.ToDecimal(txtQty.Text));
-                        }
+
+                        Properties.Settings.Default.Item_Discount = Convert.ToDecimal(txtDiscount.Text);
+                        Properties.Settings.Default.Save();
+
+                        //if (Convert.ToDecimal(txtDiscount.Text) <= maxDiscount * Convert.ToDecimal(txtQty.Text))
+                        //{
+                           
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("اقصي خصم مسموح لهذا المنتج هو " + maxDiscount * Convert.ToDecimal(txtQty.Text));
+                        //}
                         
                     }
                     else if (Properties.Settings.Default.ItemDiscount == "Present")
                     {
+                        //Properties.Settings.Default.Item_Discount = Properties.Settings.Default.Item_SalePrice - (Properties.Settings.Default.Item_SalePrice *((100 - presentValue)/100));
+
                         decimal presentValue = 0;
-                        presentValue = (Convert.ToDecimal(txtSalePrice.Text) / 100) * Convert.ToDecimal(txtDiscount.Text);
-                        if (presentValue <= maxDiscount)
-                        {
-                            Properties.Settings.Default.Item_Discount = presentValue;
-                            Properties.Settings.Default.Save();
-                        }
-                        else
-                        {
-                            MessageBox.Show("اقصي خصم مسموح لهذا المنتج هو " + maxDiscount);
-                        }
+                        presentValue = Convert.ToDecimal(txtDiscount.Text);
+
+                        decimal total = Properties.Settings.Default.Item_SalePrice * Properties.Settings.Default.Item_Qty;
+                        Properties.Settings.Default.Item_Discount = Math.Round(total - (total * ((100 - presentValue) / 100)));
+                        Properties.Settings.Default.Save();
+
+                        //if (presentValue <= maxDiscount)
+                        //{
+                            
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("اقصي خصم مسموح لهذا المنتج هو " + maxDiscount);
+                        //}
 
 
                     }

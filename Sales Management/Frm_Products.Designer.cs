@@ -29,10 +29,10 @@ namespace Sales_Management
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
@@ -202,26 +202,26 @@ namespace Sales_Management
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvUnits.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvUnits.DefaultCellStyle = dataGridViewCellStyle1;
             this.DgvUnits.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvUnits.Location = new System.Drawing.Point(3, 88);
             this.DgvUnits.Name = "DgvUnits";
             this.DgvUnits.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvUnits.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvUnits.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvUnits.RowHeadersVisible = false;
             this.DgvUnits.RowHeadersWidth = 51;
             this.DgvUnits.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -461,26 +461,26 @@ namespace Sales_Management
             this.Column2,
             this.Column1,
             this.Column3});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvStore.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvStore.DefaultCellStyle = dataGridViewCellStyle3;
             this.DgvStore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvStore.Location = new System.Drawing.Point(3, 3);
             this.DgvStore.Name = "DgvStore";
             this.DgvStore.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvStore.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arabic Typesetting", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvStore.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvStore.RowHeadersVisible = false;
             this.DgvStore.RowHeadersWidth = 51;
             this.DgvStore.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
@@ -737,7 +737,7 @@ namespace Sales_Management
             this.cbxUnitBuy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxUnitBuy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUnitBuy.FormattingEnabled = true;
-            this.cbxUnitBuy.Location = new System.Drawing.Point(18, 197);
+            this.cbxUnitBuy.Location = new System.Drawing.Point(18, 194);
             this.cbxUnitBuy.Name = "cbxUnitBuy";
             this.cbxUnitBuy.Size = new System.Drawing.Size(264, 36);
             this.cbxUnitBuy.TabIndex = 41;
@@ -759,7 +759,7 @@ namespace Sales_Management
             this.cbxUnitSale.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxUnitSale.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxUnitSale.FormattingEnabled = true;
-            this.cbxUnitSale.Location = new System.Drawing.Point(17, 235);
+            this.cbxUnitSale.Location = new System.Drawing.Point(17, 232);
             this.cbxUnitSale.Name = "cbxUnitSale";
             this.cbxUnitSale.Size = new System.Drawing.Size(267, 36);
             this.cbxUnitSale.TabIndex = 36;
@@ -831,7 +831,7 @@ namespace Sales_Management
             this.cbxMainUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxMainUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxMainUnit.FormattingEnabled = true;
-            this.cbxMainUnit.Location = new System.Drawing.Point(59, 9);
+            this.cbxMainUnit.Location = new System.Drawing.Point(59, 3);
             this.cbxMainUnit.Name = "cbxMainUnit";
             this.cbxMainUnit.Size = new System.Drawing.Size(232, 36);
             this.cbxMainUnit.TabIndex = 30;
@@ -1003,7 +1003,7 @@ namespace Sales_Management
             this.cbxGroup.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxGroup.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxGroup.FormattingEnabled = true;
-            this.cbxGroup.Location = new System.Drawing.Point(58, 9);
+            this.cbxGroup.Location = new System.Drawing.Point(58, 3);
             this.cbxGroup.Name = "cbxGroup";
             this.cbxGroup.Size = new System.Drawing.Size(233, 36);
             this.cbxGroup.TabIndex = 27;
@@ -1167,7 +1167,7 @@ namespace Sales_Management
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.19303F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.90909F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 111F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204F));
             this.tableLayoutPanel7.Controls.Add(this.txtSearchBarcode, 5, 0);
             this.tableLayoutPanel7.Controls.Add(this.btnSearch, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.label21, 4, 0);
@@ -1186,7 +1186,7 @@ namespace Sales_Management
             // txtSearchBarcode
             // 
             this.txtSearchBarcode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSearchBarcode.Location = new System.Drawing.Point(18, 8);
+            this.txtSearchBarcode.Location = new System.Drawing.Point(19, 8);
             this.txtSearchBarcode.Name = "txtSearchBarcode";
             this.txtSearchBarcode.Size = new System.Drawing.Size(169, 36);
             this.txtSearchBarcode.TabIndex = 45;
@@ -1199,7 +1199,7 @@ namespace Sales_Management
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
             this.btnSearch.Image = global::Sales_Management.Properties.Resources.search1;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(526, 7);
+            this.btnSearch.Location = new System.Drawing.Point(528, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(111, 38);
             this.btnSearch.TabIndex = 10;
@@ -1212,7 +1212,7 @@ namespace Sales_Management
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.Red;
-            this.label21.Location = new System.Drawing.Point(210, 12);
+            this.label21.Location = new System.Drawing.Point(212, 12);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(100, 28);
             this.label21.TabIndex = 44;
@@ -1221,9 +1221,9 @@ namespace Sales_Management
             // txtProNameSearch
             // 
             this.txtProNameSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtProNameSearch.Location = new System.Drawing.Point(643, 8);
+            this.txtProNameSearch.Location = new System.Drawing.Point(645, 8);
             this.txtProNameSearch.Name = "txtProNameSearch";
-            this.txtProNameSearch.Size = new System.Drawing.Size(196, 36);
+            this.txtProNameSearch.Size = new System.Drawing.Size(195, 36);
             this.txtProNameSearch.TabIndex = 9;
             this.txtProNameSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtProNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProNameSearch_KeyPress);
@@ -1245,7 +1245,7 @@ namespace Sales_Management
             this.cbxProducts.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbxProducts.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbxProducts.FormattingEnabled = true;
-            this.cbxProducts.Location = new System.Drawing.Point(318, 14);
+            this.cbxProducts.Location = new System.Drawing.Point(320, 14);
             this.cbxProducts.Name = "cbxProducts";
             this.cbxProducts.Size = new System.Drawing.Size(202, 36);
             this.cbxProducts.TabIndex = 11;
